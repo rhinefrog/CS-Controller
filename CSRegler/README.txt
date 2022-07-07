@@ -52,3 +52,6 @@ dotnet ef migrations add MeinDBName --context ContextName
 dotnet ef database update --context ContextName
 
 DB und db-shm und sd-wal markieren und Eigenschaft -> immer mit kopieren auswählen
+
+update von ef:
+dotnet tool update --global dotnet-ef

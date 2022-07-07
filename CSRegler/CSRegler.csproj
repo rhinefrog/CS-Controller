@@ -63,6 +63,9 @@
 		<None Update="CSRegler.db">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
+		<None Update="DPNummer.db">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 		<None Update="DPNummer.db-shm">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
