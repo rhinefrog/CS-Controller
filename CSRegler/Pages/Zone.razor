@@ -1,0 +1,243 @@
+﻿@page "/zone"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+<PageTitle>Zone</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+   <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a class='active' href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Zone</h2>
+<table>
+<tr>
+<td>Zone</td>
+<td><input type='number' name='zone1' min='1' max='4' maxlength='3' value='1'></td>
+<td> + </td>
+<td><input type='number' name='zone2' min='1' max='2' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone3' min='1' max='4' maxlength='3' value='1'></td>
+<td> - </td>
+<td><input type='number' name='zone4' min='0' max='255' maxlength='3' value='100'></td>
+</tr> 
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone5' min='1' max='4' maxlength='3' value='1'></td>
+<td> seqtime </td>
+<td><input type='number' name='zone6' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone7' min='1' max='4' maxlength='3' value='1'></td>
+<td> emertemp </td>
+<td><input type='number' name='zone8' min='0' max='1' maxlength='3' value='0'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone9' min='1' max='4' maxlength='3' value='1'></td>
+<td> emernum </td>
+<td><input type='number' name='zone10' min='0' max='32' maxlength='3' value='0'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone11' min='1' max='4' maxlength='3' value='1'></td>
+<td> nmax </td>
+<td><input type='number' name='zone12' min='0' max='32' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone13' min='1' max='4' maxlength='3' value='1'></td>
+<td> cwmode </td>
+<td><input type='number' name='zone14' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone15' min='1' max='4' maxlength='3' value='1'></td>
+<td> gestart </td>
+<td><input type='number' name='zone16' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone17' min='1' max='4' maxlength='3' value='1'></td>
+<td> gestartrel </td>
+<td><input type='number' name='zone18' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone19' min='1' max='4' maxlength='3' value='1'></td>
+<td> gehys </td>
+<td><input type='number' name='zone20' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone21' min='1' max='4' maxlength='3' value='1'></td>
+<td> gewstart </td>
+<td><input type='number' name='zone22' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone23' min='1' max='4' maxlength='3' value='1'></td>
+<td> gewstartrel </td>
+<td><input type='number' name='zone24' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone25' min='1' max='4' maxlength='3' value='1'></td>
+<td> gewhys </td>
+<td><input type='number' name='zone26' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone27' min='1' max='4' maxlength='3' value='1'></td>
+<td> average </td>
+<td><input type='number' name='zone28' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone29' min='1' max='4' maxlength='3' value='1'></td>
+<td> avgp </td>
+<td><input type='number' name='zone30' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>zone </td>
+<td><input type='number' name='zone31' min='1' max='4' maxlength='3' value='1'></td>
+<td> sbaverage </td>
+<td><input type='number' name='zone32' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+</table>
+<input type='submit' value='Set' name='paramSetzone'>
+<br />
+
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+
+@code{
+
+}

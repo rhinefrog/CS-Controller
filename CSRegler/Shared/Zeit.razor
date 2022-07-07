@@ -1,0 +1,26 @@
+﻿@using System.Threading    
+@implements IDisposable
+
+<span style='padding:10px;'>@theTime</span>
+
+@code{
+
+    string theTime;    
+    Timer aTimer;
+
+    protected override void OnInitialized()
+    {
+        aTimer = new Timer(Tick, null, 0, 1000);        
+    }
+
+    private void Tick(object _)
+    {
+        theTime = DateTime.Now.ToLongTimeString();
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        aTimer?.Dispose();
+    }
+}

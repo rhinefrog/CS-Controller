@@ -1,0 +1,578 @@
+﻿@page "/aout"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+
+<PageTitle>aout</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a class='active' href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<table>
+<tr>
+<td>
+<label for='aout1'>Choose aout  1:</label></td>
+<td><select name='aout1' id='aout1'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout1'>
+</td>
+<td>
+<label for='aout2'>Choose aout  2:</label></td>
+<td><select name='aout2' id='aout2'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout2'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout3'>Choose aout  3:</label></td>
+<td><select name='aout3' id='aout3'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout3'>
+</td>
+<td>
+<label for='aout4'>Choose aout  4:</label></td>
+<td><select name='aout4' id='aout4'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout4'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout5'>Choose aout  5:</label></td>
+<td><select name='aout5' id='aout5'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout5'>
+</td>
+<td>
+<label for='aout6'>Choose aout  6:</label></td>
+<td><select name='aout6' id='aout6'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout6'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout7'>Choose aout  7:</label></td>
+<td><select name='aout7' id='aout7'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout7'>
+</td>
+<td>
+<label for='aout8'>Choose aout  8:</label></td>
+<td><select name='aout8' id='aout8'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout8'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain9'>Choose aout  9:</label></td>
+<td><select name='aout9' id='aout9'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout9'>
+</td>
+<td>
+<label for='aout10'>Choose aout 10:</label></td>
+<td><select name='aout10' id='aout10'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout10'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout11'>Choose aout 11:</label></td>
+<td><select name='aout11' id='aout11'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout11'>
+</td>
+<td>
+<label for='ain12'>Choose aout 12:</label></td>
+<td><select name='aout12' id='aout12'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout12'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout13'>Choose aout 13:</label></td>
+<td><select name='aout13' id='aout13'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout3'>
+</td>
+<td>
+<label for='aout14'>Choose aout 14:</label></td>
+<td><select name='aout14' id='aout14'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout14'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout15'>Choose aout 15:</label></td>
+<td><select name='aout15' id='aout15'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout15'>
+</td>
+<td>
+<label for='aout16'>Choose aout 16:</label></td>
+<td><select name='aout16' id='aout16'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout16'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout17'>Choose aout 17:</label></td>
+<td><select name='aout17' id='aout17'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout17'>
+</td>
+<td>
+<label for='aout18'>Choose aout 18:</label></td>
+<td><select name='aout18' id='aout18'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout18'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='aout19'>Choose aout 19:</label></td>
+<td><select name='aout19' id='aout19'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout19'>
+</td>
+<td>
+<label for='aout20'>Choose aout 20:</label></td>
+<td><select name='aout20' id='aout20'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>
+</select></td>
+<td><input type='submit' value='Set' name='paramAout20'>
+</td>
+</tr>
+</table>
+
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+
+
+@code {
+ 
+}

@@ -1,0 +1,68 @@
+﻿@inherits LayoutComponentBase
+@using System.Globalization
+@using CSRegler.Resources
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+
+<PageTitle>CSRegler</PageTitle>
+
+<div class="page">
+<!--   <div class="sidebar">
+        <NavMenu />
+    </div>-->
+    <main>
+        <div class="top-row px-4 auth">
+            <RadzenNotification />
+            <Zeit />
+            <RadzenButton Disabled="@startunit" Text="@Loc["Start Unit"]" Icon="check_circle" ButtonStyle="ButtonStyle.Success" Click="StartUnit" />
+            <RadzenButton Disabled="@stopunit" Text="@Loc["Stop Unit"]" Icon="highlight_off" ButtonStyle="ButtonStyle.Success" Click="StopUnit" />           
+            <RadzenButton Disabled="true" Text="@Loc["Alarmreset"]" Icon="warning_amber" ButtonStyle="ButtonStyle.Danger" />
+            <LoginDisplay />
+            <CultureSelector />
+        </div>
+        <article class="content px-4">
+            @Body
+        </article>
+        <Footer/>
+    </main>
+</div>
+
+
+@code{ 
+    protected bool startunit { get; set; }
+    protected bool stopunit { get; set; }
+
+void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+
+        //        Console.WriteLine($"{message.Severity} notification");
+        //      console.Log($"{message.Severity} notification");
+        // console.Log($"{message.Summary} notification");
+    }
+
+    protected override void OnInitialized()
+    {
+        startunit = false;
+        stopunit = true;
+    }
+
+    protected async Task StartUnit()
+    {
+        stopunit = false;
+        startunit = true;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = @Loc["Info: Unit Start"], Detail = @Loc["Starting Unit"], Duration = 4000 });
+//        Log.Information($"Info: Unit Starts: {DateTime.Now}");
+        await InvokeAsync(StateHasChanged);
+    }
+    protected async Task StopUnit()
+    {
+        startunit = false;
+        stopunit = true;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = @Loc["Info: Unit Stop"], Detail = @Loc["Stoping Unit"], Duration = 4000 });
+//        Log.Information($"Info: Unit Stops: {DateTime.Now}");
+        await InvokeAsync(StateHasChanged);
+    }
+}

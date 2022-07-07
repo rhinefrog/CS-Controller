@@ -1,0 +1,155 @@
+﻿
+
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">CSRegler V0.01 beta</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <AuthorizeView Roles="Admin">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span>Home
+            </NavLink>
+        </li>
+        </AuthorizeView>
+                <AuthorizeView Roles="Admin">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="/administration">
+                    <span class="oi oi-home" aria-hidden="true"></span> Admin
+                </NavLink>
+            </div>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/hardwareconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Hardware config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+<!---------------------->
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/unitconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Unit config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/networkconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Network config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/setpoint">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Set point
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/alarmconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Alarm config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/ioconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> IO config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/airconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Air config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/humiconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Humidicifation config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/valveconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Valve config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/drycoolconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Drycool config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/louverconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Louver config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/compressorconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Compressor config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/pressureconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Pressure config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/sensorconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Sensor config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/minmaxconfig">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> MinMax config
+                </NavLink>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin, Normal">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="/datalog">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Data Log
+                </NavLink>
+            </li>
+        </AuthorizeView>
+
+    </ul>
+</div>
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

@@ -1,0 +1,295 @@
+﻿@page "/sensor"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+<PageTitle>Sensor</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a class='active' href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Sensor</h2>
+<table>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor1' min='1' max='21' maxlength='3' value='1'></td>
+<td> use </td>
+<td>
+<select name='sensortyp' id='sensortyp'>
+<option value='0'>-none-</option>
+<option value='1'>@Loc["Roomtemp"]</option>
+<option value='2'>@Loc["Roomhumidity"]</option>
+<option value='3'>@Loc["Supplytemp"]</option>
+<option value='4'>@Loc["Supplyhumidity"]</option>
+<option value='5'>@Loc["Watertemp in 1"]</option>
+<option value='6'>@Loc["Outsidetemp"]</option>
+<option value='8'>@Loc["Outsidehumidity"]</option>
+<option value='9'>@Loc["Hotgastemp 1"]</option>
+<option value='10'>@Loc["Condensation pressure 1"]</option>
+<option value='11'>@Loc["Suction gas temperature 1"]</option>
+<option value='12'>@Loc["Evaporation pressure 1"]</option>
+<option value='13'>@Loc["Watertemp in 2"]</option>
+<option value='14'>@Loc["Hotgastemp 2"]</option>
+<option value='15'>@Loc["Condensation pressure 2"]</option>
+<option value='16'>@Loc["Suction gas temperature 2"]</option>
+<option value='17'>@Loc["Evaporation pressure 2"]</option>
+<option value='18'>@Loc["Setpoint temperature"]</option>
+<option value='19'>@Loc["Setpoint humidity"]</option>
+<option value='20'>@Loc["Watertemp out 1"]</option>
+<option value='21'>@Loc["Watertemp out 2"]</option>
+<option value='22'>@Loc["Waterpressure"]</option>
+<option value='23'>@Loc["Air pressure"]</option>
+<option value='24'>@Loc["Universal temp 1"]</option>
+<option value='25'>@Loc["Differential pressure 1"]</option>
+<option value='26'>@Loc["Differential pressure 2"]</option>
+<option value='27'>@Loc["Differential pressure 3"]</option>
+</select>
+<br><br>
+<input type='submit' value='Send' name='paramSensortyp'>
+</td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor3' min='1' max='21' maxlength='3' value='1'></td>
+<td> ain </td>
+<td><input type='number' name='sensor4' min='0' max='255' maxlength='3' value='100'></td>
+</tr> 
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor5' min='1' max='21' maxlength='3' value='1'></td>
+<td> minmess </td>
+<td><input type='number' name='sensor6' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor7' min='1' max='21' maxlength='3' value='1'></td>
+<td> maxmess </td>
+<td><input type='number' name='sensor8' min='0' max='1' maxlength='3' value='0'></td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor9' min='1' max='21' maxlength='3' value='1'></td>
+<td> minout </td>
+<td><input type='number' name='sensor10' min='0' max='32' maxlength='3' value='0'></td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor11' min='1' max='21' maxlength='3' value='1'></td>
+<td> maxout </td>
+<td><input type='number' name='sensor12' min='0' max='32' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor13' min='1' max='21' maxlength='3' value='1'></td>
+<td> div </td>
+<td><input type='number' name='sensor14' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor15' min='1' max='21' maxlength='3' value='1'></td>
+<td> alarmprio </td>
+<td><input type='number' name='sensor16' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor17' min='1' max='21' maxlength='3' value='1'></td>
+<td> commonalarm </td>
+<td><input type='number' name='sensor18' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor19' min='1' max='21' maxlength='3' value='1'></td>
+<td> alarmdelay </td>
+<td><input type='number' name='sensor20' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor21' min='1' max='21' maxlength='3' value='1'></td>
+<td> alarmdelaybr </td>
+<td><input type='number' name='sensor22' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor23' min='1' max='21' maxlength='3' value='1'></td>
+<td> commonalarmbr </td>
+<td><input type='number' name='sensor24' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor25' min='1' max='21' maxlength='3' value='1'></td>
+<td> alarmpriobr </td>
+<td><input type='number' name='sensor26' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor27' min='1' max='21' maxlength='3' value='1'></td>
+<td> trim </td>
+<td><input type='number' name='sensor28' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor29' min='1' max='21' maxlength='3' value='1'></td>
+<td> trim reset </td>
+<td><input type='number' name='sensor30' min='0' max='1' maxlength='3' value='0'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor31' min='1' max='21' maxlength='3' value='1'></td>
+<td> bms </td>
+<td><input type='number' name='sensor32' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor33' min='1' max='21' maxlength='3' value='1'></td>
+<td> hand </td>
+<td><input type='number' name='sensor34' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+<tr>
+<td>sensor </td>
+<td><input type='number' name='sensor35' min='1' max='21' maxlength='3' value='1'></td>
+<td> handon </td>
+<td><input type='number' name='sensor36' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+</table>
+<input type='submit' value='Set' name='paramSetsensor'>
+<br />
+
+
+ </div>
+ </div>
+ </div>
+
+ 
+
+ </body>
+</html>
+
+@code{
+    IEnumerable<int> valuessensor = new int[] { };
+
+    void OnChange(object value, string name)
+    {
+        var str = value is IEnumerable<int> ? string.Join(", ", (IEnumerable<int>)value) : value;
+        //    console.Log($"{name} value changed to {str}");
+    }
+    double valuesensor = 0;
+}

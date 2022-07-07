@@ -1,0 +1,192 @@
+﻿@page "/dehumi"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+
+
+<PageTitle>Dehumi</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a class='active' href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Dehumi</h2>
+<table>
+<tr>
+<td>dehumi confvalve</td>
+<td><input type='number' name='dehumi1' min='0' max='1' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>dehumi confbypass</td>
+<td><input type='number' name='dehumi2' min='0' max='1' maxlength='3' value='0'></td>
+</tr> 
+
+<tr>
+<td>dehumi start</td>
+<td><input type='number' name='dehumi3' min='0' max='255' maxlength='3' value='120'></td>
+</tr>
+
+<tr>
+<td>dehumi hys</td>
+<td><input type='number' name='dehumi4' min='0' max='255' maxlength='3' value='90'></td>
+</tr>
+
+<tr>
+<td>dehumi dout</td>
+<td><input type='number' name='dehumi5' min='0' max='255' maxlength='3' value='60'></td>
+<td>
+</td>
+</tr>
+
+<tr>
+<td>dehumi stop</td>
+<td><input type='number' name='dehumi6' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>dehumi min</td>
+<td><input type='number' name='dehumi7' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>dehumi max</td>
+<td><input type='number' name='dehumi8' min='0' max='255' maxlength='3' value='1'></td>
+</tr>
+
+<tr>
+<td>dehumi hand</td>
+<td><input type='number' name='dehumi9' min='0' max='1' maxlength='3' value='0'></td>
+</tr>
+
+<tr>
+<td>dehumi handon</td>
+<td><input type='number' name='dehumi10' min='0' max='1' maxlength='3' value='0'></td>
+</tr>
+
+</table>
+<input type='submit' value='Set' name='paramSetDehumi'>
+<br />
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+
+@code{
+
+}

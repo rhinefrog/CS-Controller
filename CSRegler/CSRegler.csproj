@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-CSRegler-5539E7FD-932F-41BB-8E1F-B3960D5AB126</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\1hmk4nt3.uos~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.Toast" Version="3.2.2" />
+    <PackageReference Include="Majorsoft.Blazor.Components.CssEvents" Version="1.5.0" />
+    <PackageReference Include="Majorsoft.Blazor.Components.Notifications" Version="1.5.0" />
+    <PackageReference Include="Majorsoft.Blazor.Components.Timer" Version="1.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-preview.5.22302.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0-preview.5.22302.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-preview.5.22302.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.0-preview.4.22251.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+    <PackageReference Include="MudBlazor" Version="6.0.11-dev.4" />
+    <PackageReference Include="NotificationService" Version="1.0.0" />
+    <PackageReference Include="Radzen.Blazor" Version="3.18.15" />
+    <PackageReference Include="ResourceBridge" Version="2021.8.21" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Shared\Zeit.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\CSReglerResource.de.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CSReglerResource.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CSReglerResource.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CSReglerResource.ru.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Update="CSRegler.db">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="DPNummer.db-shm">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="DPNummer.db-wal">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

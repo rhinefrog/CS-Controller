@@ -1,0 +1,853 @@
+﻿@page "/din"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+
+
+<PageTitle>Din</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a class='active' href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Din</h2>
+<table>
+<tr>
+<td>
+<label for='din1'>Choose din  1:</label></td><td>
+<select name='din1' id='din1'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin1'>
+</td>
+<td>
+<label for='din2'>Choose din  2:</label></td><td>
+<select name='din2' id='din2'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin2'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din3'>Choose din  3:</label></td><td>
+<select name='din3' id='din3'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin3'>
+</td>
+<td>
+<label for='din4'>Choose din  4:</label></td><td>
+<select name='din4' id='din4'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin4'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din5'>Choose din  5:</label></td><td>
+<select name='din5' id='din5'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin5'>
+</td>
+<td>
+<label for='din6'>Choose din  6:</label></td><td>
+<select name='din6' id='din6'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin6'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din7'>Choose din  7:</label></td><td>
+<select name='din7' id='din7'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin7'>
+</td>
+<td>
+<label for='din8'>Choose din  8:</label></td><td>
+<select name='din8' id='din8'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin8'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din9'>Choose din  9:</label></td><td>
+<select name='din9' id='din9'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin9'>
+</td>
+<td>
+<label for='din10'>Choose din 10:</label></td><td>
+<select name='din10' id='din10'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin10'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din11'>Choose din 11:</label></td><td>
+<select name='din11' id='din11'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin11'>
+</td>
+<td>
+<label for='din12'>Choose din 12:</label></td><td>
+<select name='din12' id='din12'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin12'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din13'>Choose din 13:</label></td><td>
+<select name='din13' id='din13'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin3'>
+</td>
+<td>
+<label for='din14'>Choose din 14:</label></td><td>
+<select name='din14' id='din14'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin14'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din15'>Choose din 15:</label></td><td>
+<select name='din15' id='din15'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin15'>
+</td>
+<td>
+<label for='din16'>Choose din 16:</label></td><td>
+<select name='din16' id='din16'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin16'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din17'>Choose din 17:</label></td><td>
+<select name='din17' id='din17'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin17'>
+</td>
+<td>
+<label for='din18'>Choose din 18:</label></td><td>
+<select name='din18' id='din18'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin18'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din19'>Choose din 19:</label></td><td>
+<select name='din19' id='din19'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin19'>
+</td>
+<td>
+<label for='din20'>Choose din 20:</label></td><td>
+<select name='din20' id='din20'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin20'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='din21'>Choose din 21:</label></td><td>
+<select name='din21' id='din21'>
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDin21'>
+</td>
+</tr>
+</table>
+ </div>
+ </div>
+ </div>
+
+ 
+ </body>
+</html>
+
+@code{
+
+}

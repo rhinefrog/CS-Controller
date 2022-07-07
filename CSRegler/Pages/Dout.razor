@@ -1,0 +1,827 @@
+﻿@page "/dout"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+
+<PageTitle>Dout</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a class='active' href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Dout</h2>
+<table>
+<tr>
+<td>
+<label for='dout1'>Choose dout  1:</label></td><td>
+<select name='dout1' id='dout1'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDout1'>
+</td>
+<td>
+<label for='dout2'>Choose dout  2:</label></td><td>
+<select name='dout2' id='dout2'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout2'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout3'>Choose dout  3:</label></td><td>
+<select name='dout3' id='dout3'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout3'>
+</td>
+<td>
+<label for='dout4'>Choose dout  4:</label></td><td>
+<select name='dout4' id='dout4'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDout4'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout5'>Choose dout  5:</label></td><td>
+<select name='dout5' id='dout5'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDout5'>
+</td>
+<td>
+<label for='dout6'>Choose dout  6:</label></td><td>
+<select name='dout6' id='dout6'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout6'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout7'>Choose dout  7:</label></td><td>
+<select name='dout7' id='dout7'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout7'>
+</td>
+<td>
+<label for='dout8'>Choose dout  8:</label></td><td>
+<select name='dout8' id='dout8'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout8'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout9'>Choose dout  9:</label></td><td>
+<select name='dout9' id='dout9'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout9'>
+</td>
+<td>
+<label for='dout10'>Choose dout 10:</label></td><td>
+<select name='dout10' id='dout10'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout10'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout11'>Choose dout 11:</label></td><td>
+<select name='dout11' id='dout11'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout11'>
+</td>
+<td>
+<label for='dout12'>Choose dout 12:</label></td><td>
+<select name='dout12' id='dout12'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout12'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout13'>Choose dout 13:</label></td><td>
+<select name='dout13' id='dout13'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout3'>
+</td>
+<td>
+<label for='dout14'>Choose dout 14:</label></td><td>
+<select name='dout14' id='dout14'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramDout14'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout15'>Choose dout 15:</label></td><td>
+<select name='dout15' id='dout15'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout15'>
+</td>
+<td>
+<label for='dout16'>Choose dout 16:</label></td><td>
+<select name='dout16' id='dout16'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout16'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout17'>Choose dout 17:</label></td><td>
+<select name='dout17' id='dout17'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout17'>
+</td>
+<td>
+<label for='dout18'>Choose dout 18:</label></td><td>
+<select name='dout18' id='dout18'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout18'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout19'>Choose dout 19:</label></td><td>
+<select name='dout19' id='dout19'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout19'>
+</td>
+<td>
+<label for='dout20'>Choose dout 20:</label></td><td>
+<select name='dout20' id='dout20'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout20'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='dout21'>Choose dout 21:</label></td><td>
+<select name='dout21' id='dout21'>
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>
+
+</select></td><td>
+<input type='submit' value='Set' name='paramDout21'>
+</td>
+</tr>
+</table>
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+
+@code{
+
+}

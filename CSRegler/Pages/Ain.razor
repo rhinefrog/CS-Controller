@@ -1,0 +1,557 @@
+﻿@page "/ain"
+@using System.Globalization
+@using CSRegler.Resources
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject IStringLocalizer<CSReglerResource> Loc
+@inject NotificationService NotificationService
+<PageTitle>ain</PageTitle>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='/'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a class='active' href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+<h2>Ain</h2>
+<table>
+<tr>
+<td>
+<label for='ain1'>Choose ain  1:</label></td><td>
+<select name='ain1' id='ain1'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin1'>
+</td>
+<td>
+<label for='ain2'>Choose ain  2:</label></td><td>
+<select name='ain2' id='ain2'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin2'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain3'>Choose ain  3:</label></td><td>
+<select name='ain3' id='ain3'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin3'>
+</td>
+<td>
+<label for='ain4'>Choose ain  4:</label></td><td>
+<select name='ain4' id='ain4'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin4'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain5'>Choose ain  5:</label></td><td>
+<select name='ain5' id='ain5'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin5'>
+</td>
+<td>
+<label for='ain6'>Choose ain  6:</label></td><td>
+<select name='ain6' id='ain6'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin6'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain7'>Choose ain  7:</label></td><td>
+<select name='ain7' id='ain7'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin7'>
+</td>
+<td>
+<label for='ain8'>Choose ain  8:</label></td><td>
+<select name='ain8' id='ain8'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin8'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain9'>Choose ain  9:</label></td><td>
+<select name='ain9' id='ain9'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin9'>
+</td>
+<td>
+<label for='ain10'>Choose ain 10:</label></td><td>
+<select name='ain10' id='ain10'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin10'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain11'>Choose ain 11:</label></td><td>
+<select name='ain11' id='ain11'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin11'>
+</td>
+<td>
+<label for='ain12'>Choose ain 12:</label></td><td>
+<select name='ain12' id='ain12'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin12'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain13'>Choose ain 13:</label></td><td>
+<select name='ain13' id='ain13'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin3'>
+</td>
+<td>
+<label for='ain14'>Choose ain 14:</label></td><td>
+<select name='ain14' id='ain14'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin14'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain15'>Choose ain 15:</label></td><td>
+<select name='ain15' id='ain15'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin15'>
+</td>
+<td>
+<label for='ain16'>Choose ain 16:</label></td><td>
+<select name='ain16' id='ain16'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin16'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain17'>Choose ain 17:</label></td><td>
+<select name='ain17' id='ain17'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin17'>
+</td>
+<td>
+<label for='ain18'>Choose ain 18:</label></td><td>
+<select name='ain18' id='ain18'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin18'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain19'>Choose ain 19:</label></td><td>
+<select name='ain19' id='ain19'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin19'>
+</td>
+<td>
+<label for='ain20'>Choose ain 20:</label></td><td>
+<select name='ain20' id='ain20'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin20'>
+</td>
+</tr>
+<tr>
+<td>
+<label for='ain21'>Choose ain 21:</label></td><td>
+<select name='ain21' id='ain21'>
+<option value='none'>-none-</option>
+<option value='roomhumi'>Roomhumidity</option>
+<option value='roomtemp'>Roomtemperature</option>
+<option value='supplyhumi'>Supplyhumidity</option>
+<option value='supplytemp'>Supplytemperature</option>
+<option value='watertempin1'>Watertemp inlet 1</option>
+<option value='watertempin2'>Watertemp inlet 2</option>
+<option value='watertempout1'>Watertemp outlet 1</option>
+<option value='watertempout2'>Watertemp outlet 2</option>
+<option value='outsidetemp'>Outsidetemperature</option>
+<option value='outsidehumi'>Outsidehumidity</option>
+<option value='condpress1'>Condensationpressure 1</option>
+<option value='condpress2'>Condensationpressure 2</option>
+</select></td><td>
+<input type='submit' value='Set' name='paramAin21'>
+</td>
+</tr>
+</table>
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+
+@code{
+
+}

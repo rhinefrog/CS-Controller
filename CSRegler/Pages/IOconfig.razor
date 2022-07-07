@@ -1,0 +1,699 @@
+﻿@page "/ioconfig"
+@using CSRegler.Resources
+@using System.Security.Claims
+@inject IStringLocalizer<CSReglerResource> Localizer
+@using System.Globalization
+@using CSRegler.Pages
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Http
+@inject NotificationService NotificationService
+
+<PageTitle>IO config</PageTitle>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { box-sizing: border-box; }
+ body { font-family: Arial; padding: 10px; background: #f1f1f1; }
+/* Header/Blog Title */
+.header { padding: 30px;  text-align: center;  background: white;}
+.header h1 {  font-size: 50px;}
+.vertical-menu {  width: 200px;  height: 500px;  overflow-y: auto;}
+.vertical-menu a {   background-color: #eee;  color: black;   display: block;  padding: 5px;  text-decoration: none;}
+.vertical-menu a:hover {  background-color: #ccc;}
+.vertical-menu a.active {  background-color: #04AA6D;  color: white;}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {     float: left;  width: 25%;}
+/* Right column */
+.rightcolumn {  float: left;  width: 75%;  background-color: #f1f1f1;  padding-left: 0px;}
+/* Fake image */
+.fakeimg {  background-color: #aaa;  width: 100%;  padding: 20px;}
+/* Add a card effect for articles */
+.card {  background-color: white;  padding: 20px;  margin-top: 20px;}
+/* Clear floats after the columns */
+.row:after {  content: ;  display: table;  clear: both;}
+/* Footer */
+.footer {  padding: 10px;  text-align: center;  background: #ddd; margin-top: 500px;}
+
+/* Add a black background color to the top navigation */
+.topnav {  background-color: #333;  overflow: hidden;}
+/* Style the links inside the navigation bar */
+.topnav a {  float: left;  color: #f2f2f2;  text-align: center;  padding: 14px 16px;  text-decoration: none;  font-size: 17px;}
+/* Change the color of links on hover */
+.topnav a:hover {  background-color: #ddd;  color: black;}
+/* Add a color to the active/current link */
+.topnav a.active {  background-color: #F4AA6A;  color: white;}
+button {  background-color: #04AA6D;  color: white;  
+padding: 14px 20px;  margin: 8px 0;  border: none;  cursor: pointer;  width: 100%;}
+button:hover {  opacity: 0.8;}
+</style>
+</head>
+<body>
+
+<div class='topnav'>
+<a href='#'>Home</a>
+<a href='/hardwareconfig'>Hardware Configuration</a>
+<a class='active' href='/ioconfig'>IO Configuration</a>
+<a href='/unitconfig'>Unit Configuration</a>
+<a href='/networkconfig'>Network Configuration</a>
+ </div>
+
+  <div class='row'>
+   <div class='leftcolumn' >
+     <div class='vertical-menu' >
+ <a href='/ae'>ae</a>
+ <a href='/ain'>ain</a>
+ <a href='/aout'>aout</a>
+ <a href='/bmsstop'>bmsstop</a>
+ <a href='/calarm'>calarm</a>
+ <a href='/coil'>coil</a>
+ <a href='/comp'>comp</a>
+ <a href='/cond'>cond</a>
+ <a href='/control'>control</a>
+ <a href='/coolingprio'>coolingprio</a>
+ <a href='/cpset'>cpset</a>
+ <a href='/cw'>cw</a>
+ <a href='/date'>date time</a>
+ <a href='/dehumi'>dehumi</a>
+ <a href='/din'>din</a>
+ <a href='/dout'>dout</a>
+ <a href='/drycool'>drycool</a>
+ <a href='/eco'>eco</a>
+ <a href='/eev'>eev</a>
+ <a href='/eheat'>eheat</a>
+ <a href='/equipment'>equipment</a>
+ <a href='/event'>event</a>
+ <a href='/fan'>fan</a>
+ <a href='/fcm'>fcm</a>
+ <a href='/filter'>filter</a>
+ <a href='/fire'>fire</a>
+ <a href='/flow'>flow</a>
+ <a href='/gasheat'>gasheat</a>
+ <a href='/gecwv'>gecwv</a>
+ <a href='/gvalve'>gvalve</a>
+ <a href='/hgbp'>hgbp</a>
+ <a href='/humi'>humi</a>
+ <a href='/iobus'>iobus</a>
+ <a href='/is'>is</a>
+ <a href='/loaddefault'>loaddefault</a>
+ <a href='/log'>log</a>
+ <a href='/louver'>louver</a>
+ <a href='/minmax'>minmax</a>
+ <a href='/option'>option</a>
+ <a href='/phase'>phase</a>
+ <a href='/protocol'>protocol</a>
+ <a href='/pszone'>pszone</a>
+ <a href='/pump'>pump</a>
+ <a href='/pwwheat'>pwwheat</a>
+ <a href='/sensor'>sensor</a>
+ <a href='/setpoint'>setpoint</a>
+ <a href='/state'>state</a>
+ <a href='/suctionv'>suctionv</a>
+ <a href='/ups'>ups</a>
+ <a href='/water'>water</a>
+ <a href='/winter'>winter</a>
+ <a href='/wprg'>wprg</a>
+ <a href='/zone'>zone</a>
+ 	</div>
+   </div>
+
+ <div class='rightcolumn'>
+ <div class='card'>
+ <AuthorizeView Roles="Admin">
+    <Authorized>
+        <!--        <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>-->
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading DX unit 1 circuit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesdx1 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@dx1 Click=@OnBusyClickdx1 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuedx1" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading DX unit 2 circuits"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesdx2 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@dx2 Click=@OnBusyClickdx2 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuedx2" />
+        </RadzenCard>
+        <RadzenCard>
+            <h4 class="mb-4">@Localizer["Loading CW unit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuescw TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@cw Click=@OnBusyClickcw Text="@Localizer["Load"]" />
+            <RadzenProgressBar @bind-Value="@valuecw" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading CW/CW unit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuescw2 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@cw2 Click=@OnBusyClickcw2 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuecw2" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading A/G/CW unit 1 circuit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesagcw1 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@agcw1 Click=@OnBusyClickagcw1 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valueagcw1" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading A/G/CW unit 2 circuits"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesagcw2 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@agcw2 Click=@OnBusyClickagcw2 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valueagcw2" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading GE1 unit 1 circuit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesge11 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ge11 Click=@OnBusyClickge11 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuege11" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading GE1 unit 2 circuits"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesge12 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ge12 Click=@OnBusyClickge12 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuege12" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading GE2 unit 1 circuit"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesge21 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ge21 Click=@OnBusyClickge21 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuege21" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading GE2 unit 2 circuits"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesge22 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ge22 Click=@OnBusyClickge22 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuege22" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading pump station"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesps TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ps Click=@OnBusyClickps Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valueps" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading AE-Control"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuesae TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@ae Click=@OnBusyClickae Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valueae" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading Indoor Chiller basic (CC2)"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuescsi TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@csi Click=@OnBusyClickcsi Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuecsi" />
+        </RadzenCard>
+        <RadzenCard Visible="true">
+            <h4 class="mb-4">@Localizer["Loading Chiller basic (CC2)"]</h4>
+            <h3 class="mb-4">@Localizer["Adding Components..."]</h3>
+            <RadzenSelectBar @bind-Value=@valuescc2 TValue="IEnumerable<int>" Multiple="true" Change=@(args => OnChange(args, "SelectBar with multiple selection"))>
+                <Items>
+                    <RadzenSelectBarItem Text="@Localizer["Humidifier"]" Value="1" />
+                    <RadzenSelectBarItem Text="@Localizer["Dehumidifier"]" Value="2" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 1"]" Value="3" />
+                    <RadzenSelectBarItem Text="@Localizer["Heating 2"]" Value="4" />
+                    <RadzenSelectBarItem Text="@Localizer["HGBP"]" Value="5" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 1"]" Value="6" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 2"]" Value="7" />
+                    <RadzenSelectBarItem Text="@Localizer["Drycooler 3"]" Value="8" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 1"]" Value="9" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 2"]" Value="10" />
+                    <RadzenSelectBarItem Text="@Localizer["Louver 3"]" Value="11" />
+                    <RadzenSelectBarItem Text="@Localizer["Smoke/Fire detector"]" Value="12" />
+                    <RadzenSelectBarItem Text="@Localizer["Wateralarm"]" Value="13" />
+                    <RadzenSelectBarItem Text="@Localizer["Phasealarm"]" Value="14" />
+                </Items>
+            </RadzenSelectBar>
+            <RadzenButton style="width: 160px" Icon="save" BusyText="@Localizer["Loading ..."]" IsBusy=@cc2 Click=@OnBusyClickcc2 Text="@Localizer["Load configuration"]" />
+            <RadzenProgressBar @bind-Value="@valuecc2" />
+        </RadzenCard>
+    </Authorized>
+    <NotAuthorized>
+        @Localizer["You do not have permission to click the counter button. Please ask for permission."]
+    </NotAuthorized>
+</AuthorizeView>
+
+<div style="color:red">
+    <br />
+    @Message
+</div>
+
+
+ </div>
+ </div>
+ </div>
+
+
+ </body>
+</html>
+@code {
+//    bool singleValue = false;
+    IEnumerable<int> valuesdx1 = new int[] { };
+    IEnumerable<int> valuesdx2 = new int[] { };
+    IEnumerable<int> valuesdx3 = new int[] { };
+    IEnumerable<int> valuescw = new int[] { };
+    IEnumerable<int> valuescw2 = new int[] { };
+    IEnumerable<int> valuesagcw1 = new int[] { };
+    IEnumerable<int> valuesagcw2 = new int[] { };
+    IEnumerable<int> valuesge11 = new int[] { };
+    IEnumerable<int> valuesge12 = new int[] { };
+    IEnumerable<int> valuesge21 = new int[] { };
+    IEnumerable<int> valuesge22 = new int[] { };
+    IEnumerable<int> valuesps = new int[] { };
+    IEnumerable<int> valuesae = new int[] { };
+    IEnumerable<int> valuescsi = new int[] { };
+    IEnumerable<int> valuescc2 = new int[] { };
+    // EventConsole console;
+
+    void OnChange(object value, string name)
+    {
+        var str = value is IEnumerable<int> ? string.Join(", ", (IEnumerable<int>)value) : value;
+        //    console.Log($"{name} value changed to {str}");
+    }
+    double valuedx1 = 0;
+    double valuedx2 = 0;
+    double valuecw = 0;
+    double valuecw2 = 0;
+    double valueagcw1 = 0;
+    double valueagcw2 = 0;
+    double valuege11 = 0;
+    double valuege12 = 0;
+    double valuege21 = 0;
+    double valuege22 = 0;
+    double valueps = 0;
+    double valueae = 0;
+    double valuecsi = 0;
+    double valuecc2 = 0;
+
+    private ClaimsPrincipal User;
+    private string Message = "";
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        Message = "";
+
+        //        if (User.Identity.IsAuthenticated && User.IsInRole("CanIncrementCounter"))
+        currentCount++;
+        //        else
+        //            Message = "You do not have permission to increment the counter!";
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+     //   var authState = await AuthenticationStateProvider
+     //      .GetAuthenticationStateAsync();
+
+     //   User = authState.User;
+        valuedx1 = 0;
+        valuedx2 = 0;
+        valuecw = 0;
+        valuecw2 = 0;
+        valueagcw1 = 0;
+        valueagcw2 = 0;
+        valuege11 = 0;
+        valuege12 = 0;
+        valuege21 = 0;
+        valuege22 = 0;
+        valueps = 0;
+        valueae = 0;
+        valuecsi = 0;
+        valuecc2 = 0;
+    }
+    bool dx1, dx2, cw, cw2, agcw1, agcw2, ge11, ge12, ge21, ge22, ps, ae, csi, cc2;
+
+    void OnClick(string buttonName)
+    {
+        //    console.Log($"{buttonName} clicked");
+    }
+
+    async Task OnBusyClickdx1()
+    {
+        dx1 = true;
+        valuedx1 = 50;
+        await Task.Delay(2000);
+        dx1 = false;
+        valuedx1 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickdx2()
+    {
+        dx2 = true;
+        valuedx2 = 50;
+        await Task.Delay(2000);
+        dx2 = false;
+        valuedx2 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickcw()
+    {
+        cw = true;
+        valuecw = 50;
+        await Task.Delay(2000);
+        cw = false;
+        valuecw = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickcw2()
+    {
+        cw2 = true;
+        valuecw2 = 50;
+        await Task.Delay(2000);
+        cw2 = false;
+        valuecw2 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickagcw1()
+    {
+        agcw1 = true;
+        valueagcw1 = 50;
+        await Task.Delay(2000);
+        agcw1 = false;
+        valueagcw1 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickagcw2()
+    {
+        agcw2 = true;
+        valueagcw2 = 50;
+        await Task.Delay(2000);
+        agcw2 = false;
+        valueagcw2 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickge11()
+    {
+        ge11 = true;
+        valuege11 = 50;
+        await Task.Delay(2000);
+        ge11 = false;
+        valuege11 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickge12()
+    {
+        ge12 = true;
+        valuege12 = 50;
+        await Task.Delay(2000);
+        ge12 = false;
+        valuege12 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickge21()
+    {
+        ge21 = true;
+        valuege21 = 50;
+        await Task.Delay(2000);
+        ge21 = false;
+        valuege21 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickge22()
+    {
+        ge22 = true;
+        valuege22 = 50;
+        await Task.Delay(2000);
+        ge22 = false;
+        valuege22 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickae()
+    {
+        ae = true;
+        valueae = 50;
+        await Task.Delay(2000);
+        ae = false;
+        valueae = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickps()
+    {
+        ps = true;
+        valueps = 50;
+        await Task.Delay(2000);
+        ps = false;
+        valueps = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickcsi()
+    {
+        csi = true;
+        valuecsi = 50;
+        await Task.Delay(2000);
+        csi = false;
+        valuecsi = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    async Task OnBusyClickcc2()
+    {
+        cc2 = true;
+        valuecc2 = 50;
+        await Task.Delay(2000);
+        cc2 = false;
+        valuecc2 = 100;
+        ShowNotification(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = @Localizer["Finished!!!"], Detail = @Localizer["Configuration loading finished"], Duration = 4000 });
+    }
+    // showing notify
+    void ShowNotification(NotificationMessage message)
+    {
+        NotificationService.Notify(message);
+        //@inject AuthenticationStateProvider AuthenticationStateProvider
+        //@attribute [Authorize(Roles = "Admin")]
+
+        //        Console.WriteLine($"{message.Severity} notification");
+        //console.Log($"{message.Severity} notification");
+    }
+}
