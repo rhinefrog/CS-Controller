@@ -9,7 +9,7 @@
 <PageTitle>Compressor</PageTitle>
 
 
-<!DOCTYPE html>
+
 <html>
 <head>
 <style>
@@ -57,7 +57,8 @@ button:hover {  opacity: 0.8;}
 <a href='/ioconfig'>IO Configuration</a>
 <a href='/unitconfig'>Unit Configuration</a>
 <a href='/networkconfig'>Network Configuration</a>
- </div>
+<a href='/administration'>Administration</a> 
+</div>
 
   <div class='row'>
    <div class='leftcolumn' >
@@ -119,404 +120,576 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
- <div class='card'>
-<h2>Compressor</h2>
-<table>
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp1' min='1' max='4' maxlength='3' value='1'></td>
-<td> startsum </td>
-<td><input type='number' name='comp2' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
+<!-- Tab links -->
 
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp3' min='1' max='4' maxlength='3' value='1'></td>
-<td> hyssum </td>
-<td><input type='number' name='comp4' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp5' min='1' max='4' maxlength='3' value='1'></td>
-<td> startwin </td>
-<td><input type='number' name='comp6' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp7' min='1' max='4' maxlength='3' value='1'></td>
-<td> hyswin </td>
-<td><input type='number' name='comp8' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp9' min='1' max='4' maxlength='3' value='1'></td>
-<td> prespeed </td>
-<td><input type='number' name='comp10' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp11' min='1' max='4' maxlength='3' value='1'></td>
-<td> conf </td>
-<td><input type='number' name='comp12' min='0' max='1' maxlength='3' value='0'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp1' min='1' max='4' maxlength='3' value='1'></td>
-<td> dout </td>
-<td><input type='number' name='comp2' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp13' min='1' max='4' maxlength='3' value='1'></td>
-<td> alarm </td>
-<td><input type='number' name='comp14' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp15' min='1' max='4' maxlength='3' value='1'></td>
-<td> commonalarm </td>
-<td><input type='number' name='comp16' min='0' max='255' maxlength='3' value='0'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp17' min='1' max='4' maxlength='3' value='1'></td>
-<td> alarmdelay </td>
-<td><input type='number' name='comp18' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp19' min='1' max='4' maxlength='3' value='1'></td>
-<td> alarmlp </td>
-<td><input type='number' name='comp20' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp21' min='1' max='4' maxlength='3' value='1'></td>
-<td> alarmpriolp </td>
-<td><input type='number' name='comp22' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp23' min='1' max='4' maxlength='3' value='1'></td>
-<td> commonalarmlp </td>
-<td><input type='number' name='comp24' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp25' min='1' max='4' maxlength='3' value='1'></td>
-<td> alarmdelaylp </td>
-<td><input type='number' name='comp26' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp27' min='1' max='4' maxlength='3' value='1'></td>
-<td> lptime </td>
-<td><input type='number' name='comp28' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp29' min='1' max='4' maxlength='3' value='1'></td>
-<td> lppress </td>
-<td><input type='number' name='comp30' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp31' min='1' max='4' maxlength='3' value='1'></td>
-<td> lptries </td>
-<td><input type='number' name='comp32' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp33' min='1' max='4' maxlength='3' value='1'></td>
-<td> hptime </td>
-<td><input type='number' name='comp34' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp35' min='1' max='4' maxlength='3' value='1'></td>
-<td> hppress </td>
-<td><input type='number' name='comp36' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp37' min='1' max='4' maxlength='3' value='1'></td>
-<td> hptries </td>
-<td><input type='number' name='comp38' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp39' min='1' max='4' maxlength='3' value='1'></td>
-<td> hpmode </td>
-<td><input type='number' name='comp40' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp41' min='1' max='4' maxlength='3' value='1'></td>
-<td> pause </td>
-<td><input type='number' name='comp42' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp43' min='1' max='4' maxlength='3' value='1'></td>
-<td> runtime </td>
-<td><input type='number' name='comp44' min='0' max='10000' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp45' min='1' max='4' maxlength='3' value='1'></td>
-<td> hand </td>
-<td><input type='number' name='comp46' min='0' max='1' maxlength='3' value='1'></td>
-</tr>
-
-
-<tr>
-<td>comp </td>
-<td><input type='number' name='comp47' min='1' max='4' maxlength='3' value='1'></td>
-<td> handon </td>
-<td><input type='number' name='comp48' min='0' max='255' maxlength='3' value='1'></td>
-</tr>
-</table>
-<table class="table table-responsive table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Beschreibung</th>
-            <th scope="col">Datenpunkt</th>
-            <th scope="col">Wert</th>
-            <th scope="col">CRUD</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (_datenpunkte != null)
-        {
-            foreach (var datenpunkt in _datenpunkte)
-            {
-                 if (datenpunkt.DPNummer.Equals(10300))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-lg w-100 my-2">Update</a></td>
-                </tr>
-                }
-            }
-        }
-    </tbody>
-</table>
- </div>
+<RadzenTabs TabPosition="TabPosition.Left" style="width: 1000px; margin-left: -100px;"  @bind-SelectedIndex=@selectedIndex Change=@OnChanged>
+    <Tabs>
+        <RadzenTabsItem Text="Compressor 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(4400))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4401))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4402))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4403))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4404))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4405))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4406))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4407))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4408))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4416))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4417))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4418))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4419))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4420))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4421))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4422))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4423))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4424))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4425))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4426))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4427))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4428))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4429))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4430))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4431))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4432))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4433))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4434))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4435))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Compressor 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(4500))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4501))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4502))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4503))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4504))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4505))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4506))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4507))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4508))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4516))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4517))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4518))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4519))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4520))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4521))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4522))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4523))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4524))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4525))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4526))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4527))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4528))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4529))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4530))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4531))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4532))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4533))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4534))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4535))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+  
+    
+    </Tabs>
+</RadzenTabs>
  </div>
  </div>
 
@@ -525,6 +698,7 @@ button:hover {  opacity: 0.8;}
 @inject IJSRuntime JsRuntime
 
 @code {
+    int selectedIndex = 0;
     private List<Datenpunkt> _datenpunkte = null;
     public string seite = "/compressor";
 
@@ -533,5 +707,10 @@ button:hover {  opacity: 0.8;}
         using var context = new DPointDbContext();
 
         _datenpunkte = await context.Datenpunkte.ToListAsync();
+    }
+    
+     void OnChanged(int index)
+    {
+//        console.Log($"Tab with index {index} was selected.");
     }
 }

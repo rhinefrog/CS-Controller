@@ -1,15 +1,22 @@
-﻿@page "/"
+﻿@page "/upload"
+@using System.IO
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Identity;
+@using System.Collections;
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment HostEnvironment
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 @using System.Globalization
 @using CSRegler.Resources
 @using CSRegler.Pages
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Http
-@using CSRegler.Data
 @inject IStringLocalizer<CSReglerResource> Loc
 @inject NotificationService NotificationService
-@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment Environment
+<PageTitle>File Upload</PageTitle>
 
-<PageTitle>Home</PageTitle>
 
 
 <html>
@@ -54,12 +61,13 @@ button:hover {  opacity: 0.8;}
 <body>
 
 <div class='topnav'>
-<a class='active' href='/'>Home</a>
+<a href='/'>Home</a>
 <a href='/hardwareconfig'>Hardware Configuration</a>
 <a href='/ioconfig'>IO Configuration</a>
 <a href='/unitconfig'>Unit Configuration</a>
 <a href='/networkconfig'>Network Configuration</a>
 <a href='/administration'>Administration</a> 
+ <a class='active' href='/upload'>File Upload</a>
 </div>
 
   <div class='row'>
@@ -122,15 +130,33 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
+<InputFile OnChange="@UploadFile" />
 
- </div>
- <!--<EventConsole @ref=@console Class="mt-4" />-->
- </div>
+@if (ImgUrl != null)
+{
+    <div>
+        <img src="@ImgUrl" style="width:100px" />
 
+    </div>
+}
+ </div>
+ </div>
 
  </body>
 </html>
+@inject IJSRuntime JsRuntime
 
-@code {
-   
+ @code {
+  private string ImgUrl;
+
+    private async Task UploadFile(InputFileChangeEventArgs e)
+    {
+        var path = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", e.File.Name);
+        var newFilePath = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", "logo.png");
+        await using FileStream fs = new(path, FileMode.Create);
+        await e.File.OpenReadStream().CopyToAsync(fs);
+        ImgUrl = Path.Combine("https://localhost:7265/", "upload", e.File.Name);
+        System.IO.File.Move(path, newFilePath);
+    }
+
 }

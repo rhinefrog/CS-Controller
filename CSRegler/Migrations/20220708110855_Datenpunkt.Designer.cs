@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSRegler.Migrations
 {
     [DbContext(typeof(DPointDbContext))]
-    [Migration("20220704123619_DPunkte")]
-    partial class DPunkte
+    [Migration("20220708110855_Datenpunkt")]
+    partial class Datenpunkt
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,7 @@ namespace CSRegler.Migrations
                     b.HasData(
                         new
                         {
-                            DatenpunktId = 3672,
+                            DatenpunktId = 3954,
                             DPBeschreibung = "hardware type (controller type)",
                             DPNummer = 0,
                             DPWert = "0"
@@ -7521,8 +7521,8 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1068,
-                            DPBeschreibung = "sensor 1 defect alarm",
-                            DPNummer = 8539,
+                            DPBeschreibung = "netmask",
+                            DPNummer = 10001,
                             DPWert = "0"
                         },
                         new
@@ -9838,7 +9838,7 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1399,
-                            DPBeschreibung = "compressor 3 config. active",
+                            DPBeschreibung = "compr. 3 config. active",
                             DPNummer = 9500,
                             DPWert = "0"
                         },
@@ -9887,35 +9887,35 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1406,
-                            DPBeschreibung = "compr.3  low press. common alarm config",
+                            DPBeschreibung = "compr. 3  low press. common alarm config",
                             DPNummer = 9508,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1407,
-                            DPBeschreibung = "compressor 3 start temp. Summer",
+                            DPBeschreibung = "compr. 3 start temp. Summer",
                             DPNummer = 9516,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1408,
-                            DPBeschreibung = "compressor 3 hysteresis Summer",
+                            DPBeschreibung = "compr. 3 hysteresis Summer",
                             DPNummer = 9517,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1409,
-                            DPBeschreibung = "compressor 3 start temp. Winter",
+                            DPBeschreibung = "compr. 3 start temp. Winter",
                             DPNummer = 9518,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1410,
-                            DPBeschreibung = "compressor 3 hysteresis winter",
+                            DPBeschreibung = "compr. 3 hysteresis winter",
                             DPNummer = 9519,
                             DPWert = "0"
                         },
@@ -9964,154 +9964,154 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1417,
-                            DPBeschreibung = "compr.3 low press. Digital in",
+                            DPBeschreibung = "compr. 3 low press. Digital in",
                             DPNummer = 9526,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1418,
-                            DPBeschreibung = "compr.3 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 3 low press. Alarm priorities",
                             DPNummer = 9527,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1419,
-                            DPBeschreibung = "compr.3 low press. Alarm delay",
+                            DPBeschreibung = "compr. 3 low press. Alarm delay",
                             DPNummer = 9528,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1420,
-                            DPBeschreibung = "compr.3 low press. Digital in",
+                            DPBeschreibung = "compr. 3 low press. Digital in",
                             DPNummer = 9524,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1421,
-                            DPBeschreibung = "compr.3 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 3 low press. Alarm priorities",
                             DPNummer = 9525,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1422,
-                            DPBeschreibung = "compr.3 low press. Alarm delay",
+                            DPBeschreibung = "compr. 3 low press. Alarm delay",
                             DPNummer = 9526,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1423,
-                            DPBeschreibung = "compr.3 break",
+                            DPBeschreibung = "compr. 3 break",
                             DPNummer = 9527,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1424,
-                            DPBeschreibung = "compr.3 runtime",
+                            DPBeschreibung = "compr. 3 runtime",
                             DPNummer = 9528,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1425,
-                            DPBeschreibung = "compr.3 low press manag. time",
+                            DPBeschreibung = "compr. 3 low press manag. time",
                             DPNummer = 9529,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1426,
-                            DPBeschreibung = "compr.3 low press manag. press.",
+                            DPBeschreibung = "compr. 3 low press manag. press.",
                             DPNummer = 9530,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1427,
-                            DPBeschreibung = "compr.3 low press manag. restarts",
+                            DPBeschreibung = "compr. 3 low press manag. restarts",
                             DPNummer = 9531,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1428,
-                            DPBeschreibung = "compr.3 high press manag. time",
+                            DPBeschreibung = "compr. 3 high press manag. time",
                             DPNummer = 9532,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1429,
-                            DPBeschreibung = "compr.3 high press manag. press.",
+                            DPBeschreibung = "compr. 3 high press manag. press.",
                             DPNummer = 9533,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1430,
-                            DPBeschreibung = "compr.3 high press manag. restarts",
+                            DPBeschreibung = "compr. 3 high press manag. restarts",
                             DPNummer = 9534,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1431,
-                            DPBeschreibung = "compr.3 high press manag. mode",
+                            DPBeschreibung = "compr. 3 high press manag. mode",
                             DPNummer = 9535,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1432,
-                            DPBeschreibung = "compr.3 minimum runtime",
+                            DPBeschreibung = "compr. 3 minimum runtime",
                             DPNummer = 9536,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1433,
-                            DPBeschreibung = "compr.3 actual current speed (read back from comp.)",
+                            DPBeschreibung = "compr. 3 actual current speed (read back from comp.)",
                             DPNummer = 9537,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1434,
-                            DPBeschreibung = "compr.3 desired speed/power",
+                            DPBeschreibung = "compr. 3 desired speed/power",
                             DPNummer = 9538,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1435,
-                            DPBeschreibung = "compr.3 oil temperature",
+                            DPBeschreibung = "compr. 3 oil temperature",
                             DPNummer = 9539,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1436,
-                            DPBeschreibung = "compr.3 ASTP threshold",
+                            DPBeschreibung = "compr. 3 ASTP threshold",
                             DPNummer = 9540,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1437,
-                            DPBeschreibung = "compr.3 ASTP hysteresis",
+                            DPBeschreibung = "compr. 3 ASTP hysteresis",
                             DPNummer = 9541,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1438,
-                            DPBeschreibung = "compressor 4 config. active",
+                            DPBeschreibung = "compr. 4 config. active",
                             DPNummer = 9600,
                             DPWert = "0"
                         },
@@ -10160,35 +10160,35 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1445,
-                            DPBeschreibung = "compr.  low press. common alarm config",
+                            DPBeschreibung = "compr. 4 low press. common alarm config",
                             DPNummer = 9608,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1446,
-                            DPBeschreibung = "compressor 4 start temp. Summer",
+                            DPBeschreibung = "compr. 4 start temp. Summer",
                             DPNummer = 9616,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1447,
-                            DPBeschreibung = "compressor 4 hysteresis Summer",
+                            DPBeschreibung = "compr. 4 hysteresis Summer",
                             DPNummer = 9617,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1448,
-                            DPBeschreibung = "compressor 4 start temp. Winter",
+                            DPBeschreibung = "compr. 4 start temp. Winter",
                             DPNummer = 9618,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1449,
-                            DPBeschreibung = "compressor 4 hysteresis winter",
+                            DPBeschreibung = "compr. 4 hysteresis winter",
                             DPNummer = 9619,
                             DPWert = "0"
                         },
@@ -10237,154 +10237,154 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1456,
-                            DPBeschreibung = "compr.4 low press. Digital in",
+                            DPBeschreibung = "compr. 4 low press. Digital in",
                             DPNummer = 9626,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1457,
-                            DPBeschreibung = "compr.4 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 4 low press. Alarm priorities",
                             DPNummer = 9627,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1458,
-                            DPBeschreibung = "compr.4 low press. Alarm delay",
+                            DPBeschreibung = "compr. 4 low press. Alarm delay",
                             DPNummer = 9628,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1459,
-                            DPBeschreibung = "compr.4 low press. Digital in",
+                            DPBeschreibung = "compr. 4 low press. Digital in",
                             DPNummer = 9624,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1460,
-                            DPBeschreibung = "compr.4 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 4 low press. Alarm priorities",
                             DPNummer = 9625,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1461,
-                            DPBeschreibung = "compr.4 low press. Alarm delay",
+                            DPBeschreibung = "compr. 4 low press. Alarm delay",
                             DPNummer = 9626,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1462,
-                            DPBeschreibung = "compr.4 break",
+                            DPBeschreibung = "compr. 4 break",
                             DPNummer = 9627,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1463,
-                            DPBeschreibung = "compr.4 runtime",
+                            DPBeschreibung = "compr. 4 runtime",
                             DPNummer = 9628,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1464,
-                            DPBeschreibung = "compr.4 low press manag. time",
+                            DPBeschreibung = "compr. 4 low press manag. time",
                             DPNummer = 9629,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1465,
-                            DPBeschreibung = "compr.4 low press manag. press.",
+                            DPBeschreibung = "compr. 4 low press manag. press.",
                             DPNummer = 9630,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1466,
-                            DPBeschreibung = "compr.4 low press manag. restarts",
+                            DPBeschreibung = "compr. 4 low press manag. restarts",
                             DPNummer = 9631,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1467,
-                            DPBeschreibung = "compr.4 high press manag. time",
+                            DPBeschreibung = "compr. 4 high press manag. time",
                             DPNummer = 9632,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1468,
-                            DPBeschreibung = "compr.4 high press manag. press.",
+                            DPBeschreibung = "compr. 4 high press manag. press.",
                             DPNummer = 9633,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1469,
-                            DPBeschreibung = "compr.4 high press manag. restarts",
+                            DPBeschreibung = "compr. 4 high press manag. restarts",
                             DPNummer = 9634,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1470,
-                            DPBeschreibung = "compr.4 high press manag. mode",
+                            DPBeschreibung = "compr. 4 high press manag. mode",
                             DPNummer = 9635,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1471,
-                            DPBeschreibung = "compr.4 minimum runtime",
+                            DPBeschreibung = "compr. 4 minimum runtime",
                             DPNummer = 9636,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1472,
-                            DPBeschreibung = "compr.4 actual current speed (read back from comp.)",
+                            DPBeschreibung = "compr. 4 actual current speed (read back from comp.)",
                             DPNummer = 9637,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1473,
-                            DPBeschreibung = "compr.4 desired speed/power",
+                            DPBeschreibung = "compr. 4 desired speed/power",
                             DPNummer = 9638,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1474,
-                            DPBeschreibung = "compr.4 oil temperature",
+                            DPBeschreibung = "compr. 4 oil temperature",
                             DPNummer = 9639,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1475,
-                            DPBeschreibung = "compr.4 ASTP threshold",
+                            DPBeschreibung = "compr. 4 ASTP threshold",
                             DPNummer = 9640,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1476,
-                            DPBeschreibung = "compr.4 ASTP hysteresis",
+                            DPBeschreibung = "compr. 4 ASTP hysteresis",
                             DPNummer = 9641,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1477,
-                            DPBeschreibung = "compressor 5 config. active",
+                            DPBeschreibung = "compr. 5 config. active",
                             DPNummer = 9700,
                             DPWert = "0"
                         },
@@ -10440,28 +10440,28 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1485,
-                            DPBeschreibung = "compressor 5 start temp. Summer",
+                            DPBeschreibung = "compr. 5 start temp. Summer",
                             DPNummer = 9716,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1486,
-                            DPBeschreibung = "compressor 5 hysteresis Summer",
+                            DPBeschreibung = "compr. 5 hysteresis Summer",
                             DPNummer = 9717,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1487,
-                            DPBeschreibung = "compressor 5 start temp. Winter",
+                            DPBeschreibung = "compr. 5 start temp. Winter",
                             DPNummer = 9718,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1488,
-                            DPBeschreibung = "compressor 5 hysteresis winter",
+                            DPBeschreibung = "compr. 5 hysteresis winter",
                             DPNummer = 9719,
                             DPWert = "0"
                         },
@@ -10510,154 +10510,154 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1495,
-                            DPBeschreibung = "compr.5 low press. Digital in",
+                            DPBeschreibung = "compr. 5 low press. Digital in",
                             DPNummer = 9726,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1496,
-                            DPBeschreibung = "compr.5 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 5 low press. Alarm priorities",
                             DPNummer = 9727,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1497,
-                            DPBeschreibung = "compr.5 low press. Alarm delay",
+                            DPBeschreibung = "compr. 5 low press. Alarm delay",
                             DPNummer = 9728,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1498,
-                            DPBeschreibung = "compr.5 low press. Digital in",
+                            DPBeschreibung = "compr. 5 low press. Digital in",
                             DPNummer = 9724,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1499,
-                            DPBeschreibung = "compr.5 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 5 low press. Alarm priorities",
                             DPNummer = 9725,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1500,
-                            DPBeschreibung = "compr.5 low press. Alarm delay",
+                            DPBeschreibung = "compr. 5 low press. Alarm delay",
                             DPNummer = 9726,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1501,
-                            DPBeschreibung = "compr.5 break",
+                            DPBeschreibung = "compr. 5 break",
                             DPNummer = 9727,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1502,
-                            DPBeschreibung = "compr.5 runtime",
+                            DPBeschreibung = "compr. 5 runtime",
                             DPNummer = 9728,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1503,
-                            DPBeschreibung = "compr.5 low press manag. time",
+                            DPBeschreibung = "compr. 5 low press manag. time",
                             DPNummer = 9729,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1504,
-                            DPBeschreibung = "compr.5 low press manag. press.",
+                            DPBeschreibung = "compr. 5 low press manag. press.",
                             DPNummer = 9730,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1505,
-                            DPBeschreibung = "compr.5 low press manag. restarts",
+                            DPBeschreibung = "compr. 5 low press manag. restarts",
                             DPNummer = 9731,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1506,
-                            DPBeschreibung = "compr.5 high press manag. time",
+                            DPBeschreibung = "compr. 5 high press manag. time",
                             DPNummer = 9732,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1507,
-                            DPBeschreibung = "compr.5 high press manag. press.",
+                            DPBeschreibung = "compr. 5 high press manag. press.",
                             DPNummer = 9733,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1508,
-                            DPBeschreibung = "compr.5 high press manag. restarts",
+                            DPBeschreibung = "compr. 5 high press manag. restarts",
                             DPNummer = 9734,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1509,
-                            DPBeschreibung = "compr.5 high press manag. mode",
+                            DPBeschreibung = "compr. 5 high press manag. mode",
                             DPNummer = 9735,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1510,
-                            DPBeschreibung = "compr.5 minimum runtime",
+                            DPBeschreibung = "compr. 5 minimum runtime",
                             DPNummer = 9736,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1511,
-                            DPBeschreibung = "compr.5 actual current speed (read back from comp.)",
+                            DPBeschreibung = "compr. 5 actual current speed (read back from comp.)",
                             DPNummer = 9737,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1512,
-                            DPBeschreibung = "compr.5 desired speed/power",
+                            DPBeschreibung = "compr. 5 desired speed/power",
                             DPNummer = 9738,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1513,
-                            DPBeschreibung = "compr.5  oil temperature",
+                            DPBeschreibung = "compr. 5  oil temperature",
                             DPNummer = 9739,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1514,
-                            DPBeschreibung = "compr.5 ASTP threshold",
+                            DPBeschreibung = "compr. 5 ASTP threshold",
                             DPNummer = 9740,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1515,
-                            DPBeschreibung = "compr.5 ASTP hysteresis",
+                            DPBeschreibung = "compr. 5 ASTP hysteresis",
                             DPNummer = 9741,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1516,
-                            DPBeschreibung = "compressor 6 config. active",
+                            DPBeschreibung = "compr. 6 config. active",
                             DPNummer = 9800,
                             DPWert = "0"
                         },
@@ -10713,28 +10713,28 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1524,
-                            DPBeschreibung = "compressor 6 start temp. Summer",
+                            DPBeschreibung = "compr. 6 start temp. Summer",
                             DPNummer = 9816,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1525,
-                            DPBeschreibung = "compressor 6 hysteresis Summer",
+                            DPBeschreibung = "compr. 6 hysteresis Summer",
                             DPNummer = 9817,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1526,
-                            DPBeschreibung = "compressor 6 start temp. Winter",
+                            DPBeschreibung = "compr. 6 start temp. Winter",
                             DPNummer = 9818,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1527,
-                            DPBeschreibung = "compressor 6 hysteresis winter",
+                            DPBeschreibung = "compr. 6 hysteresis winter",
                             DPNummer = 9819,
                             DPWert = "0"
                         },
@@ -10783,147 +10783,147 @@ namespace CSRegler.Migrations
                         new
                         {
                             DatenpunktId = 1534,
-                            DPBeschreibung = "compr.6 low press. Digital in",
+                            DPBeschreibung = "compr. 6 low press. Digital in",
                             DPNummer = 9826,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1535,
-                            DPBeschreibung = "compr.6 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 6 low press. Alarm priorities",
                             DPNummer = 9827,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1536,
-                            DPBeschreibung = "compr.6 low press. Alarm delay",
+                            DPBeschreibung = "compr. 6 low press. Alarm delay",
                             DPNummer = 9828,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1537,
-                            DPBeschreibung = "compr.6 low press. Digital in",
+                            DPBeschreibung = "compr. 6 low press. Digital in",
                             DPNummer = 9824,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1538,
-                            DPBeschreibung = "compr.6 low press. Alarm priorities",
+                            DPBeschreibung = "compr. 6 low press. Alarm priorities",
                             DPNummer = 9825,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1539,
-                            DPBeschreibung = "compr.6 low press. Alarm delay",
+                            DPBeschreibung = "compr. 6 low press. Alarm delay",
                             DPNummer = 9826,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1540,
-                            DPBeschreibung = "compr.6 break",
+                            DPBeschreibung = "compr. 6 break",
                             DPNummer = 9827,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1541,
-                            DPBeschreibung = "compr.6 runtime",
+                            DPBeschreibung = "compr. 6 runtime",
                             DPNummer = 9828,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1542,
-                            DPBeschreibung = "compr.6 low press manag. time",
+                            DPBeschreibung = "compr. 6 low press manag. time",
                             DPNummer = 9829,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1543,
-                            DPBeschreibung = "compr.6 low press manag. press.",
+                            DPBeschreibung = "compr. 6 low press manag. press.",
                             DPNummer = 9830,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1544,
-                            DPBeschreibung = "compr.6 low press manag. restarts",
+                            DPBeschreibung = "compr. 6 low press manag. restarts",
                             DPNummer = 9831,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1545,
-                            DPBeschreibung = "compr.6 high press manag. time",
+                            DPBeschreibung = "compr. 6 high press manag. time",
                             DPNummer = 9832,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1546,
-                            DPBeschreibung = "compr.6 high press manag. press.",
+                            DPBeschreibung = "compr. 6 high press manag. press.",
                             DPNummer = 9833,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1547,
-                            DPBeschreibung = "compr.6 high press manag. restarts",
+                            DPBeschreibung = "compr. 6 high press manag. restarts",
                             DPNummer = 9834,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1548,
-                            DPBeschreibung = "compr.6 high press manag. mode",
+                            DPBeschreibung = "compr. 6 high press manag. mode",
                             DPNummer = 9835,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1549,
-                            DPBeschreibung = "compr.6 minimum runtime",
+                            DPBeschreibung = "compr. 6 minimum runtime",
                             DPNummer = 9836,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1550,
-                            DPBeschreibung = "compr.6 actual current speed (read back from comp.)",
+                            DPBeschreibung = "compr. 6 actual current speed (read back from comp.)",
                             DPNummer = 9837,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1551,
-                            DPBeschreibung = "compr.6 desired speed/power",
+                            DPBeschreibung = "compr. 6 desired speed/power",
                             DPNummer = 9838,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1552,
-                            DPBeschreibung = "compr.6 oil temperature",
+                            DPBeschreibung = "compr. 6 oil temperature",
                             DPNummer = 9839,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1553,
-                            DPBeschreibung = "compr.6 ASTP threshold",
+                            DPBeschreibung = "compr. 6 ASTP threshold",
                             DPNummer = 9740,
                             DPWert = "0"
                         },
                         new
                         {
                             DatenpunktId = 1554,
-                            DPBeschreibung = "compr.6 ASTP hysteresis",
+                            DPBeschreibung = "compr. 6 ASTP hysteresis",
                             DPNummer = 9741,
                             DPWert = "0"
                         },
@@ -25744,6 +25744,6971 @@ namespace CSRegler.Migrations
                             DatenpunktId = 3671,
                             DPBeschreibung = "Cold water request unit 31",
                             DPNummer = 37831,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3672,
+                            DPBeschreibung = "AOUT 20",
+                            DPNummer = 1940,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3673,
+                            DPBeschreibung = "Sondersoftwareoptionen",
+                            DPNummer = 1032,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3674,
+                            DPBeschreibung = "DIN 1",
+                            DPNummer = 1800,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3675,
+                            DPBeschreibung = "DIN 2",
+                            DPNummer = 1801,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3676,
+                            DPBeschreibung = "DIN 3",
+                            DPNummer = 1802,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3677,
+                            DPBeschreibung = "DIN 4",
+                            DPNummer = 1803,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3678,
+                            DPBeschreibung = "DIN 5",
+                            DPNummer = 1804,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3679,
+                            DPBeschreibung = "DIN 6",
+                            DPNummer = 1805,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3680,
+                            DPBeschreibung = "DIN 7",
+                            DPNummer = 1806,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3681,
+                            DPBeschreibung = "DIN 8",
+                            DPNummer = 1807,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3682,
+                            DPBeschreibung = "DIN 9",
+                            DPNummer = 1808,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3683,
+                            DPBeschreibung = "DIN 10",
+                            DPNummer = 1809,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3684,
+                            DPBeschreibung = "DIN 11",
+                            DPNummer = 1810,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3685,
+                            DPBeschreibung = "DIN 12",
+                            DPNummer = 1811,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3686,
+                            DPBeschreibung = "DIN 13",
+                            DPNummer = 1812,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3687,
+                            DPBeschreibung = "DIN 14",
+                            DPNummer = 1813,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3688,
+                            DPBeschreibung = "DIN 15",
+                            DPNummer = 1814,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3689,
+                            DPBeschreibung = "DIN 16",
+                            DPNummer = 1815,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3690,
+                            DPBeschreibung = "DIN 17",
+                            DPNummer = 1816,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3691,
+                            DPBeschreibung = "DIN 18",
+                            DPNummer = 1817,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3692,
+                            DPBeschreibung = "DIN 19",
+                            DPNummer = 1818,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3693,
+                            DPBeschreibung = "DIN 20",
+                            DPNummer = 1819,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3694,
+                            DPBeschreibung = "DIN 21",
+                            DPNummer = 1820,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3695,
+                            DPBeschreibung = "DIN 22",
+                            DPNummer = 1821,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3696,
+                            DPBeschreibung = "DIN 23",
+                            DPNummer = 1822,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3697,
+                            DPBeschreibung = "DIN 24",
+                            DPNummer = 1823,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3698,
+                            DPBeschreibung = "DIN 25",
+                            DPNummer = 1824,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3699,
+                            DPBeschreibung = "DIN 26",
+                            DPNummer = 1825,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3700,
+                            DPBeschreibung = "DIN 27",
+                            DPNummer = 1826,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3701,
+                            DPBeschreibung = "DIN 28",
+                            DPNummer = 1827,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3702,
+                            DPBeschreibung = "DIN 29",
+                            DPNummer = 1828,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3703,
+                            DPBeschreibung = "DIN 30",
+                            DPNummer = 1829,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3704,
+                            DPBeschreibung = "DIN 31",
+                            DPNummer = 1830,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3705,
+                            DPBeschreibung = "DIN 32",
+                            DPNummer = 1831,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3706,
+                            DPBeschreibung = "DIN 33",
+                            DPNummer = 1832,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3707,
+                            DPBeschreibung = "DIN 34",
+                            DPNummer = 1833,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3708,
+                            DPBeschreibung = "DIN 35",
+                            DPNummer = 1834,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3709,
+                            DPBeschreibung = "DIN 36",
+                            DPNummer = 1835,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3710,
+                            DPBeschreibung = "DIN 37",
+                            DPNummer = 1836,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3711,
+                            DPBeschreibung = "DIN 38",
+                            DPNummer = 1837,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3712,
+                            DPBeschreibung = "DIN 39",
+                            DPNummer = 1838,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3713,
+                            DPBeschreibung = "DIN 40",
+                            DPNummer = 1839,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3714,
+                            DPBeschreibung = "DIN 41",
+                            DPNummer = 1840,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3715,
+                            DPBeschreibung = "DIN 42",
+                            DPNummer = 1841,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3716,
+                            DPBeschreibung = "DIN 43",
+                            DPNummer = 1842,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3717,
+                            DPBeschreibung = "DOUT 1",
+                            DPNummer = 1843,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3718,
+                            DPBeschreibung = "DOUT 2",
+                            DPNummer = 1844,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3719,
+                            DPBeschreibung = "DOUT 3",
+                            DPNummer = 1845,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3720,
+                            DPBeschreibung = "DOUT 4",
+                            DPNummer = 1846,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3721,
+                            DPBeschreibung = "DOUT 5",
+                            DPNummer = 1847,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3722,
+                            DPBeschreibung = "DOUT 6",
+                            DPNummer = 1848,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3723,
+                            DPBeschreibung = "DOUT 7",
+                            DPNummer = 1849,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3724,
+                            DPBeschreibung = "DOUT 8",
+                            DPNummer = 1850,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3725,
+                            DPBeschreibung = "DOUT 9",
+                            DPNummer = 1851,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3726,
+                            DPBeschreibung = "DOUT 10",
+                            DPNummer = 1852,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3727,
+                            DPBeschreibung = "DOUT 11",
+                            DPNummer = 1853,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3728,
+                            DPBeschreibung = "DOUT 12",
+                            DPNummer = 1854,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3729,
+                            DPBeschreibung = "DOUT 13",
+                            DPNummer = 1855,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3730,
+                            DPBeschreibung = "DOUT 14",
+                            DPNummer = 1856,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3731,
+                            DPBeschreibung = "DOUT 15",
+                            DPNummer = 1857,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3732,
+                            DPBeschreibung = "DOUT 16",
+                            DPNummer = 1858,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3733,
+                            DPBeschreibung = "DOUT 17",
+                            DPNummer = 1859,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3734,
+                            DPBeschreibung = "DOUT 18",
+                            DPNummer = 1860,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3735,
+                            DPBeschreibung = "DOUT 19",
+                            DPNummer = 1861,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3736,
+                            DPBeschreibung = "DOUT 20",
+                            DPNummer = 1862,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3737,
+                            DPBeschreibung = "AIN 1",
+                            DPNummer = 1900,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3738,
+                            DPBeschreibung = "AIN 2",
+                            DPNummer = 1901,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3739,
+                            DPBeschreibung = "AIN 3",
+                            DPNummer = 1902,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3740,
+                            DPBeschreibung = "AIN 4",
+                            DPNummer = 1903,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3741,
+                            DPBeschreibung = "AIN 5",
+                            DPNummer = 1904,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3742,
+                            DPBeschreibung = "AIN 6",
+                            DPNummer = 1905,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3743,
+                            DPBeschreibung = "AIN 7",
+                            DPNummer = 1906,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3744,
+                            DPBeschreibung = "AIN 8",
+                            DPNummer = 1907,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3745,
+                            DPBeschreibung = "AIN 9",
+                            DPNummer = 1908,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3746,
+                            DPBeschreibung = "AIN 10",
+                            DPNummer = 1909,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3747,
+                            DPBeschreibung = "AIN 11",
+                            DPNummer = 1910,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3748,
+                            DPBeschreibung = "AIN 12",
+                            DPNummer = 1911,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3749,
+                            DPBeschreibung = "AIN 13",
+                            DPNummer = 1912,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3750,
+                            DPBeschreibung = "AIN 14",
+                            DPNummer = 1913,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3751,
+                            DPBeschreibung = "AIN 15",
+                            DPNummer = 1914,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3752,
+                            DPBeschreibung = "AIN 16",
+                            DPNummer = 1915,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3753,
+                            DPBeschreibung = "AIN 17",
+                            DPNummer = 1916,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3754,
+                            DPBeschreibung = "AIN 18",
+                            DPNummer = 1917,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3755,
+                            DPBeschreibung = "AIN 19",
+                            DPNummer = 1918,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3756,
+                            DPBeschreibung = "AIN 20",
+                            DPNummer = 1919,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3757,
+                            DPBeschreibung = "AIN 21",
+                            DPNummer = 1920,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3758,
+                            DPBeschreibung = "AOUT 1",
+                            DPNummer = 1921,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3759,
+                            DPBeschreibung = "AOUT 2",
+                            DPNummer = 1922,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3760,
+                            DPBeschreibung = "AOUT 3",
+                            DPNummer = 1923,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3761,
+                            DPBeschreibung = "AOUT 4",
+                            DPNummer = 1924,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3762,
+                            DPBeschreibung = "AOUT 5",
+                            DPNummer = 1925,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3763,
+                            DPBeschreibung = "AOUT 6",
+                            DPNummer = 1926,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3764,
+                            DPBeschreibung = "AOUT 7",
+                            DPNummer = 1927,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3765,
+                            DPBeschreibung = "AOUT 8",
+                            DPNummer = 1928,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3766,
+                            DPBeschreibung = "AOUT 9",
+                            DPNummer = 1929,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3767,
+                            DPBeschreibung = "AOUT 10",
+                            DPNummer = 1930,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3768,
+                            DPBeschreibung = "AOUT 11",
+                            DPNummer = 1931,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3769,
+                            DPBeschreibung = "AOUT 12",
+                            DPNummer = 1932,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3770,
+                            DPBeschreibung = "AOUT 13",
+                            DPNummer = 1933,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3771,
+                            DPBeschreibung = "AOUT 14",
+                            DPNummer = 1934,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3772,
+                            DPBeschreibung = "AOUT 15",
+                            DPNummer = 1935,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3773,
+                            DPBeschreibung = "AOUT 16",
+                            DPNummer = 1936,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3774,
+                            DPBeschreibung = "AOUT 17",
+                            DPNummer = 1937,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3775,
+                            DPBeschreibung = "AOUT 18",
+                            DPNummer = 1938,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3776,
+                            DPBeschreibung = "AOUT 19",
+                            DPNummer = 1939,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3777,
+                            DPBeschreibung = "Unit Monitoring stop",
+                            DPNummer = 1000,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3778,
+                            DPBeschreibung = "Unit Fern Ein/Aus Kontakt stop",
+                            DPNummer = 1001,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3779,
+                            DPBeschreibung = "Unit Local stop",
+                            DPNummer = 1002,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3780,
+                            DPBeschreibung = "Unit Timer stop",
+                            DPNummer = 1003,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3781,
+                            DPBeschreibung = "Unit Sequencing stop",
+                            DPNummer = 1004,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3782,
+                            DPBeschreibung = "Unit Warm up stop immer auf 0",
+                            DPNummer = 1005,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3783,
+                            DPBeschreibung = "Remote UPS	by bus command",
+                            DPNummer = 1006,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3784,
+                            DPBeschreibung = "Remote UPS	by contact",
+                            DPNummer = 1007,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3785,
+                            DPBeschreibung = "G/CW-mode",
+                            DPNummer = 1008,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3786,
+                            DPBeschreibung = "manual operation	reset:gibts noch nicht allgemein",
+                            DPNummer = 1009,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3787,
+                            DPBeschreibung = "Sammelalarm",
+                            DPNummer = 1010,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3788,
+                            DPBeschreibung = "Alarmreset (Write only)",
+                            DPNummer = 1011,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3789,
+                            DPBeschreibung = "manual operation raw output gibts noch nicht",
+                            DPNummer = 1012,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3790,
+                            DPBeschreibung = "Unit On/Off",
+                            DPNummer = 1013,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3791,
+                            DPBeschreibung = "maintainance necessary Alarm",
+                            DPNummer = 1014,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3792,
+                            DPBeschreibung = "maintainance done (write only)",
+                            DPNummer = 1015,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3793,
+                            DPBeschreibung = "unit year",
+                            DPNummer = 1016,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3794,
+                            DPBeschreibung = "unit month",
+                            DPNummer = 1017,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3795,
+                            DPBeschreibung = "unit day",
+                            DPNummer = 1018,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3796,
+                            DPBeschreibung = "unit hour",
+                            DPNummer = 1019,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3797,
+                            DPBeschreibung = "unit minute",
+                            DPNummer = 1020,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3798,
+                            DPBeschreibung = "unit second",
+                            DPNummer = 1021,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3799,
+                            DPBeschreibung = "unit temperature phys. unit (°C/°F)",
+                            DPNummer = 1022,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3800,
+                            DPBeschreibung = "Winterbetrieb",
+                            DPNummer = 1023,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3801,
+                            DPBeschreibung = "Nachtbetrieb aktiv",
+                            DPNummer = 1024,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3802,
+                            DPBeschreibung = "CW-Change over bei CW2-Geräten (force)",
+                            DPNummer = 1025,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3803,
+                            DPBeschreibung = "CW-Change over bei CW2-Geräten (liest den aktuellen Zustand)",
+                            DPNummer = 1026,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3804,
+                            DPBeschreibung = "Modus bei OTE:0=OTE kontrolliert, 1=normal",
+                            DPNummer = 1027,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3805,
+                            DPBeschreibung = "Unit Start über Fern Ein/Aus",
+                            DPNummer = 1028,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3806,
+                            DPBeschreibung = "Event Log löschen",
+                            DPNummer = 1029,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3807,
+                            DPBeschreibung = "IOC service language",
+                            DPNummer = 1030,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3808,
+                            DPBeschreibung = "unit last maintenance year",
+                            DPNummer = 1160,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3809,
+                            DPBeschreibung = "unit last maintenance month",
+                            DPNummer = 1161,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3810,
+                            DPBeschreibung = "unit last maintenance day",
+                            DPNummer = 1162,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3811,
+                            DPBeschreibung = "unit maintenance intervall",
+                            DPNummer = 1163,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3812,
+                            DPBeschreibung = "Gerätelaufzeit",
+                            DPNummer = 1164,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3813,
+                            DPBeschreibung = "Gerätestopzeit",
+                            DPNummer = 1165,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3814,
+                            DPBeschreibung = "Gerätekühlzeit",
+                            DPNummer = 1166,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3815,
+                            DPBeschreibung = "Geräteheizzeit",
+                            DPNummer = 1167,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3816,
+                            DPBeschreibung = "Gerätebefeuchtungszeit",
+                            DPNummer = 1168,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3817,
+                            DPBeschreibung = "Geräteentfeuchtungszeit",
+                            DPNummer = 1169,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3818,
+                            DPBeschreibung = "Temperatur",
+                            DPNummer = 1170,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3819,
+                            DPBeschreibung = "Feuchtigkeit",
+                            DPNummer = 1171,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3820,
+                            DPBeschreibung = "Unit emergency Temperature",
+                            DPNummer = 1172,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3821,
+                            DPBeschreibung = "Soll Temperatur Tag",
+                            DPNummer = 1173,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3822,
+                            DPBeschreibung = "Soll Temperatur Nacht",
+                            DPNummer = 1174,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3823,
+                            DPBeschreibung = "Soll Temperatur korrigiert",
+                            DPNummer = 1175,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3824,
+                            DPBeschreibung = "Soll Feuchtigkeit",
+                            DPNummer = 1176,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3825,
+                            DPBeschreibung = "Soll Feuchtigkeit korrigiert",
+                            DPNummer = 1178,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3826,
+                            DPBeschreibung = "Regelungsart",
+                            DPNummer = 1183,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3827,
+                            DPBeschreibung = "Start Temp bei begrenzender Regelung",
+                            DPNummer = 1184,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3828,
+                            DPBeschreibung = "Start Temp Steigung bei begrenzender Regelung",
+                            DPNummer = 1185,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3829,
+                            DPBeschreibung = "Start Feuchte bei begrenzender Regelung",
+                            DPNummer = 1186,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3830,
+                            DPBeschreibung = "Start Feuchte Steigung bei begrenzender Regelung",
+                            DPNummer = 1187,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3831,
+                            DPBeschreibung = "Start Temp für Sommer/Winter umschaltung",
+                            DPNummer = 1188,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3832,
+                            DPBeschreibung = "Hysterese für Sommer/Winter umschaltung",
+                            DPNummer = 1189,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3833,
+                            DPBeschreibung = "Integralfactor",
+                            DPNummer = 1190,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3834,
+                            DPBeschreibung = "Wasser Temperatur 1 Kreis",
+                            DPNummer = 1191,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3835,
+                            DPBeschreibung = "Gerät Raum Temperatur",
+                            DPNummer = 1192,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3836,
+                            DPBeschreibung = "Gerät Zuluft Temperatur",
+                            DPNummer = 1193,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3837,
+                            DPBeschreibung = "Gerät Raum Feuchtigkeit",
+                            DPNummer = 1194,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3838,
+                            DPBeschreibung = "Gerät Zuluft Feuchtigkeit",
+                            DPNummer = 1195,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3839,
+                            DPBeschreibung = " Aussen Temperatur",
+                            DPNummer = 1196,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3840,
+                            DPBeschreibung = "Aussen Feuchtigkeit",
+                            DPNummer = 1197,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3841,
+                            DPBeschreibung = "Kühlpriorität",
+                            DPNummer = 1198,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3842,
+                            DPBeschreibung = "Start Aussentemp für Kondensationsdruckreduzierung",
+                            DPNummer = 1199,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3843,
+                            DPBeschreibung = "Steigung für Aussentemp für Kondensationsdruckreduzierung",
+                            DPNummer = 1200,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3844,
+                            DPBeschreibung = "Wasser Temperatur eintritt 2 Kreis",
+                            DPNummer = 1202,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3845,
+                            DPBeschreibung = "Free cooling Laufzeit",
+                            DPNummer = 1203,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3846,
+                            DPBeschreibung = "Mix mode Laufzeit",
+                            DPNummer = 1204,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3847,
+                            DPBeschreibung = "Unit start delay",
+                            DPNummer = 1205,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3848,
+                            DPBeschreibung = "Wasser Temperatur austritt 1",
+                            DPNummer = 1206,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3849,
+                            DPBeschreibung = "Wasser Temperatur austritt 2",
+                            DPNummer = 1207,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3850,
+                            DPBeschreibung = "Differenz-Luftdruck",
+                            DPNummer = 1208,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3851,
+                            DPBeschreibung = "Sollwert Differenz-Luftdruck",
+                            DPNummer = 1209,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3852,
+                            DPBeschreibung = "Universelle Temperatur 1",
+                            DPNummer = 1210,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3853,
+                            DPBeschreibung = "Sollwert Wasserdruck Pumpenschrank",
+                            DPNummer = 1211,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3854,
+                            DPBeschreibung = "Istwert  Wasserdruck Pumpenschrank",
+                            DPNummer = 1212,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3855,
+                            DPBeschreibung = "Sollwert Zulufttemperatur",
+                            DPNummer = 1213,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3856,
+                            DPBeschreibung = "Sollwert Zuluftfeuchte",
+                            DPNummer = 1214,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3857,
+                            DPBeschreibung = "Sollwert Rücklufttemperatur",
+                            DPNummer = 1215,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3858,
+                            DPBeschreibung = "Sollwert Rückluftfeuchte",
+                            DPNummer = 1216,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3859,
+                            DPBeschreibung = "ehemals HPDSC-Modus",
+                            DPNummer = 1217,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3860,
+                            DPBeschreibung = "Kondensationsdruck Sollwert Mix-Betrieb",
+                            DPNummer = 1218,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3861,
+                            DPBeschreibung = "Kondensationsdruck Sollwert DX-Betrieb",
+                            DPNummer = 1219,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3862,
+                            DPBeschreibung = "Referenzdatenpunkt für Einheit Anzeigewert 1",
+                            DPNummer = 1222,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3863,
+                            DPBeschreibung = "Anzeigewert für Zeile 1 im AT",
+                            DPNummer = 1223,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3864,
+                            DPBeschreibung = "Referenzdatenpunkt für Einheit Anzeigewert 2",
+                            DPNummer = 1224,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3865,
+                            DPBeschreibung = "Anzeigewert für Zeile 2 im AT",
+                            DPNummer = 1225,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3866,
+                            DPBeschreibung = "ACT: Temperatursollwert",
+                            DPNummer = 1226,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3867,
+                            DPBeschreibung = "ACT: aktueller Wert des Watchdog Timers",
+                            DPNummer = 1227,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3868,
+                            DPBeschreibung = "Start Temp2 bei begrenzender Regelung",
+                            DPNummer = 1228,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3869,
+                            DPBeschreibung = "BMS protocol",
+                            DPNummer = 1233,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3870,
+                            DPBeschreibung = "BMS datapointlist",
+                            DPNummer = 1234,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3871,
+                            DPBeschreibung = "Integrierter Temperatur-Offset",
+                            DPNummer = 1241,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3872,
+                            DPBeschreibung = "ENS: Feuchtesollwert korrigiert untere Grenze für Befeuchterpause",
+                            DPNummer = 1242,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3873,
+                            DPBeschreibung = "loaddefault dx1 (write only)",
+                            DPNummer = 1250,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3874,
+                            DPBeschreibung = "loaddefault dx2 (write only)",
+                            DPNummer = 1251,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3875,
+                            DPBeschreibung = "loaddefault cw (write only)",
+                            DPNummer = 1252,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3876,
+                            DPBeschreibung = "loaddefault cw2 (write only)",
+                            DPNummer = 1253,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3877,
+                            DPBeschreibung = "loaddefault agcw1 (write only)",
+                            DPNummer = 1254,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3878,
+                            DPBeschreibung = "loaddefault agcw2 (write only)",
+                            DPNummer = 1255,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3879,
+                            DPBeschreibung = "loaddefault ge11 (write only)",
+                            DPNummer = 1256,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3880,
+                            DPBeschreibung = "loaddefault ge12 (write only)",
+                            DPNummer = 1257,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3881,
+                            DPBeschreibung = "loaddefault ge21 (write only)",
+                            DPNummer = 1258,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3882,
+                            DPBeschreibung = "loaddefault ge22 (write only)",
+                            DPNummer = 1259,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3883,
+                            DPBeschreibung = "Pumpenschrank (write only)",
+                            DPNummer = 1260,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3884,
+                            DPBeschreibung = "SATS with HP DSC (write only)",
+                            DPNummer = 1261,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3885,
+                            DPBeschreibung = "Bedien Passwort Ziffer 1",
+                            DPNummer = 1292,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3886,
+                            DPBeschreibung = "Bedien Passwort Ziffer 2",
+                            DPNummer = 1293,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3887,
+                            DPBeschreibung = "Bedien Passwort Ziffer 3",
+                            DPNummer = 1294,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3888,
+                            DPBeschreibung = "Bedien Passwort Ziffer 4",
+                            DPNummer = 1295,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3889,
+                            DPBeschreibung = "Service Passwort Ziffer 1",
+                            DPNummer = 1296,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3890,
+                            DPBeschreibung = "Service Passwort Ziffer 2",
+                            DPNummer = 1297,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3891,
+                            DPBeschreibung = "Service Passwort Ziffer 3",
+                            DPNummer = 1298,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3892,
+                            DPBeschreibung = "Service Passwort Ziffer 4",
+                            DPNummer = 1299,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3893,
+                            DPBeschreibung = "common alarm DOUT",
+                            DPNummer = 1700,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3894,
+                            DPBeschreibung = "winter mode DOUT",
+                            DPNummer = 1701,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3895,
+                            DPBeschreibung = "remote on/off DIN",
+                            DPNummer = 1702,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3896,
+                            DPBeschreibung = "ups DIN",
+                            DPNummer = 1703,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3897,
+                            DPBeschreibung = "fire alarm DIN",
+                            DPNummer = 1704,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3898,
+                            DPBeschreibung = "water alarm DIN",
+                            DPNummer = 1705,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3899,
+                            DPBeschreibung = "water flow alarm DIN",
+                            DPNummer = 1706,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3900,
+                            DPBeschreibung = "phase alarm DIN",
+                            DPNummer = 1707,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3901,
+                            DPBeschreibung = "CW-disable/DX-enable DIN",
+                            DPNummer = 1708,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3902,
+                            DPBeschreibung = "Istwert 1 Aout",
+                            DPNummer = 1709,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3903,
+                            DPBeschreibung = "Istwert 2 Aout",
+                            DPNummer = 1710,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3904,
+                            DPBeschreibung = "Feuer Alarmprio",
+                            DPNummer = 1711,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3905,
+                            DPBeschreibung = "Feuer Alarmverzögerung",
+                            DPNummer = 1712,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3906,
+                            DPBeschreibung = "Wasser Alarmprio",
+                            DPNummer = 1713,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3907,
+                            DPBeschreibung = "Wasser Alarmverzögerung",
+                            DPNummer = 1714,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3908,
+                            DPBeschreibung = "Phase Alarmprio",
+                            DPNummer = 1715,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3909,
+                            DPBeschreibung = "Phase Alarmverzögerung",
+                            DPNummer = 1716,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3910,
+                            DPBeschreibung = "Wartung Alarmprio",
+                            DPNummer = 1717,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3911,
+                            DPBeschreibung = "Strömungswächter Alarmausgang",
+                            DPNummer = 1719,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3912,
+                            DPBeschreibung = "Strömungswächter Alarmverzögerung",
+                            DPNummer = 1720,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3913,
+                            DPBeschreibung = "Digitalausgang für Local Stop",
+                            DPNummer = 1722,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3914,
+                            DPBeschreibung = "Digitalausgang für Freie Kühlung",
+                            DPNummer = 1723,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3915,
+                            DPBeschreibung = "Es läuft mindestens 1 EC-Lüfter",
+                            DPNummer = 1727,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3916,
+                            DPBeschreibung = "Digitalausgang für GLT-Stopp 1",
+                            DPNummer = 1728,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3917,
+                            DPBeschreibung = "Feuer Sammelalarm",
+                            DPNummer = 1742,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3918,
+                            DPBeschreibung = "Wasser Sammelalarm",
+                            DPNummer = 1743,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3919,
+                            DPBeschreibung = "Phase Sammelalarm",
+                            DPNummer = 1744,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3920,
+                            DPBeschreibung = "Wartung Sammelalarm",
+                            DPNummer = 1745,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3921,
+                            DPBeschreibung = "Phase restart",
+                            DPNummer = 1746,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3922,
+                            DPBeschreibung = "Strömungswächter Sammelalarm",
+                            DPNummer = 1747,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3923,
+                            DPBeschreibung = "ups action cooling",
+                            DPNummer = 1750,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3924,
+                            DPBeschreibung = "ups action heating",
+                            DPNummer = 1751,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3925,
+                            DPBeschreibung = "ups action humidification",
+                            DPNummer = 1752,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3926,
+                            DPBeschreibung = "ups action dehumidification",
+                            DPNummer = 1753,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3927,
+                            DPBeschreibung = "Gerät kühlt gerade",
+                            DPNummer = 1754,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3928,
+                            DPBeschreibung = "Gerät heizt gerade",
+                            DPNummer = 1755,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3929,
+                            DPBeschreibung = "Gerät befeuchtet gerade",
+                            DPNummer = 1756,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3930,
+                            DPBeschreibung = "Gerät entfeuchtet gerade",
+                            DPNummer = 1757,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3931,
+                            DPBeschreibung = "number of EDIO",
+                            DPNummer = 1758,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3932,
+                            DPBeschreibung = "number of EAIO",
+                            DPNummer = 1759,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3933,
+                            DPBeschreibung = "type of EBUS",
+                            DPNummer = 1760,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3934,
+                            DPBeschreibung = "Anzahl der konfigurierten Kompressoren",
+                            DPNummer = 1761,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3935,
+                            DPBeschreibung = "Anzahl der konfigurierten Saugdrosseln",
+                            DPNummer = 1762,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3936,
+                            DPBeschreibung = "Anzahl der konfigurierten Rückkühler",
+                            DPNummer = 1763,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3937,
+                            DPBeschreibung = "Anzahl der konfigurierten Pumpen",
+                            DPNummer = 1764,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3938,
+                            DPBeschreibung = "Anzahl der konfigurierten E-Heizungen",
+                            DPNummer = 1765,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3939,
+                            DPBeschreibung = "Anzahl der konfigurierten Befeuchter",
+                            DPNummer = 1766,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3940,
+                            DPBeschreibung = "Anzahl der konfigurierten Lüfter",
+                            DPNummer = 1767,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3941,
+                            DPBeschreibung = "Anzahl der konfigurierten Luftklappen",
+                            DPNummer = 1768,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3942,
+                            DPBeschreibung = "Anzahl der konfigurierten Sensoren",
+                            DPNummer = 1769,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3943,
+                            DPBeschreibung = "Anzahl der konfigurierten Externen Alarm Eingänge",
+                            DPNummer = 1770,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3944,
+                            DPBeschreibung = "Ist ein GE/CW-Ventil konfiguriert",
+                            DPNummer = 1771,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3945,
+                            DPBeschreibung = "Ist eine Heissgas Hzg konfiguriert",
+                            DPNummer = 1772,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3946,
+                            DPBeschreibung = "Ist eine PWW Hzg konfiguriert",
+                            DPNummer = 1773,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3947,
+                            DPBeschreibung = "Ist ein Entfeuchter konfiguriert",
+                            DPNummer = 1774,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3948,
+                            DPBeschreibung = "Anzahl der EEIO Karten",
+                            DPNummer = 1775,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3949,
+                            DPBeschreibung = "Ist eine ECO-COOL Luftklappe konfiguriert",
+                            DPNummer = 1777,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3950,
+                            DPBeschreibung = "Kaltwasseranforderung",
+                            DPNummer = 1778,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3951,
+                            DPBeschreibung = "Stopp wegen Feueralarms",
+                            DPNummer = 1779,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3952,
+                            DPBeschreibung = "GLT-Stopp 2",
+                            DPNummer = 1783,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3953,
+                            DPBeschreibung = "Kühlbetriebsart",
+                            DPNummer = 1787,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 8000,
+                            DPBeschreibung = "IP Adresse",
+                            DPNummer = 500,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3955,
+                            DPBeschreibung = "Sensor 1 Konfiguriert",
+                            DPNummer = 2300,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3956,
+                            DPBeschreibung = "Sensor 1 Alarm",
+                            DPNummer = 2301,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3957,
+                            DPBeschreibung = "Sensor 1 Fühlerbruch",
+                            DPNummer = 2302,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3958,
+                            DPBeschreibung = "Sensor 1 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2303,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3959,
+                            DPBeschreibung = "Sensor 1 Sammelalarm bei Abweichung",
+                            DPNummer = 2304,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3960,
+                            DPBeschreibung = "Sensor 1 Handbetrieb",
+                            DPNummer = 2305,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3961,
+                            DPBeschreibung = "Sensor 1 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2306,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3962,
+                            DPBeschreibung = "Sensor 1 Sensorzweck",
+                            DPNummer = 2308,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3963,
+                            DPBeschreibung = "Sensor 1 Sensortyp",
+                            DPNummer = 2309,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3964,
+                            DPBeschreibung = "Sensor 1 Analog in",
+                            DPNummer = 2310,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3965,
+                            DPBeschreibung = "Sensor 1 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2311,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3966,
+                            DPBeschreibung = "Sensor 1 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2312,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3967,
+                            DPBeschreibung = "Sensor 1 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2313,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3968,
+                            DPBeschreibung = "Sensor 1 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2314,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3969,
+                            DPBeschreibung = "Sensor 1 Max Sensor Abweichung",
+                            DPNummer = 2315,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3970,
+                            DPBeschreibung = "Sensor 1 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2316,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3971,
+                            DPBeschreibung = "Sensor 1 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2317,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3972,
+                            DPBeschreibung = "Sensor 1 Alarmprio bei Sensorbruch",
+                            DPNummer = 2318,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3973,
+                            DPBeschreibung = "Sensor 1 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2319,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3974,
+                            DPBeschreibung = "Sensor 1 Offset für Fühlerabgleich",
+                            DPNummer = 2320,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3975,
+                            DPBeschreibung = "Sensor 1 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2321,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3976,
+                            DPBeschreibung = "Sensor 1 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2322,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3977,
+                            DPBeschreibung = "Sensor 1 Hand Wert",
+                            DPNummer = 2323,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3978,
+                            DPBeschreibung = "Sensor 1 GLT-Wert",
+                            DPNummer = 2324,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3979,
+                            DPBeschreibung = "Sensor 2 Konfiguriert",
+                            DPNummer = 2400,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3980,
+                            DPBeschreibung = "Sensor 2 Alarm",
+                            DPNummer = 2401,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3981,
+                            DPBeschreibung = "Sensor 2 Fühlerbruch",
+                            DPNummer = 2402,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3982,
+                            DPBeschreibung = "Sensor 2 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2403,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3983,
+                            DPBeschreibung = "Sensor 2 Sammelalarm bei Abweichung",
+                            DPNummer = 2404,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3984,
+                            DPBeschreibung = "Sensor 2 Handbetrieb",
+                            DPNummer = 2405,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3985,
+                            DPBeschreibung = "Sensor 2 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2406,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3986,
+                            DPBeschreibung = "Sensor 2 Sensorzweck",
+                            DPNummer = 2408,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3987,
+                            DPBeschreibung = "Sensor 2 Sensortyp",
+                            DPNummer = 2409,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3988,
+                            DPBeschreibung = "Sensor 2 Analog in",
+                            DPNummer = 2410,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3989,
+                            DPBeschreibung = "Sensor 2 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2411,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3990,
+                            DPBeschreibung = "Sensor 2 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2412,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3991,
+                            DPBeschreibung = "Sensor 2 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2413,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3992,
+                            DPBeschreibung = "Sensor 2 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2414,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3993,
+                            DPBeschreibung = "Sensor 2 Max Sensor Abweichung",
+                            DPNummer = 2415,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3994,
+                            DPBeschreibung = "Sensor 2 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2416,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3995,
+                            DPBeschreibung = "Sensor 2 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2417,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3996,
+                            DPBeschreibung = "Sensor 2 Alarmprio bei Sensorbruch",
+                            DPNummer = 2418,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3997,
+                            DPBeschreibung = "Sensor 2 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2419,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3998,
+                            DPBeschreibung = "Sensor 2 Offset für Fühlerabgleich",
+                            DPNummer = 2420,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 3999,
+                            DPBeschreibung = "Sensor 2 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2421,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4000,
+                            DPBeschreibung = "Sensor 2 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2422,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4001,
+                            DPBeschreibung = "Sensor 2 Hand Wert",
+                            DPNummer = 2423,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4002,
+                            DPBeschreibung = "Sensor 2 GLT-Wert",
+                            DPNummer = 2424,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4003,
+                            DPBeschreibung = "Sensor 3 Konfiguriert",
+                            DPNummer = 2500,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4004,
+                            DPBeschreibung = "Sensor 3 Alarm",
+                            DPNummer = 2501,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4005,
+                            DPBeschreibung = "Sensor 3 Fühlerbruch",
+                            DPNummer = 2502,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4006,
+                            DPBeschreibung = "Sensor 3 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2503,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4007,
+                            DPBeschreibung = "Sensor 3 Sammelalarm bei Abweichung",
+                            DPNummer = 2504,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4008,
+                            DPBeschreibung = "Sensor 3 Handbetrieb",
+                            DPNummer = 2505,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4009,
+                            DPBeschreibung = "Sensor 3 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2506,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4010,
+                            DPBeschreibung = "Sensor 3 Sensorzweck",
+                            DPNummer = 2508,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4011,
+                            DPBeschreibung = "Sensor 3 Sensortyp",
+                            DPNummer = 2509,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4012,
+                            DPBeschreibung = "Sensor 3 Analog in",
+                            DPNummer = 2510,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4013,
+                            DPBeschreibung = "Sensor 3 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2511,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4014,
+                            DPBeschreibung = "Sensor 3 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2512,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4015,
+                            DPBeschreibung = "Sensor 3 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2513,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4016,
+                            DPBeschreibung = "Sensor 3 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2514,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4017,
+                            DPBeschreibung = "Sensor 3 Max Sensor Abweichung",
+                            DPNummer = 2515,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4018,
+                            DPBeschreibung = "Sensor 3 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2516,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4019,
+                            DPBeschreibung = "Sensor 3 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2517,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4020,
+                            DPBeschreibung = "Sensor 3 Alarmprio bei Sensorbruch",
+                            DPNummer = 2518,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4021,
+                            DPBeschreibung = "Sensor 3 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2519,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4022,
+                            DPBeschreibung = "Sensor 3 Offset für Fühlerabgleich",
+                            DPNummer = 2520,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4023,
+                            DPBeschreibung = "Sensor 3 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2521,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4024,
+                            DPBeschreibung = "Sensor 3 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2522,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4025,
+                            DPBeschreibung = "Sensor 3 Hand Wert",
+                            DPNummer = 2523,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4026,
+                            DPBeschreibung = "Sensor 3 GLT-Wert",
+                            DPNummer = 2524,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4027,
+                            DPBeschreibung = "Sensor 4 Konfiguriert",
+                            DPNummer = 2600,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4028,
+                            DPBeschreibung = "Sensor 4 Alarm",
+                            DPNummer = 2601,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4029,
+                            DPBeschreibung = "Sensor 4 Fühlerbruch",
+                            DPNummer = 2602,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4030,
+                            DPBeschreibung = "Sensor 4 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2603,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4031,
+                            DPBeschreibung = "Sensor 4 Sammelalarm bei Abweichung",
+                            DPNummer = 2604,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4032,
+                            DPBeschreibung = "Sensor 4 Handbetrieb",
+                            DPNummer = 2605,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4033,
+                            DPBeschreibung = "Sensor 4 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2606,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4034,
+                            DPBeschreibung = "Sensor 4 Sensorzweck",
+                            DPNummer = 2608,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4035,
+                            DPBeschreibung = "Sensor 4 Sensortyp",
+                            DPNummer = 2609,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4036,
+                            DPBeschreibung = "Sensor 4 Analog in",
+                            DPNummer = 2610,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4037,
+                            DPBeschreibung = "Sensor 4 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2611,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4038,
+                            DPBeschreibung = "Sensor 4 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2612,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4039,
+                            DPBeschreibung = "Sensor 4 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2613,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4040,
+                            DPBeschreibung = "Sensor 4 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2614,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4041,
+                            DPBeschreibung = "Sensor 4 Max Sensor Abweichung",
+                            DPNummer = 2615,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4042,
+                            DPBeschreibung = "Sensor 4 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2616,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4043,
+                            DPBeschreibung = "Sensor 4 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2617,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4044,
+                            DPBeschreibung = "Sensor 4 Alarmprio bei Sensorbruch",
+                            DPNummer = 2618,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4045,
+                            DPBeschreibung = "Sensor 4 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2619,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4046,
+                            DPBeschreibung = "Sensor 4 Offset für Fühlerabgleich",
+                            DPNummer = 2620,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4047,
+                            DPBeschreibung = "Sensor 4 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2621,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4048,
+                            DPBeschreibung = "Sensor 4 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2622,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4049,
+                            DPBeschreibung = "Sensor 4 Hand Wert",
+                            DPNummer = 2623,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4050,
+                            DPBeschreibung = "Sensor 4 GLT-Wert",
+                            DPNummer = 2624,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4051,
+                            DPBeschreibung = "Sensor 5 Konfiguriert",
+                            DPNummer = 2700,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4052,
+                            DPBeschreibung = "Sensor 5 Alarm",
+                            DPNummer = 2701,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4053,
+                            DPBeschreibung = "Sensor 5 Fühlerbruch",
+                            DPNummer = 2702,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4054,
+                            DPBeschreibung = "Sensor 5 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2703,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4055,
+                            DPBeschreibung = "Sensor 5 Sammelalarm bei Abweichung",
+                            DPNummer = 2704,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4056,
+                            DPBeschreibung = "Sensor 5 Handbetrieb",
+                            DPNummer = 2705,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4057,
+                            DPBeschreibung = "Sensor 5 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2706,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4058,
+                            DPBeschreibung = "Sensor 5 Sensorzweck",
+                            DPNummer = 2708,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4059,
+                            DPBeschreibung = "Sensor 5 Sensortyp",
+                            DPNummer = 2709,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4060,
+                            DPBeschreibung = "Sensor 5 Analog in",
+                            DPNummer = 2710,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4061,
+                            DPBeschreibung = "Sensor 5 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2711,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4062,
+                            DPBeschreibung = "Sensor 5 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2712,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4063,
+                            DPBeschreibung = "Sensor 5 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2713,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4064,
+                            DPBeschreibung = "Sensor 5 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2714,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4065,
+                            DPBeschreibung = "Sensor 5 Max Sensor Abweichung",
+                            DPNummer = 2715,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4066,
+                            DPBeschreibung = "Sensor 5 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2716,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4067,
+                            DPBeschreibung = "Sensor 5 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2717,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4068,
+                            DPBeschreibung = "Sensor 5 Alarmprio bei Sensorbruch",
+                            DPNummer = 2718,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4069,
+                            DPBeschreibung = "Sensor 5 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2719,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4070,
+                            DPBeschreibung = "Sensor 5 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2721,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4071,
+                            DPBeschreibung = "Sensor 5 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2722,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4072,
+                            DPBeschreibung = "Sensor 5 Hand Wert",
+                            DPNummer = 2723,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4073,
+                            DPBeschreibung = "Sensor 5 GLT-Wert",
+                            DPNummer = 2724,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4074,
+                            DPBeschreibung = "Sensor 6 Konfiguriert",
+                            DPNummer = 2800,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4075,
+                            DPBeschreibung = "Sensor 6 Alarm",
+                            DPNummer = 2801,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4076,
+                            DPBeschreibung = "Sensor 6 Fühlerbruch",
+                            DPNummer = 2802,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4077,
+                            DPBeschreibung = "Sensor 6 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2803,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4078,
+                            DPBeschreibung = "Sensor 6 Sammelalarm bei Abweichung",
+                            DPNummer = 2804,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4079,
+                            DPBeschreibung = "Sensor 6 Handbetrieb",
+                            DPNummer = 2805,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4080,
+                            DPBeschreibung = "Sensor 6 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2806,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4081,
+                            DPBeschreibung = "Sensor 6 Sensorzweck",
+                            DPNummer = 2808,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4082,
+                            DPBeschreibung = "Sensor 6 Sensortyp",
+                            DPNummer = 2809,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4083,
+                            DPBeschreibung = "Sensor 6 Analog in",
+                            DPNummer = 2810,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4084,
+                            DPBeschreibung = "Sensor 6 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2811,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4085,
+                            DPBeschreibung = "Sensor 6 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2812,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4086,
+                            DPBeschreibung = "Sensor 6 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2813,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4087,
+                            DPBeschreibung = "Sensor 6 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2814,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4088,
+                            DPBeschreibung = "Sensor 6 Max Sensor Abweichung",
+                            DPNummer = 2815,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4089,
+                            DPBeschreibung = "Sensor 6 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2816,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4090,
+                            DPBeschreibung = "Sensor 6 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2817,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4091,
+                            DPBeschreibung = "Sensor 6 Alarmprio bei Sensorbruch",
+                            DPNummer = 2818,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4092,
+                            DPBeschreibung = "Sensor 6 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2819,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4093,
+                            DPBeschreibung = "Sensor 6 Offset für Fühlerabgleich",
+                            DPNummer = 2820,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4094,
+                            DPBeschreibung = "Sensor 6 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2821,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4095,
+                            DPBeschreibung = "Sensor 6 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2822,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4096,
+                            DPBeschreibung = "Sensor 6 Hand Wert",
+                            DPNummer = 2823,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4097,
+                            DPBeschreibung = "Sensor 6 GLT-Wert",
+                            DPNummer = 2824,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4098,
+                            DPBeschreibung = "Sensor 7 Konfiguriert",
+                            DPNummer = 2900,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4099,
+                            DPBeschreibung = "Sensor 7 Alarm",
+                            DPNummer = 2901,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4100,
+                            DPBeschreibung = "Sensor 7 Fühlerbruch",
+                            DPNummer = 2902,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4101,
+                            DPBeschreibung = "Sensor 7 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 2903,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4102,
+                            DPBeschreibung = "Sensor 7 Sammelalarm bei Abweichung",
+                            DPNummer = 2904,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4103,
+                            DPBeschreibung = "Sensor 7 Handbetrieb",
+                            DPNummer = 2905,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4104,
+                            DPBeschreibung = "Sensor 7 GLT-Wert aktiv ja/nein",
+                            DPNummer = 2906,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4105,
+                            DPBeschreibung = "Sensor 7 Sensorzweck",
+                            DPNummer = 2908,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4106,
+                            DPBeschreibung = "Sensor 7 Sensortyp",
+                            DPNummer = 2909,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4107,
+                            DPBeschreibung = "Sensor 7 Analog in",
+                            DPNummer = 2910,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4108,
+                            DPBeschreibung = "Sensor 7 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 2911,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4109,
+                            DPBeschreibung = "Sensor 7 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 2912,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4110,
+                            DPBeschreibung = "Sensor 7 Min Messwert (z.B. -20°C)",
+                            DPNummer = 2913,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4111,
+                            DPBeschreibung = "Sensor 7 Max Messwert (z.B. 50°C)",
+                            DPNummer = 2914,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4112,
+                            DPBeschreibung = "Sensor 7 Max Sensor Abweichung",
+                            DPNummer = 2915,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4113,
+                            DPBeschreibung = "Sensor 7 Alarmprio bei Sensorabweichung",
+                            DPNummer = 2916,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4114,
+                            DPBeschreibung = "Sensor 7 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 2917,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4115,
+                            DPBeschreibung = "Sensor 7 Alarmprio bei Sensorbruch",
+                            DPNummer = 2918,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4116,
+                            DPBeschreibung = "Sensor 7 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 2919,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4117,
+                            DPBeschreibung = "Sensor 7 Offset für Fühlerabgleich",
+                            DPNummer = 2920,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4118,
+                            DPBeschreibung = "Sensor 7 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 2921,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4119,
+                            DPBeschreibung = "Sensor 7 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 2922,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4120,
+                            DPBeschreibung = "Sensor 7 Hand Wert",
+                            DPNummer = 2923,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4121,
+                            DPBeschreibung = "Sensor 7 GLT-Wert",
+                            DPNummer = 2924,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4122,
+                            DPBeschreibung = "Sensor 8 Konfiguriert",
+                            DPNummer = 3000,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4123,
+                            DPBeschreibung = "Sensor 8 Alarm",
+                            DPNummer = 3001,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4124,
+                            DPBeschreibung = "Sensor 8 Fühlerbruch",
+                            DPNummer = 3002,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4125,
+                            DPBeschreibung = "Sensor 8 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3003,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4126,
+                            DPBeschreibung = "Sensor 8 Sammelalarm bei Abweichung",
+                            DPNummer = 3004,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4127,
+                            DPBeschreibung = "Sensor 8 Handbetrieb",
+                            DPNummer = 3005,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4128,
+                            DPBeschreibung = "Sensor 8 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3006,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4129,
+                            DPBeschreibung = "Sensor 8 Sensorzweck",
+                            DPNummer = 3008,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4130,
+                            DPBeschreibung = "Sensor 8 Sensortyp",
+                            DPNummer = 3009,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4131,
+                            DPBeschreibung = "Sensor 8 Analog in",
+                            DPNummer = 3010,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4132,
+                            DPBeschreibung = "Sensor 8 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3011,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4133,
+                            DPBeschreibung = "Sensor 8 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3012,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4134,
+                            DPBeschreibung = "Sensor 8 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3013,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4135,
+                            DPBeschreibung = "Sensor 8 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3014,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4136,
+                            DPBeschreibung = "Sensor 8 Max Sensor Abweichung",
+                            DPNummer = 3015,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4137,
+                            DPBeschreibung = "Sensor 8 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3016,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4138,
+                            DPBeschreibung = "Sensor 8 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3017,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4139,
+                            DPBeschreibung = "Sensor 8 Alarmprio bei Sensorbruch",
+                            DPNummer = 3018,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4140,
+                            DPBeschreibung = "Sensor 8 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3019,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4141,
+                            DPBeschreibung = "Sensor 8 Offset für Fühlerabgleich",
+                            DPNummer = 3020,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4142,
+                            DPBeschreibung = "Sensor 8 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3021,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4143,
+                            DPBeschreibung = "Sensor 8 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3022,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4144,
+                            DPBeschreibung = "Sensor 8 Hand Wert",
+                            DPNummer = 3023,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4145,
+                            DPBeschreibung = "Sensor 8 GLT-Wert",
+                            DPNummer = 3024,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4146,
+                            DPBeschreibung = "Sensor 9 Konfiguriert",
+                            DPNummer = 3100,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4147,
+                            DPBeschreibung = "Sensor 9 Alarm",
+                            DPNummer = 3101,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4148,
+                            DPBeschreibung = "Sensor 9 Fühlerbruch",
+                            DPNummer = 3102,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4149,
+                            DPBeschreibung = "Sensor 9 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3103,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4150,
+                            DPBeschreibung = "Sensor 9 Sammelalarm bei Abweichung",
+                            DPNummer = 3104,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4151,
+                            DPBeschreibung = "Sensor 9 Handbetrieb",
+                            DPNummer = 3105,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4152,
+                            DPBeschreibung = "Sensor 9 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3106,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4153,
+                            DPBeschreibung = "Sensor 9 Sensorzweck",
+                            DPNummer = 3108,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4154,
+                            DPBeschreibung = "Sensor 9 Sensortyp",
+                            DPNummer = 3109,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4155,
+                            DPBeschreibung = "Sensor 9 Analog in",
+                            DPNummer = 3110,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4156,
+                            DPBeschreibung = "Sensor 9 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3111,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4157,
+                            DPBeschreibung = "Sensor 9 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3112,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4158,
+                            DPBeschreibung = "Sensor 9 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3113,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4159,
+                            DPBeschreibung = "Sensor 9 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3114,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4160,
+                            DPBeschreibung = "Sensor 9 Max Sensor Abweichung",
+                            DPNummer = 3115,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4161,
+                            DPBeschreibung = "Sensor 9 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3116,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4162,
+                            DPBeschreibung = "Sensor 9 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3117,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4163,
+                            DPBeschreibung = "Sensor 9 Alarmprio bei Sensorbruch",
+                            DPNummer = 3118,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4164,
+                            DPBeschreibung = "Sensor 9 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3119,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4165,
+                            DPBeschreibung = "Sensor 9 Offset für Fühlerabgleich",
+                            DPNummer = 3120,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4166,
+                            DPBeschreibung = "Sensor 9 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3121,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4167,
+                            DPBeschreibung = "Sensor 9 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3122,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4168,
+                            DPBeschreibung = "Sensor 9 Hand Wert",
+                            DPNummer = 3123,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4169,
+                            DPBeschreibung = "Sensor 9 GLT-Wert",
+                            DPNummer = 3124,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4170,
+                            DPBeschreibung = "Sensor 10 Konfiguriert",
+                            DPNummer = 3200,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4171,
+                            DPBeschreibung = "Sensor 10 Alarm",
+                            DPNummer = 3201,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4172,
+                            DPBeschreibung = "Sensor 10 Fühlerbruch",
+                            DPNummer = 3202,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4173,
+                            DPBeschreibung = "Sensor 10 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3203,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4174,
+                            DPBeschreibung = "Sensor 10 Sammelalarm bei Abweichung",
+                            DPNummer = 3204,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4175,
+                            DPBeschreibung = "Sensor 10 Handbetrieb",
+                            DPNummer = 3205,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4176,
+                            DPBeschreibung = "Sensor 10 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3206,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4177,
+                            DPBeschreibung = "Sensor 10 Sensorzweck",
+                            DPNummer = 3208,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4178,
+                            DPBeschreibung = "Sensor 10 Sensortyp",
+                            DPNummer = 3209,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4179,
+                            DPBeschreibung = "Sensor 10 Analog in",
+                            DPNummer = 3210,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4180,
+                            DPBeschreibung = "Sensor 10 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3211,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4181,
+                            DPBeschreibung = "Sensor 10 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3212,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4182,
+                            DPBeschreibung = "Sensor 10 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3213,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4183,
+                            DPBeschreibung = "Sensor 10 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3214,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4184,
+                            DPBeschreibung = "Sensor 10 Max Sensor Abweichung",
+                            DPNummer = 3215,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4185,
+                            DPBeschreibung = "Sensor 10 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3216,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4186,
+                            DPBeschreibung = "Sensor 10 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3217,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4187,
+                            DPBeschreibung = "Sensor 10 Alarmprio bei Sensorbruch",
+                            DPNummer = 3218,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4188,
+                            DPBeschreibung = "Sensor 10 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3219,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4189,
+                            DPBeschreibung = "Sensor 10 Offset für Fühlerabgleich",
+                            DPNummer = 3220,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4190,
+                            DPBeschreibung = "Sensor 10 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3221,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4191,
+                            DPBeschreibung = "Sensor 10 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3222,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4192,
+                            DPBeschreibung = "Sensor 10 Hand Wert",
+                            DPNummer = 3223,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4193,
+                            DPBeschreibung = "Sensor 10 GLT-Wert",
+                            DPNummer = 3224,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4194,
+                            DPBeschreibung = "Sensor 11 Konfiguriert",
+                            DPNummer = 3300,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4195,
+                            DPBeschreibung = "Sensor 11 Alarm",
+                            DPNummer = 3301,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4196,
+                            DPBeschreibung = "Sensor 11 Fühlerbruch",
+                            DPNummer = 3302,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4197,
+                            DPBeschreibung = "Sensor 11 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3303,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4198,
+                            DPBeschreibung = "Sensor 11 Sammelalarm bei Abweichung",
+                            DPNummer = 3304,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4199,
+                            DPBeschreibung = "Sensor 11 Handbetrieb",
+                            DPNummer = 3305,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4200,
+                            DPBeschreibung = "Sensor 11 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3306,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4201,
+                            DPBeschreibung = "Sensor 11 Sensorzweck",
+                            DPNummer = 3308,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4202,
+                            DPBeschreibung = "Sensor 11 Sensortyp",
+                            DPNummer = 3309,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4203,
+                            DPBeschreibung = "Sensor 11 Analog in",
+                            DPNummer = 3310,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4204,
+                            DPBeschreibung = "Sensor 11 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3311,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4205,
+                            DPBeschreibung = "Sensor 11 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3312,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4206,
+                            DPBeschreibung = "Sensor 11 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3313,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4207,
+                            DPBeschreibung = "Sensor 11 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3314,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4208,
+                            DPBeschreibung = "Sensor 11 Max Sensor Abweichung",
+                            DPNummer = 3315,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4209,
+                            DPBeschreibung = "Sensor 11 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3316,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4210,
+                            DPBeschreibung = "Sensor 11 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3317,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4211,
+                            DPBeschreibung = "Sensor 11 Alarmprio bei Sensorbruch",
+                            DPNummer = 3318,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4212,
+                            DPBeschreibung = "Sensor 11 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3319,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4213,
+                            DPBeschreibung = "Sensor 11 Offset für Fühlerabgleich",
+                            DPNummer = 3320,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4214,
+                            DPBeschreibung = "Sensor 11 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3321,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4215,
+                            DPBeschreibung = "Sensor 11 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3322,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4216,
+                            DPBeschreibung = "Sensor 11 Hand Wert",
+                            DPNummer = 3323,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4217,
+                            DPBeschreibung = "Sensor 11 GLT-Wert",
+                            DPNummer = 3324,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4218,
+                            DPBeschreibung = "Sensor 12 Konfiguriert",
+                            DPNummer = 3400,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4219,
+                            DPBeschreibung = "Sensor 12 Alarm",
+                            DPNummer = 3401,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4220,
+                            DPBeschreibung = "Sensor 12 Fühlerbruch",
+                            DPNummer = 3402,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4221,
+                            DPBeschreibung = "Sensor 12 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3403,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4222,
+                            DPBeschreibung = "Sensor 12 Sammelalarm bei Abweichung",
+                            DPNummer = 3404,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4223,
+                            DPBeschreibung = "Sensor 12 Handbetrieb",
+                            DPNummer = 3405,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4224,
+                            DPBeschreibung = "Sensor 12 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3406,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4225,
+                            DPBeschreibung = "Sensor 12 Sensorzweck",
+                            DPNummer = 3408,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4226,
+                            DPBeschreibung = "Sensor 12 Sensortyp",
+                            DPNummer = 3409,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4227,
+                            DPBeschreibung = "Sensor 12 Analog in",
+                            DPNummer = 3410,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4228,
+                            DPBeschreibung = "Sensor 12 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3411,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4229,
+                            DPBeschreibung = "Sensor 12 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3412,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4230,
+                            DPBeschreibung = "Sensor 12 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3413,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4231,
+                            DPBeschreibung = "Sensor 12 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3414,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4232,
+                            DPBeschreibung = "Sensor 12 Max Sensor Abweichung",
+                            DPNummer = 3415,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4233,
+                            DPBeschreibung = "Sensor 12 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3416,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4234,
+                            DPBeschreibung = "Sensor 12 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3417,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4235,
+                            DPBeschreibung = "Sensor 12 Alarmprio bei Sensorbruch",
+                            DPNummer = 3418,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4236,
+                            DPBeschreibung = "Sensor 12 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3419,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4237,
+                            DPBeschreibung = "Sensor 12 Offset für Fühlerabgleich",
+                            DPNummer = 3420,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4238,
+                            DPBeschreibung = "Sensor 12 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3421,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4239,
+                            DPBeschreibung = "Sensor 12 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3422,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4240,
+                            DPBeschreibung = "Sensor 12 Hand Wert",
+                            DPNummer = 3423,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4241,
+                            DPBeschreibung = "Sensor 12 GLT-Wert",
+                            DPNummer = 3424,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4242,
+                            DPBeschreibung = "Sensor 13 Konfiguriert",
+                            DPNummer = 3500,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4243,
+                            DPBeschreibung = "Sensor 13 Alarm",
+                            DPNummer = 3501,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4244,
+                            DPBeschreibung = "Sensor 13 Fühlerbruch",
+                            DPNummer = 3502,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4245,
+                            DPBeschreibung = "Sensor 13 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3503,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4246,
+                            DPBeschreibung = "Sensor 13 Sammelalarm bei Abweichung",
+                            DPNummer = 3504,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4247,
+                            DPBeschreibung = "Sensor 13 Handbetrieb",
+                            DPNummer = 3505,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4248,
+                            DPBeschreibung = "Sensor 13 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3506,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4249,
+                            DPBeschreibung = "Sensor 13 Sensorzweck",
+                            DPNummer = 3508,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4250,
+                            DPBeschreibung = "Sensor 13 Sensortyp",
+                            DPNummer = 3509,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4251,
+                            DPBeschreibung = "Sensor 13 Analog in",
+                            DPNummer = 3510,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4252,
+                            DPBeschreibung = "Sensor 13 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3511,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4253,
+                            DPBeschreibung = "Sensor 13 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3512,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4254,
+                            DPBeschreibung = "Sensor 13 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3513,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4255,
+                            DPBeschreibung = "Sensor 13 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3514,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4256,
+                            DPBeschreibung = "Sensor 13 Max Sensor Abweichung",
+                            DPNummer = 3515,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4257,
+                            DPBeschreibung = "Sensor 13 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3516,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4258,
+                            DPBeschreibung = "Sensor 13 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3517,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4259,
+                            DPBeschreibung = "Sensor 13 Alarmprio bei Sensorbruch",
+                            DPNummer = 3518,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4260,
+                            DPBeschreibung = "Sensor 13 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3519,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4261,
+                            DPBeschreibung = "Sensor 13 Offset für Fühlerabgleich",
+                            DPNummer = 3520,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4262,
+                            DPBeschreibung = "Sensor 13 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3521,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4263,
+                            DPBeschreibung = "Sensor 13 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3522,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4264,
+                            DPBeschreibung = "Sensor 13 Hand Wert",
+                            DPNummer = 3523,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4265,
+                            DPBeschreibung = "Sensor 13 GLT-Wert",
+                            DPNummer = 3524,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4266,
+                            DPBeschreibung = "Sensor 14 Konfiguriert",
+                            DPNummer = 3600,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4267,
+                            DPBeschreibung = "Sensor 14 Alarm",
+                            DPNummer = 3601,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4268,
+                            DPBeschreibung = "Sensor 14 Fühlerbruch",
+                            DPNummer = 3602,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4269,
+                            DPBeschreibung = "Sensor 14 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3603,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4270,
+                            DPBeschreibung = "Sensor 14 Sammelalarm bei Abweichung",
+                            DPNummer = 3604,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4271,
+                            DPBeschreibung = "Sensor 14 Handbetrieb",
+                            DPNummer = 3605,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4272,
+                            DPBeschreibung = "Sensor 14 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3606,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4273,
+                            DPBeschreibung = "Sensor 14 Sensorzweck",
+                            DPNummer = 3608,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4274,
+                            DPBeschreibung = "Sensor 14 Sensortyp",
+                            DPNummer = 3609,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4275,
+                            DPBeschreibung = "Sensor 14 Analog in",
+                            DPNummer = 3610,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4276,
+                            DPBeschreibung = "Sensor 14 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3611,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4277,
+                            DPBeschreibung = "Sensor 14 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3612,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4278,
+                            DPBeschreibung = "Sensor 14 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3613,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4279,
+                            DPBeschreibung = "Sensor 14 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3614,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4280,
+                            DPBeschreibung = "Sensor 14 Max Sensor Abweichung",
+                            DPNummer = 3615,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4281,
+                            DPBeschreibung = "Sensor 14 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3616,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4282,
+                            DPBeschreibung = "Sensor 14 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3617,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4283,
+                            DPBeschreibung = "Sensor 14 Alarmprio bei Sensorbruch",
+                            DPNummer = 3618,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4284,
+                            DPBeschreibung = "Sensor 14 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3619,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4285,
+                            DPBeschreibung = "Sensor 14 Offset für Fühlerabgleich",
+                            DPNummer = 3620,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4286,
+                            DPBeschreibung = "Sensor 14 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3621,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4287,
+                            DPBeschreibung = "Sensor 14 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3622,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4288,
+                            DPBeschreibung = "Sensor 14 Hand Wert",
+                            DPNummer = 3623,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4289,
+                            DPBeschreibung = "Sensor 14 GLT-Wert",
+                            DPNummer = 3624,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4290,
+                            DPBeschreibung = "Sensor 15 Konfiguriert",
+                            DPNummer = 3700,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4291,
+                            DPBeschreibung = "Sensor 15 Alarm",
+                            DPNummer = 3701,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4292,
+                            DPBeschreibung = "Sensor 15 Fühlerbruch",
+                            DPNummer = 3702,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4293,
+                            DPBeschreibung = "Sensor 15 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3703,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4294,
+                            DPBeschreibung = "Sensor 15 Sammelalarm bei Abweichung",
+                            DPNummer = 3704,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4295,
+                            DPBeschreibung = "Sensor 15 Handbetrieb",
+                            DPNummer = 3705,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4296,
+                            DPBeschreibung = "Sensor 15 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3706,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4297,
+                            DPBeschreibung = "Sensor 15 Sensorzweck",
+                            DPNummer = 3708,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4298,
+                            DPBeschreibung = "Sensor 15 Sensortyp",
+                            DPNummer = 3709,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4299,
+                            DPBeschreibung = "Sensor 15 Analog in",
+                            DPNummer = 3710,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4300,
+                            DPBeschreibung = "Sensor 15 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3711,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4301,
+                            DPBeschreibung = "Sensor 15 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3712,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4302,
+                            DPBeschreibung = "Sensor 15 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3713,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4303,
+                            DPBeschreibung = "Sensor 15 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3714,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4304,
+                            DPBeschreibung = "Sensor 15 Max Sensor Abweichung",
+                            DPNummer = 3715,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4305,
+                            DPBeschreibung = "Sensor 15 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3716,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4306,
+                            DPBeschreibung = "Sensor 15 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3717,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4307,
+                            DPBeschreibung = "Sensor 15 Alarmprio bei Sensorbruch",
+                            DPNummer = 3718,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4308,
+                            DPBeschreibung = "Sensor 15 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3719,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4309,
+                            DPBeschreibung = "Sensor 15 Offset für Fühlerabgleich",
+                            DPNummer = 3720,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4310,
+                            DPBeschreibung = "Sensor 15 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3721,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4311,
+                            DPBeschreibung = "Sensor 15 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3722,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4312,
+                            DPBeschreibung = "Sensor 15 Hand Wert",
+                            DPNummer = 3723,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4313,
+                            DPBeschreibung = "Sensor 15 GLT-Wert",
+                            DPNummer = 3724,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4314,
+                            DPBeschreibung = "Sensor 16 Konfiguriert",
+                            DPNummer = 3800,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4315,
+                            DPBeschreibung = "Sensor 16 Alarm",
+                            DPNummer = 3801,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4316,
+                            DPBeschreibung = "Sensor 16 Fühlerbruch",
+                            DPNummer = 3802,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4317,
+                            DPBeschreibung = "Sensor 16 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3803,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4318,
+                            DPBeschreibung = "Sensor 16 Sammelalarm bei Abweichung",
+                            DPNummer = 3804,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4319,
+                            DPBeschreibung = "Sensor 16 Handbetrieb",
+                            DPNummer = 3805,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4320,
+                            DPBeschreibung = "Sensor 16 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3806,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4321,
+                            DPBeschreibung = "Sensor 16 Sensorzweck",
+                            DPNummer = 3808,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4322,
+                            DPBeschreibung = "Sensor 16 Sensortyp",
+                            DPNummer = 3809,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4323,
+                            DPBeschreibung = "Sensor 16 Analog in",
+                            DPNummer = 3810,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4324,
+                            DPBeschreibung = "Sensor 16 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3811,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4325,
+                            DPBeschreibung = "Sensor 16 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3812,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4326,
+                            DPBeschreibung = "Sensor 16 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3813,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4327,
+                            DPBeschreibung = "Sensor 16 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3814,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4328,
+                            DPBeschreibung = "Sensor 16 Max Sensor Abweichung",
+                            DPNummer = 3815,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4329,
+                            DPBeschreibung = "Sensor 16 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3816,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4330,
+                            DPBeschreibung = "Sensor 16 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3817,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4331,
+                            DPBeschreibung = "Sensor 16 Alarmprio bei Sensorbruch",
+                            DPNummer = 3818,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4332,
+                            DPBeschreibung = "Sensor 16 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3819,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4333,
+                            DPBeschreibung = "Sensor 16 Offset für Fühlerabgleich",
+                            DPNummer = 3820,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4334,
+                            DPBeschreibung = "Sensor 16 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3821,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4335,
+                            DPBeschreibung = "Sensor 16 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3822,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4336,
+                            DPBeschreibung = "Sensor 16 Hand Wert",
+                            DPNummer = 3823,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4337,
+                            DPBeschreibung = "Sensor 16 GLT-Wert",
+                            DPNummer = 3824,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4338,
+                            DPBeschreibung = "Sensor 17 Konfiguriert",
+                            DPNummer = 3900,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4339,
+                            DPBeschreibung = "Sensor 17 Alarm",
+                            DPNummer = 3901,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4340,
+                            DPBeschreibung = "Sensor 17 Fühlerbruch",
+                            DPNummer = 3902,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4341,
+                            DPBeschreibung = "Sensor 17 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 3903,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4342,
+                            DPBeschreibung = "Sensor 17 Sammelalarm bei Abweichung",
+                            DPNummer = 3904,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4343,
+                            DPBeschreibung = "Sensor 17 Handbetrieb",
+                            DPNummer = 3905,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4344,
+                            DPBeschreibung = "Sensor 17 GLT-Wert aktiv ja/nein",
+                            DPNummer = 3906,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4345,
+                            DPBeschreibung = "Sensor 17 Sensorzweck",
+                            DPNummer = 3908,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4346,
+                            DPBeschreibung = "Sensor 17 Sensortyp",
+                            DPNummer = 3909,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4347,
+                            DPBeschreibung = "Sensor 17 Analog in",
+                            DPNummer = 3910,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4348,
+                            DPBeschreibung = "Sensor 17 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 3911,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4349,
+                            DPBeschreibung = "Sensor 17 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 3912,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4350,
+                            DPBeschreibung = "Sensor 17 Min Messwert (z.B. -20°C)",
+                            DPNummer = 3913,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4351,
+                            DPBeschreibung = "Sensor 17 Max Messwert (z.B. 50°C)",
+                            DPNummer = 3914,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4352,
+                            DPBeschreibung = "Sensor 17 Max Sensor Abweichung",
+                            DPNummer = 3915,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4353,
+                            DPBeschreibung = "Sensor 17 Alarmprio bei Sensorabweichung",
+                            DPNummer = 3916,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4354,
+                            DPBeschreibung = "Sensor 17 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 3917,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4355,
+                            DPBeschreibung = "Sensor 17 Alarmprio bei Sensorbruch",
+                            DPNummer = 3918,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4356,
+                            DPBeschreibung = "Sensor 17 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 3919,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4357,
+                            DPBeschreibung = "Sensor 17 Offset für Fühlerabgleich",
+                            DPNummer = 3920,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4358,
+                            DPBeschreibung = "Sensor 17 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 3921,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4359,
+                            DPBeschreibung = "Sensor 17 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 3922,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4360,
+                            DPBeschreibung = "Sensor 17 Hand Wert",
+                            DPNummer = 3923,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4361,
+                            DPBeschreibung = "Sensor 17 GLT-Wert",
+                            DPNummer = 3924,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4362,
+                            DPBeschreibung = "Sensor 18 Konfiguriert",
+                            DPNummer = 4000,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4363,
+                            DPBeschreibung = "Sensor 18 Alarm",
+                            DPNummer = 4001,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4364,
+                            DPBeschreibung = "Sensor 18 Fühlerbruch",
+                            DPNummer = 4002,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4365,
+                            DPBeschreibung = "Sensor 18 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 4003,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4366,
+                            DPBeschreibung = "Sensor 18 Sammelalarm bei Abweichung",
+                            DPNummer = 4004,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4367,
+                            DPBeschreibung = "Sensor 18 Handbetrieb",
+                            DPNummer = 4005,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4368,
+                            DPBeschreibung = "Sensor 18 GLT-Wert aktiv ja/nein",
+                            DPNummer = 4006,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4369,
+                            DPBeschreibung = "Sensor 18 Sensorzweck",
+                            DPNummer = 4008,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4370,
+                            DPBeschreibung = "Sensor 18 Sensortyp",
+                            DPNummer = 4009,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4371,
+                            DPBeschreibung = "Sensor 18 Analog in",
+                            DPNummer = 4010,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4372,
+                            DPBeschreibung = "Sensor 18 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 4011,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4373,
+                            DPBeschreibung = "Sensor 18 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 4012,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4374,
+                            DPBeschreibung = "Sensor 18 Min Messwert (z.B. -20°C)",
+                            DPNummer = 4013,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4375,
+                            DPBeschreibung = "Sensor 18 Max Messwert (z.B. 50°C)",
+                            DPNummer = 4014,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4376,
+                            DPBeschreibung = "Sensor 18 Max Sensor Abweichung",
+                            DPNummer = 4015,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4377,
+                            DPBeschreibung = "Sensor 18 Alarmprio bei Sensorabweichung",
+                            DPNummer = 4016,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4378,
+                            DPBeschreibung = "Sensor 18 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 4017,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4379,
+                            DPBeschreibung = "Sensor 18 Alarmprio bei Sensorbruch",
+                            DPNummer = 4018,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4380,
+                            DPBeschreibung = "Sensor 18 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 4019,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4381,
+                            DPBeschreibung = "Sensor 18 Offset für Fühlerabgleich",
+                            DPNummer = 4020,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4382,
+                            DPBeschreibung = "Sensor 18 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 4021,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4383,
+                            DPBeschreibung = "Sensor 18 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 4022,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4384,
+                            DPBeschreibung = "Sensor 18 Hand Wert",
+                            DPNummer = 4023,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4385,
+                            DPBeschreibung = "Sensor 18 GLT-Wert",
+                            DPNummer = 4024,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4386,
+                            DPBeschreibung = "Sensor 19 Konfiguriert",
+                            DPNummer = 4100,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4387,
+                            DPBeschreibung = "Sensor 19 Alarm",
+                            DPNummer = 4101,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4388,
+                            DPBeschreibung = "Sensor 19 Fühlerbruch",
+                            DPNummer = 4102,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4389,
+                            DPBeschreibung = "Sensor 19 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 4103,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4390,
+                            DPBeschreibung = "Sensor 19 Sammelalarm bei Abweichung",
+                            DPNummer = 4104,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4391,
+                            DPBeschreibung = "Sensor 19 Handbetrieb",
+                            DPNummer = 4105,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4392,
+                            DPBeschreibung = "Sensor 19 GLT-Wert aktiv ja/nein",
+                            DPNummer = 4106,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4393,
+                            DPBeschreibung = "Sensor 19 Sensorzweck",
+                            DPNummer = 4108,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4394,
+                            DPBeschreibung = "Sensor 19 Sensortyp",
+                            DPNummer = 4109,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4395,
+                            DPBeschreibung = "Sensor 19 Analog in",
+                            DPNummer = 4110,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4396,
+                            DPBeschreibung = "Sensor 19 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 4111,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4397,
+                            DPBeschreibung = "Sensor 19 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 4112,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4398,
+                            DPBeschreibung = "Sensor 19 Min Messwert (z.B. -20°C)",
+                            DPNummer = 4113,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4399,
+                            DPBeschreibung = "Sensor 19 Max Messwert (z.B. 50°C)",
+                            DPNummer = 4114,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4400,
+                            DPBeschreibung = "Sensor 19 Max Sensor Abweichung",
+                            DPNummer = 4115,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4401,
+                            DPBeschreibung = "Sensor 19 Alarmprio bei Sensorabweichung",
+                            DPNummer = 4116,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4402,
+                            DPBeschreibung = "Sensor 19 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 4117,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4403,
+                            DPBeschreibung = "Sensor 19 Alarmprio bei Sensorbruch",
+                            DPNummer = 4118,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4404,
+                            DPBeschreibung = "Sensor 19 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 4119,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4405,
+                            DPBeschreibung = "Sensor 19 Offset für Fühlerabgleich",
+                            DPNummer = 4120,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4406,
+                            DPBeschreibung = "Sensor 19 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 4121,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4407,
+                            DPBeschreibung = "Sensor 19 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 4122,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4408,
+                            DPBeschreibung = "Sensor 19 Hand Wert",
+                            DPNummer = 4123,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4409,
+                            DPBeschreibung = "Sensor 19 GLT-Wert",
+                            DPNummer = 4124,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4410,
+                            DPBeschreibung = "Sensor 20 Konfiguriert",
+                            DPNummer = 4200,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4411,
+                            DPBeschreibung = "Sensor 20 Alarm",
+                            DPNummer = 4201,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4412,
+                            DPBeschreibung = "Sensor 20 Fühlerbruch",
+                            DPNummer = 4202,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4413,
+                            DPBeschreibung = "Sensor 20 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 4203,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4414,
+                            DPBeschreibung = "Sensor 20 Sammelalarm bei Abweichung",
+                            DPNummer = 4204,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4415,
+                            DPBeschreibung = "Sensor 20 Handbetrieb",
+                            DPNummer = 4205,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4416,
+                            DPBeschreibung = "Sensor 20 GLT-Wert aktiv ja/nein",
+                            DPNummer = 4206,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4417,
+                            DPBeschreibung = "Sensor 20 Sensorzweck",
+                            DPNummer = 4208,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4418,
+                            DPBeschreibung = "Sensor 20 Sensortyp",
+                            DPNummer = 4209,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4419,
+                            DPBeschreibung = "Sensor 20 Analog in",
+                            DPNummer = 4210,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4420,
+                            DPBeschreibung = "Sensor 20 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 4211,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4421,
+                            DPBeschreibung = "Sensor 20 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 4212,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4422,
+                            DPBeschreibung = "Sensor 20 Min Messwert (z.B. -20°C)",
+                            DPNummer = 4213,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4423,
+                            DPBeschreibung = "Sensor 20 Max Messwert (z.B. 50°C)",
+                            DPNummer = 4214,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4424,
+                            DPBeschreibung = "Sensor 20 Max Sensor Abweichung",
+                            DPNummer = 4215,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4425,
+                            DPBeschreibung = "Sensor 20 Alarmprio bei Sensorabweichung",
+                            DPNummer = 4216,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4426,
+                            DPBeschreibung = "Sensor 20 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 4217,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4427,
+                            DPBeschreibung = "Sensor 20 Alarmprio bei Sensorbruch",
+                            DPNummer = 4218,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4428,
+                            DPBeschreibung = "Sensor 20 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 4219,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4429,
+                            DPBeschreibung = "Sensor 20 Offset für Fühlerabgleich",
+                            DPNummer = 4220,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4430,
+                            DPBeschreibung = "Sensor 20 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 4221,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4431,
+                            DPBeschreibung = "Sensor 20 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 4222,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4432,
+                            DPBeschreibung = "Sensor 20 Hand Wert",
+                            DPNummer = 4223,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4433,
+                            DPBeschreibung = "Sensor 20 GLT-Wert",
+                            DPNummer = 4224,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4434,
+                            DPBeschreibung = "Sensor 21 Konfiguriert",
+                            DPNummer = 4300,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4435,
+                            DPBeschreibung = "Sensor 21 Alarm",
+                            DPNummer = 4301,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4436,
+                            DPBeschreibung = "Sensor 21 Fühlerbruch",
+                            DPNummer = 4302,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4437,
+                            DPBeschreibung = "Sensor 21 Sammelalarm bei Fühlerbruch",
+                            DPNummer = 4303,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4438,
+                            DPBeschreibung = "Sensor 21 Sammelalarm bei Abweichung",
+                            DPNummer = 4304,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4439,
+                            DPBeschreibung = "Sensor 21 Handbetrieb",
+                            DPNummer = 4305,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4440,
+                            DPBeschreibung = "Sensor 21 GLT-Wert aktiv ja/nein",
+                            DPNummer = 4306,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4441,
+                            DPBeschreibung = "Sensor 21 Sensorzweck",
+                            DPNummer = 4308,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4442,
+                            DPBeschreibung = "Sensor 21 Sensortyp",
+                            DPNummer = 4309,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4443,
+                            DPBeschreibung = "Sensor 21 Analog in",
+                            DPNummer = 4310,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4444,
+                            DPBeschreibung = "Sensor 21 Min Ausgabewert (z.B. 4mA)",
+                            DPNummer = 4311,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4445,
+                            DPBeschreibung = "Sensor 21 Max Ausgabewert (z.B. 20mA)",
+                            DPNummer = 4312,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4446,
+                            DPBeschreibung = "Sensor 21 Min Messwert (z.B. -20°C)",
+                            DPNummer = 4313,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4447,
+                            DPBeschreibung = "Sensor 21 Max Messwert (z.B. 50°C)",
+                            DPNummer = 4314,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4448,
+                            DPBeschreibung = "Sensor 21 Max Sensor Abweichung",
+                            DPNummer = 4315,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4449,
+                            DPBeschreibung = "Sensor 21 Alarmprio bei Sensorabweichung",
+                            DPNummer = 4316,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4450,
+                            DPBeschreibung = "Sensor 21 Alarmverzögerung bei Sensorabweichung",
+                            DPNummer = 4317,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4451,
+                            DPBeschreibung = "Sensor 21 Alarmprio bei Sensorbruch",
+                            DPNummer = 4318,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4452,
+                            DPBeschreibung = "Sensor 21 Alarmverzögerung bei Sensorbruch",
+                            DPNummer = 4319,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4453,
+                            DPBeschreibung = "Sensor 21 Offset für Fühlerabgleich",
+                            DPNummer = 4320,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4454,
+                            DPBeschreibung = "Sensor 21 Momentaner Messwert (z.B. 23,7°C)",
+                            DPNummer = 4321,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4455,
+                            DPBeschreibung = "Sensor 21 Momentaner Ausgabewert (z.B. 16,3mA)",
+                            DPNummer = 4322,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4456,
+                            DPBeschreibung = "Sensor 21 Hand Wert",
+                            DPNummer = 4323,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4457,
+                            DPBeschreibung = "airflow 1 Alarm",
+                            DPNummer = 2200,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4458,
+                            DPBeschreibung = "airflow 2 Alarm",
+                            DPNummer = 2201,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4459,
+                            DPBeschreibung = "airflow 3 Alarm",
+                            DPNummer = 2202,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4460,
+                            DPBeschreibung = "highpressure 1 Alarm (oder Kompressorfehler)",
+                            DPNummer = 2203,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4461,
+                            DPBeschreibung = "highpressure 2	Alarm (oder Kompressorfehler)",
+                            DPNummer = 2204,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4462,
+                            DPBeschreibung = "Wasser Alarm",
+                            DPNummer = 2206,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4463,
+                            DPBeschreibung = "Phasecheck	Phasenfehler",
+                            DPNummer = 2207,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4464,
+                            DPBeschreibung = "Feuer Alarm",
+                            DPNummer = 2208,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4465,
+                            DPBeschreibung = "Strömungswächter Alarm",
+                            DPNummer = 2209,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4466,
+                            DPBeschreibung = "return air temp. too high alarm",
+                            DPNummer = 2216,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4467,
+                            DPBeschreibung = "return air humid. too high alarm",
+                            DPNummer = 2217,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4468,
+                            DPBeschreibung = "supply air temp. too high alarm",
+                            DPNummer = 2218,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4469,
+                            DPBeschreibung = "supply air humid. too high alarm",
+                            DPNummer = 2219,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4470,
+                            DPBeschreibung = "water temp. too high alarm",
+                            DPNummer = 2220,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4471,
+                            DPBeschreibung = "return air temp. too low alarm",
+                            DPNummer = 2221,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4472,
+                            DPBeschreibung = "return air humid. too low alarm",
+                            DPNummer = 2222,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4473,
+                            DPBeschreibung = "supply air temp. too low alarm",
+                            DPNummer = 2223,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4474,
+                            DPBeschreibung = "supply air humid. too low alarm",
+                            DPNummer = 2224,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4475,
+                            DPBeschreibung = "water temp. too low alarm",
+                            DPNummer = 2225,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4476,
+                            DPBeschreibung = "Sauggas Temperatur Kreis 1",
+                            DPNummer = 2232,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4477,
+                            DPBeschreibung = "Verdampfungs Druck Kreis 1",
+                            DPNummer = 2233,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4478,
+                            DPBeschreibung = "Heissgas Temperatur Kreis 1",
+                            DPNummer = 2234,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4479,
+                            DPBeschreibung = "Kondensations Druck Kreis 1",
+                            DPNummer = 2235,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4480,
+                            DPBeschreibung = "unit freecooling-valve",
+                            DPNummer = 2238,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4481,
+                            DPBeschreibung = "limit; return air temp. too high alarm",
+                            DPNummer = 2239,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4482,
+                            DPBeschreibung = "limit; return air temp. too low alarm",
+                            DPNummer = 2240,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4483,
+                            DPBeschreibung = "limit; supply air temp. too high alarm",
+                            DPNummer = 2241,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4484,
+                            DPBeschreibung = "limit; supply air temp. too low alarm",
+                            DPNummer = 2242,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4485,
+                            DPBeschreibung = "limit; water temp. too high alarm",
+                            DPNummer = 2243,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4486,
+                            DPBeschreibung = "limit; water temp. too low alarm",
+                            DPNummer = 2244,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4487,
+                            DPBeschreibung = "limit; return air humid. too high alarm",
+                            DPNummer = 2245,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4488,
+                            DPBeschreibung = "limit; return air humid. too low alarm",
+                            DPNummer = 2246,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4489,
+                            DPBeschreibung = "limit; supply air humid. too high alarm",
+                            DPNummer = 2247,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4490,
+                            DPBeschreibung = "limit; supply air humid. too low alarm",
+                            DPNummer = 2248,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4491,
+                            DPBeschreibung = "lowpressure winterdelay",
+                            DPNummer = 2249,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4492,
+                            DPBeschreibung = "Kondensations Druck Kreis 2",
+                            DPNummer = 2250,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4493,
+                            DPBeschreibung = "Lastzuschaltung für Sequencing",
+                            DPNummer = 2251,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4494,
+                            DPBeschreibung = "Raumtemp zu hoch Alarmprio",
+                            DPNummer = 2252,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4495,
+                            DPBeschreibung = "Raumtemp zu hoch Alarmverzögerung",
+                            DPNummer = 2253,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4496,
+                            DPBeschreibung = "Raumtemp zu tief Alarmprio",
+                            DPNummer = 2254,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4497,
+                            DPBeschreibung = "Raumtemp zu tief Alarmverzögerung",
+                            DPNummer = 2255,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4498,
+                            DPBeschreibung = "Zulufttemp zu hoch Alarmprio",
+                            DPNummer = 2256,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4499,
+                            DPBeschreibung = "Zulufttemp zu hoch Alarmverzögerung",
+                            DPNummer = 2257,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4500,
+                            DPBeschreibung = "Zulufttemp zu tief Alarmprio",
+                            DPNummer = 2258,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4501,
+                            DPBeschreibung = "Zulufttemp zu tief Alarmverzögerung",
+                            DPNummer = 2259,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4502,
+                            DPBeschreibung = "Wassertemp zu hoch Alarmprio",
+                            DPNummer = 2260,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4503,
+                            DPBeschreibung = "Wassertemp zu hoch Alarmverzögerung",
+                            DPNummer = 2261,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4504,
+                            DPBeschreibung = "Wassertemp zu tief Alarmprio",
+                            DPNummer = 2262,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4505,
+                            DPBeschreibung = "Wassertemp zu tief Alarmverzögerung",
+                            DPNummer = 2263,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4506,
+                            DPBeschreibung = "Raumfeuchte zu hoch Alarmprio",
+                            DPNummer = 2264,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4507,
+                            DPBeschreibung = "Raumfeuchte zu hoch Alarmverzögerung",
+                            DPNummer = 2265,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4508,
+                            DPBeschreibung = "Raumfeuchte zu tief Alarmprio",
+                            DPNummer = 2266,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4509,
+                            DPBeschreibung = "Raumfeuchte zu tief Alarmverzögerung",
+                            DPNummer = 2267,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4510,
+                            DPBeschreibung = "Zuluftfeuchte zu hoch Alarmprio",
+                            DPNummer = 2268,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4511,
+                            DPBeschreibung = "Zuluftfeuchte zu hoch Alarmverzögerung",
+                            DPNummer = 2269,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4512,
+                            DPBeschreibung = "Zuluftfeuchte zu tief Alarmprio",
+                            DPNummer = 2270,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4513,
+                            DPBeschreibung = "Zuluftfeuchte zu tief Alarmverzögerung",
+                            DPNummer = 2271,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4514,
+                            DPBeschreibung = "Heissgas Temperatur Kreis 2",
+                            DPNummer = 2272,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4515,
+                            DPBeschreibung = "Verdampfungs Druck Kreis 2",
+                            DPNummer = 2273,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4516,
+                            DPBeschreibung = "Sauggas Temperatur Kreis 2",
+                            DPNummer = 2274,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4517,
+                            DPBeschreibung = "Lastzuschaltung für Sequencing",
+                            DPNummer = 2275,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4518,
+                            DPBeschreibung = "Saugdruck Kreis 1",
+                            DPNummer = 2278,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4519,
+                            DPBeschreibung = "Saugdruck Kreis 2",
+                            DPNummer = 2279,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4520,
+                            DPBeschreibung = "Raumtemp Sammelalarm",
+                            DPNummer = 2284,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4521,
+                            DPBeschreibung = "Raumtemp Sammelalarm",
+                            DPNummer = 2285,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4522,
+                            DPBeschreibung = "Zulufttemp Sammelalarm",
+                            DPNummer = 2286,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4523,
+                            DPBeschreibung = "Zulufttemp Sammelalarm",
+                            DPNummer = 2287,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4524,
+                            DPBeschreibung = "Wassertemp Sammelalarm",
+                            DPNummer = 2288,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4525,
+                            DPBeschreibung = "Wassertemp Sammelalarm",
+                            DPNummer = 2289,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4526,
+                            DPBeschreibung = "Raumfeuchte Sammelalarm",
+                            DPNummer = 2290,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4527,
+                            DPBeschreibung = "Raumfeuchte Sammelalarm",
+                            DPNummer = 2291,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4528,
+                            DPBeschreibung = "Zuluftfeuchte Sammelalarm",
+                            DPNummer = 2292,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4529,
+                            DPBeschreibung = "Zuluftfeuchte Sammelalarm",
+                            DPNummer = 2293,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4530,
+                            DPBeschreibung = "eheat 1 Konfiguriert",
+                            DPNummer = 4800,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4531,
+                            DPBeschreibung = "eheat 1 Handbedienung aktiv",
+                            DPNummer = 4801,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4532,
+                            DPBeschreibung = "eheat 1 Alarm",
+                            DPNummer = 4802,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4533,
+                            DPBeschreibung = "eheat 1 Ein/Aus",
+                            DPNummer = 4803,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4534,
+                            DPBeschreibung = "eheat 1 Hand Ein/Aus Zustand",
+                            DPNummer = 4804,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4535,
+                            DPBeschreibung = "eheat 1 Sammelalarm",
+                            DPNummer = 4805,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4536,
+                            DPBeschreibung = "eheat 1 Heizungstyp",
+                            DPNummer = 4808,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4537,
+                            DPBeschreibung = "eheat 1 Start Temp",
+                            DPNummer = 4809,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4538,
+                            DPBeschreibung = "eheat 1 Stop hysterese",
+                            DPNummer = 4810,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4539,
+                            DPBeschreibung = "eheat 1 Steigung",
+                            DPNummer = 4811,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4540,
+                            DPBeschreibung = "eheat 1 Dig out",
+                            DPNummer = 4812,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4541,
+                            DPBeschreibung = "eheat 1 Dig Alarm in",
+                            DPNummer = 4813,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4542,
+                            DPBeschreibung = "eheat 1 Alarmprio",
+                            DPNummer = 4814,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4543,
+                            DPBeschreibung = "eheat 1 Alarmverzögerung",
+                            DPNummer = 4815,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4544,
+                            DPBeschreibung = "eheat 1 Laufzeit",
+                            DPNummer = 4816,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4545,
+                            DPBeschreibung = "eheat 1 Stetiges PWM Signal (Nur E-Hzg 1)",
+                            DPNummer = 4817,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4546,
+                            DPBeschreibung = "eheat 2 Konfiguriert",
+                            DPNummer = 4900,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4547,
+                            DPBeschreibung = "eheat 2 Handbedienung aktiv",
+                            DPNummer = 4901,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4548,
+                            DPBeschreibung = "eheat 2 Alarm",
+                            DPNummer = 4902,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4549,
+                            DPBeschreibung = "eheat 2 Ein/Aus",
+                            DPNummer = 4903,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4550,
+                            DPBeschreibung = "eheat 2 Hand Ein/Aus Zustand",
+                            DPNummer = 4904,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4551,
+                            DPBeschreibung = "eheat 2 Sammelalarm",
+                            DPNummer = 4905,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4552,
+                            DPBeschreibung = "eheat 2 Heizungstyp",
+                            DPNummer = 4908,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4553,
+                            DPBeschreibung = "eheat 2 Start Temp",
+                            DPNummer = 4909,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4554,
+                            DPBeschreibung = "eheat 2 Stop hysterese",
+                            DPNummer = 4910,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4555,
+                            DPBeschreibung = "eheat 2 Steigung",
+                            DPNummer = 4911,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4556,
+                            DPBeschreibung = "eheat 2 Dig out",
+                            DPNummer = 4912,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4557,
+                            DPBeschreibung = "eheat 2 Dig Alarm in",
+                            DPNummer = 4913,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4558,
+                            DPBeschreibung = "eheat 2 Alarmprio",
+                            DPNummer = 4914,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4559,
+                            DPBeschreibung = "eheat 2 Alarmverzögerung",
+                            DPNummer = 4915,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4560,
+                            DPBeschreibung = "eheat 2 Laufzeit",
+                            DPNummer = 4916,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4561,
+                            DPBeschreibung = "eheat 2 Stetiges PWM Signal (Nur E-Hzg 1)",
+                            DPNummer = 4917,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4562,
+                            DPBeschreibung = "eheat 3 Konfiguriert",
+                            DPNummer = 5000,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4563,
+                            DPBeschreibung = "eheat 3 Handbedienung aktiv",
+                            DPNummer = 5001,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4564,
+                            DPBeschreibung = "eheat 3 Alarm",
+                            DPNummer = 5002,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4565,
+                            DPBeschreibung = "eheat 3 Ein/Aus",
+                            DPNummer = 5003,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4566,
+                            DPBeschreibung = "eheat 3 Hand Ein/Aus Zustand",
+                            DPNummer = 5004,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4567,
+                            DPBeschreibung = "eheat 3 Sammelalarm",
+                            DPNummer = 5005,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4568,
+                            DPBeschreibung = "eheat 3 Heizungstyp",
+                            DPNummer = 5008,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4569,
+                            DPBeschreibung = "eheat 3 Start Temp",
+                            DPNummer = 5009,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4570,
+                            DPBeschreibung = "eheat 3 Stop hysterese",
+                            DPNummer = 5010,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4571,
+                            DPBeschreibung = "eheat 3 Steigung",
+                            DPNummer = 5011,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4572,
+                            DPBeschreibung = "eheat 3 Dig out",
+                            DPNummer = 5012,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4573,
+                            DPBeschreibung = "eheat 3 Dig Alarm in",
+                            DPNummer = 5013,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4574,
+                            DPBeschreibung = "eheat 3 Alarmprio",
+                            DPNummer = 5014,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4575,
+                            DPBeschreibung = "eheat 3 Alarmverzögerung",
+                            DPNummer = 5015,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4576,
+                            DPBeschreibung = "eheat 3 Laufzeit",
+                            DPNummer = 5016,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4577,
+                            DPBeschreibung = "eheat 3 Stetiges PWM Signal (Nur E-Hzg 1)",
+                            DPNummer = 5017,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4578,
+                            DPBeschreibung = "eheat 4 Konfiguriert",
+                            DPNummer = 5100,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4579,
+                            DPBeschreibung = "eheat 4 Handbedienung aktiv",
+                            DPNummer = 5101,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4580,
+                            DPBeschreibung = "eheat 4 Alarm",
+                            DPNummer = 5102,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4581,
+                            DPBeschreibung = "eheat 4 Ein/Aus",
+                            DPNummer = 5103,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4582,
+                            DPBeschreibung = "eheat 4 Hand Ein/Aus Zustand",
+                            DPNummer = 5104,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4583,
+                            DPBeschreibung = "eheat 4 Sammelalarm",
+                            DPNummer = 5105,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4584,
+                            DPBeschreibung = "eheat 4 Heizungstyp",
+                            DPNummer = 5108,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4585,
+                            DPBeschreibung = "eheat 4 Start Temp",
+                            DPNummer = 5109,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4586,
+                            DPBeschreibung = "eheat 4 Stop hysterese",
+                            DPNummer = 5110,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4587,
+                            DPBeschreibung = "eheat 4 Steigung",
+                            DPNummer = 5111,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4588,
+                            DPBeschreibung = "eheat 4 Dig out",
+                            DPNummer = 5112,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4589,
+                            DPBeschreibung = "eheat 4 Dig Alarm in",
+                            DPNummer = 5113,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4590,
+                            DPBeschreibung = "eheat 4 Alarmprio",
+                            DPNummer = 5114,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4591,
+                            DPBeschreibung = "eheat 4 Alarmverzögerung",
+                            DPNummer = 5115,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4592,
+                            DPBeschreibung = "eheat 4 Laufzeit",
+                            DPNummer = 5116,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4593,
+                            DPBeschreibung = "eheat 4 Stetiges PWM Signal (Nur E-Hzg 1)",
+                            DPNummer = 5117,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4594,
+                            DPBeschreibung = "komp 1 konfiguriert",
+                            DPNummer = 4400,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4595,
+                            DPBeschreibung = "komp 1 Handbedienung aktiv",
+                            DPNummer = 4401,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4596,
+                            DPBeschreibung = "komp 1 Hand ein/aus",
+                            DPNummer = 4402,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4597,
+                            DPBeschreibung = "komp 1 ein/aus",
+                            DPNummer = 4403,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4598,
+                            DPBeschreibung = "Komp 1 Alarm",
+                            DPNummer = 4404,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4599,
+                            DPBeschreibung = "Komp 1 Alarm LP",
+                            DPNummer = 4405,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4600,
+                            DPBeschreibung = "Komp 1 Sammelalarm",
+                            DPNummer = 4407,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4601,
+                            DPBeschreibung = "Komp 1 Sammelalarm bei LP",
+                            DPNummer = 4408,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4602,
+                            DPBeschreibung = "komp 1 Sommer Start Temp",
+                            DPNummer = 4416,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4603,
+                            DPBeschreibung = "komp 1 Sommer Stop hysterese",
+                            DPNummer = 4417,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4604,
+                            DPBeschreibung = "komp 1 Winter Start Temp",
+                            DPNummer = 4418,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4605,
+                            DPBeschreibung = "komp 1 Winter Stop hysterese",
+                            DPNummer = 4419,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4606,
+                            DPBeschreibung = "komp 1 Dig out",
+                            DPNummer = 4420,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4607,
+                            DPBeschreibung = "komp 1 Dig Alarm in",
+                            DPNummer = 4421,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4608,
+                            DPBeschreibung = "komp 1 Alarmpriorität",
+                            DPNummer = 4422,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4609,
+                            DPBeschreibung = "komp 1 Alarmverzögerung",
+                            DPNummer = 4423,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4610,
+                            DPBeschreibung = "komp 1 Dig Alarm in LP",
+                            DPNummer = 4424,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4611,
+                            DPBeschreibung = "komp 1 Alarmpriorität LP",
+                            DPNummer = 4425,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4612,
+                            DPBeschreibung = "komp 1 Alarmverzögerung LP",
+                            DPNummer = 4426,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4613,
+                            DPBeschreibung = "komp 1 Kompressorpause",
+                            DPNummer = 4427,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4614,
+                            DPBeschreibung = "komp 1 Laufzeit",
+                            DPNummer = 4428,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4615,
+                            DPBeschreibung = "komp 1 ND Management Zeit",
+                            DPNummer = 4429,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4616,
+                            DPBeschreibung = "komp 1 ND Management Druck",
+                            DPNummer = 4430,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4617,
+                            DPBeschreibung = "komp 1 ND Management Versuche",
+                            DPNummer = 4431,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4618,
+                            DPBeschreibung = "komp 1 HD Management Zeit fehlt",
+                            DPNummer = 4432,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4619,
+                            DPBeschreibung = "komp 1 HD Management Druck fehlt",
+                            DPNummer = 4433,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4620,
+                            DPBeschreibung = "komp 1 HD Management Versuche fehlt",
+                            DPNummer = 4434,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4621,
+                            DPBeschreibung = "komp 1 HD Management Modus",
+                            DPNummer = 4435,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4622,
+                            DPBeschreibung = "komp 2 konfiguriert",
+                            DPNummer = 4500,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4623,
+                            DPBeschreibung = "komp 2 Handbedienung aktiv",
+                            DPNummer = 4501,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4624,
+                            DPBeschreibung = "komp 2 Hand ein/aus",
+                            DPNummer = 4502,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4625,
+                            DPBeschreibung = "komp 2 ein/aus",
+                            DPNummer = 4503,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4626,
+                            DPBeschreibung = "Komp 2 Alarm",
+                            DPNummer = 4504,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4627,
+                            DPBeschreibung = "Komp 2 Alarm LP",
+                            DPNummer = 4505,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4628,
+                            DPBeschreibung = "Komp 2 Sammelalarm",
+                            DPNummer = 4507,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4629,
+                            DPBeschreibung = "Komp 2 Sammelalarm bei LP",
+                            DPNummer = 4508,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4630,
+                            DPBeschreibung = "komp 2 Sommer Start Temp",
+                            DPNummer = 4516,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4631,
+                            DPBeschreibung = "komp 2 Sommer Stop hysterese",
+                            DPNummer = 4517,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4632,
+                            DPBeschreibung = "komp 2 Winter Start Temp",
+                            DPNummer = 4518,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4633,
+                            DPBeschreibung = "komp 2 Winter Stop hysterese",
+                            DPNummer = 4519,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4634,
+                            DPBeschreibung = "komp 2 Dig out",
+                            DPNummer = 4520,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4635,
+                            DPBeschreibung = "komp 2 Dig Alarm in",
+                            DPNummer = 4521,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4636,
+                            DPBeschreibung = "komp 2 Alarmpriorität",
+                            DPNummer = 4522,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4637,
+                            DPBeschreibung = "komp 2 Alarmverzögerung",
+                            DPNummer = 4523,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4638,
+                            DPBeschreibung = "komp 2 Dig Alarm in LP",
+                            DPNummer = 4524,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4639,
+                            DPBeschreibung = "komp 2 Alarmpriorität LP",
+                            DPNummer = 4525,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4640,
+                            DPBeschreibung = "komp 2 Alarmverzögerung LP",
+                            DPNummer = 4526,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4641,
+                            DPBeschreibung = "komp 2 Kompressorpause",
+                            DPNummer = 4527,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4642,
+                            DPBeschreibung = "komp 2 Laufzeit",
+                            DPNummer = 4528,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4643,
+                            DPBeschreibung = "komp 2 ND Management Zeit",
+                            DPNummer = 4529,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4644,
+                            DPBeschreibung = "komp 2 ND Management Druck",
+                            DPNummer = 4530,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4645,
+                            DPBeschreibung = "komp 2 ND Management Versuche",
+                            DPNummer = 4531,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4646,
+                            DPBeschreibung = "komp 2 HD Management Zeit fehlt",
+                            DPNummer = 4532,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4647,
+                            DPBeschreibung = "komp 2 HD Management Druck fehlt",
+                            DPNummer = 4533,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4648,
+                            DPBeschreibung = "komp 2 HD Management Versuche fehlt",
+                            DPNummer = 4534,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4649,
+                            DPBeschreibung = "komp 2 HD Management Modus",
+                            DPNummer = 4535,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4650,
+                            DPBeschreibung = "saugd 1 Konfiguriert",
+                            DPNummer = 4600,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4651,
+                            DPBeschreibung = "saugd 1 Handbetrieb aktiv",
+                            DPNummer = 4601,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4652,
+                            DPBeschreibung = "saugd 1 Start Temp",
+                            DPNummer = 4608,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4653,
+                            DPBeschreibung = "saugd 1 Steigung",
+                            DPNummer = 4609,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4654,
+                            DPBeschreibung = "saugd 1 Analog out",
+                            DPNummer = 4610,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4655,
+                            DPBeschreibung = "saugd 1 Öffnungsgrad",
+                            DPNummer = 4611,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4656,
+                            DPBeschreibung = "saugd 1 Zustand bei Handbetrieb",
+                            DPNummer = 4612,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4657,
+                            DPBeschreibung = "saugd 1 Mindestöffnungsgrad",
+                            DPNummer = 4613,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4658,
+                            DPBeschreibung = "saugd 2 Konfiguriert",
+                            DPNummer = 4700,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4659,
+                            DPBeschreibung = "saugd 2 Handbetrieb aktiv",
+                            DPNummer = 4701,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4660,
+                            DPBeschreibung = "saugd 2 Start Temp",
+                            DPNummer = 4708,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4661,
+                            DPBeschreibung = "saugd 2 Steigung",
+                            DPNummer = 4709,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4662,
+                            DPBeschreibung = "saugd 2 Analog out",
+                            DPNummer = 4710,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4663,
+                            DPBeschreibung = "saugd 2 Öffnungsgrad",
+                            DPNummer = 4711,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4664,
+                            DPBeschreibung = "saugd 2 Zustand bei Handbetrieb",
+                            DPNummer = 4712,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4665,
+                            DPBeschreibung = "saugd 2 Mindestöffnungsgrad",
+                            DPNummer = 4713,
+                            DPWert = "0"
+                        },
+                        new
+                        {
+                            DatenpunktId = 4666,
+                            DPBeschreibung = "eheat 1 Stetiges PWM Signal bei Handbetrieb (Nur E-Hzg 1)",
+                            DPNummer = 4818,
                             DPWert = "0"
                         });
                 });

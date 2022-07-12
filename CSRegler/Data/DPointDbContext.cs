@@ -1091,7 +1091,7 @@ internal sealed class DPointDbContext : DbContext
         postsToSeed[1065] = new Datenpunkt { DatenpunktId = 1065, DPNummer = 8536, DPWert = $"0", DPBeschreibung = $"sensor 19 limit alarm" };
         postsToSeed[1066] = new Datenpunkt { DatenpunktId = 1066, DPNummer = 8537, DPWert = $"0", DPBeschreibung = $"sensor 20 limit alarm" };
         postsToSeed[1067] = new Datenpunkt { DatenpunktId = 1067, DPNummer = 8538, DPWert = $"0", DPBeschreibung = $"sensor 21 limit alarm" };
-        postsToSeed[1068] = new Datenpunkt { DatenpunktId = 1068, DPNummer = 8539, DPWert = $"0", DPBeschreibung = $"sensor 1 defect alarm" };
+        postsToSeed[1068] = new Datenpunkt { DatenpunktId = 1068, DPNummer = 10001, DPWert = $"0", DPBeschreibung = $"netmask" };
         postsToSeed[1069] = new Datenpunkt { DatenpunktId = 1069, DPNummer = 8539, DPWert = $"0", DPBeschreibung = $"sensor 1 defect alarm" };
         postsToSeed[1070] = new Datenpunkt { DatenpunktId = 1070, DPNummer = 8540, DPWert = $"0", DPBeschreibung = $"sensor 2 defect alarm" };
         postsToSeed[1071] = new Datenpunkt { DatenpunktId = 1071, DPNummer = 8541, DPWert = $"0", DPBeschreibung = $"sensor 3 defect alarm" };
