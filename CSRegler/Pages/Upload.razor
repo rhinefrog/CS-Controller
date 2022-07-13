@@ -130,15 +130,21 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
-<InputFile OnChange="@UploadFile" />
-
-@if (ImgUrl != null)
-{
+ <RadzenCard class="m-3">
     <div>
-        <img src="@ImgUrl" style="width:100px" />
+        <label>Before you select a File(only png is allowed), please rename it to: logo.png</label>
+        <InputFile OnChange="@UploadFile" Accept="image/png"/>
+        <progress value="@Wert" max="100"></progress>
+    </div>
+    @if (ImgUrl != null)
+    {
+    <div>
+        <img src="/img/logo.png" style="width:200px" />
 
     </div>
-}
+    }
+    </RadzenCard>
+
  </div>
  </div>
 
@@ -146,17 +152,25 @@ button:hover {  opacity: 0.8;}
 </html>
 @inject IJSRuntime JsRuntime
 
- @code {
-  private string ImgUrl;
+@code {
+    private string ImgUrl;
+    public int Wert;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Wert = 0;
+    }
 
     private async Task UploadFile(InputFileChangeEventArgs e)
     {
-        var path = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", e.File.Name);
-        var newFilePath = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", "logo.png");
+        Wert = 0;
+        var path = Path.Combine(Environment.ContentRootPath, "wwwroot", "img", e.File.Name);
+        //var newFilePath = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", "logo.png");
         await using FileStream fs = new(path, FileMode.Create);
         await e.File.OpenReadStream().CopyToAsync(fs);
-        ImgUrl = Path.Combine("https://localhost:7265/", "upload", e.File.Name);
-        System.IO.File.Move(path, newFilePath);
+        ImgUrl = Path.Combine("https://localhost:5000/", "upload", e.File.Name);
+        //System.IO.File.Move(path, newFilePath);
+        Wert = 100;
     }
 
 }
