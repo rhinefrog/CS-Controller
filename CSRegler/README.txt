@@ -49,6 +49,7 @@ um nur time zu bekommen-->
 database:
 via console: 
 dotnet ef migrations add MeinDBName --context ContextName
+dotnet ef migrations remove MeinDBName --context ContextName
 dotnet ef database update --context ContextName
 
 DB und db-shm und sd-wal markieren und Eigenschaft -> immer mit kopieren auswählen

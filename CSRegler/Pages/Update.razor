@@ -4,8 +4,18 @@
 
 <EditForm Model="_postToUpdate" OnValidSubmit="UpdatePostAsync">
     <div class="form-group mb-3">
-        <label for="postTitle">Datapoint</label>
-        <InputText @bind-Value="_postToUpdate.DPBeschreibung" class="form-control" id="postTitle" />
+        <label for="postTitle">Beschreibung DE</label>
+        <InputText @bind-Value="_postToUpdate.DPBeschreibung" class="form-control" id="postTitle" readonly="true" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="postTitle1">Beschreibung EN</label>
+        <InputText @bind-Value="_postToUpdate.DPBeschreibungEN" class="form-control" id="postTitle1" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="postTitle2">Range</label>
+        <InputText @bind-Value="_postToUpdate.DPRange" class="form-control" id="postTitle2" />
     </div>
 
     <div class="form-group mb-3">

@@ -123,13 +123,7 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
- <div class='card'>
-<h2>Din</h2>
-<table>
-<tr>
-<td>
-<label for='din1'>Choose din  1:</label></td><td>
-<select name='din1' id='din1'>
+<!--
 <option value='none'>-none-</option>
 <option value='Fan failure'>Fan failure</option>
 <option value='Compressor failure'>Compressor failure</option>
@@ -156,892 +150,1262 @@ button:hover {  opacity: 0.8;}
 <option value='ENS 5µS'>ENS 5µS</option> 
 <option value='Phase control'>Phase control</option>
 <option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin1'>
-</td>
-<td>
-<label for='din2'>Choose din  2:</label></td><td>
-<select name='din2' id='din2'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin2'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din3'>Choose din  3:</label></td><td>
-<select name='din3' id='din3'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin3'>
-</td>
-<td>
-<label for='din4'>Choose din  4:</label></td><td>
-<select name='din4' id='din4'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin4'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din5'>Choose din  5:</label></td><td>
-<select name='din5' id='din5'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin5'>
-</td>
-<td>
-<label for='din6'>Choose din  6:</label></td><td>
-<select name='din6' id='din6'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin6'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din7'>Choose din  7:</label></td><td>
-<select name='din7' id='din7'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin7'>
-</td>
-<td>
-<label for='din8'>Choose din  8:</label></td><td>
-<select name='din8' id='din8'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin8'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din9'>Choose din  9:</label></td><td>
-<select name='din9' id='din9'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin9'>
-</td>
-<td>
-<label for='din10'>Choose din 10:</label></td><td>
-<select name='din10' id='din10'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin10'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din11'>Choose din 11:</label></td><td>
-<select name='din11' id='din11'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin11'>
-</td>
-<td>
-<label for='din12'>Choose din 12:</label></td><td>
-<select name='din12' id='din12'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin12'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din13'>Choose din 13:</label></td><td>
-<select name='din13' id='din13'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin3'>
-</td>
-<td>
-<label for='din14'>Choose din 14:</label></td><td>
-<select name='din14' id='din14'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin14'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din15'>Choose din 15:</label></td><td>
-<select name='din15' id='din15'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin15'>
-</td>
-<td>
-<label for='din16'>Choose din 16:</label></td><td>
-<select name='din16' id='din16'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin16'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din17'>Choose din 17:</label></td><td>
-<select name='din17' id='din17'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin17'>
-</td>
-<td>
-<label for='din18'>Choose din 18:</label></td><td>
-<select name='din18' id='din18'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin18'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din19'>Choose din 19:</label></td><td>
-<select name='din19' id='din19'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin19'>
-</td>
-<td>
-<label for='din20'>Choose din 20:</label></td><td>
-<select name='din20' id='din20'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin20'>
-</td>
-</tr>
-<tr>
-<td>
-<label for='din21'>Choose din 21:</label></td><td>
-<select name='din21' id='din21'>
-<option value='none'>-none-</option>
-<option value='Fan failure'>Fan failure</option>
-<option value='Compressor failure'>Compressor failure</option>
-<option value='Pump failure 1'>Pump failure 1</option>
-<option value='Low pressure 1'>Low pressure 1</option>
-<option value='Chiller failure'>Chiller failure</option>
-<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
-<option value='Filter alarm'>Filter alarm</option>
-<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
-<option value='Water detection'>Water detection</option>
-<option value='ext. alarm 1'>ext. alarm 1</option>
-<option value='Compressor failure 2'>Compressor failure 2</option>
-<option value='ext. alarm 2'>ext. alarm 2</option>
-<option value='low pressure 2'>low pressure 2</option>
-<option value='Remote on/off'>Remote on/off</option>
-<option value='Fire stat'>Fire stat</option>
-<option value='UPS'>UPS</option>
-<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
-<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
-<option value='Drycooler failure'>Drycooler failure</option>
-<option value='CW disable/DX enable'>CW disable/DX enable</option>
-<option value='ext. alarm 3'>ext. alarm 3</option>
-<option value='ext. alarm 4'>ext. alarm 4</option>
-<option value='ENS 5µS'>ENS 5µS</option> 
-<option value='Phase control'>Phase control</option>
-<option value='Pump failure 3'>Pump failure 3</option>
-<option value='Pump failure 4'>Pump failure 4</option>
-</select></td><td>
-<input type='submit' value='Set' name='paramDin21'>
-</td>
-</tr>
-</table>
+<option value='Pump failure 4'>Pump failure 4</option>-->
+<!-- Tab links -->
 
-<table class="table table-responsive table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Beschreibung</th>
-            <th scope="col">Datenpunkt</th>
-            <th scope="col">Wert</th>
-            <th scope="col">CRUD</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (_datenpunkte != null)
-        {
-            foreach (var datenpunkt in _datenpunkte)
-            {
-                 if (datenpunkt.DPNummer.Equals(10300))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-            }
-        }
-    </tbody>
-</table>
- </div>
+<RadzenTabs TabPosition="TabPosition.Left" style="width: 1000px; margin-left: -100px;"  @bind-SelectedIndex=@selectedIndex Change=@OnChanged>
+    <Tabs>
+        <RadzenTabsItem Text="Din 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1800))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1801))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 3">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1802))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 4">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1803))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 5">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1804))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 6">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1805))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 7">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1806))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 8">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1807))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 9">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1808))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 10">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1809))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 11">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1810))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 12">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1811))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 13">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1812))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 14">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1813))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 15">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1814))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 16">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1815))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 17">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1816))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 18">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1817))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 19">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1818))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 20">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1819))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 21">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1820))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 22">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1821))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 23">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1822))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 24">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1823))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 25">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1824))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 26">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1825))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 27">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1826))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 28">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1827))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 29">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1828))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 30">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1829))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 31">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1830))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 32">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1831))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 33">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1832))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 34">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1833))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 35">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1834))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 36">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1835))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 37">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1836))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 38">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1837))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 39">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1838))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 40">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1839))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 41">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1840))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 42">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1841))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 43">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1842))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+		
+		
+	</Tabs>
+</RadzenTabs>
  </div>
  </div>
 
@@ -1052,6 +1416,7 @@ button:hover {  opacity: 0.8;}
 @inject IJSRuntime JsRuntime
 
 @code {
+    int selectedIndex = 0;
     private List<Datenpunkt> _datenpunkte = null;
     public string seite = "/din";
 
@@ -1060,5 +1425,9 @@ button:hover {  opacity: 0.8;}
         using var context = new DPointDbContext();
 
         _datenpunkte = await context.Datenpunkte.ToListAsync();
+    }
+     void OnChanged(int index)
+    {
+//        console.Log($"Tab with index {index} was selected.");
     }
 }

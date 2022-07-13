@@ -73,13 +73,9 @@
 		<None Update="DPNummer.db-shm">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-		<None Update="DPNummer.db-wal">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Migrations\" />
 	  <Folder Include="wwwroot\uploads\" />
 	</ItemGroup>
 </Project>

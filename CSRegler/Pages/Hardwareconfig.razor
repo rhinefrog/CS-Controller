@@ -120,251 +120,136 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
- <div class='card'>
+<!--
  <h2>Expansion card slot 1:</h2>
- <select name='expansioncard1' id='expansioncard1'>
+ <-- name='expansioncard1' id='expansioncard1'>
  <option class='active' value='none'>-None-</option>
  <option value='digital1'>digital exp. 1</option>
  <option value='digital2'>digital exp. 2</option>
  <option value='analog1'>analog exp. 1</option>
  <option value='analog2'>analog exp. 2</option>
- </select>
- <br>
- <input type='submit' value='Send' name='Send'>
- </div>
- <div class='card'>
- <h2>Expansion card slot 2:</h2>
- <select name='expansioncard2' id='expansioncard2'>
- <option class='active' value='none'>-None-</option>
- <option value='digital1'>digital exp. 1</option>
- <option value='digital2'>digital exp. 2</option>
- <option value='analog1'>analog exp. 1</option>
- <option value='analog2'>analog exp. 2</option>
- </select>
- <br>
- <input type='submit' value='Send' name='Send'>
- </div>
-  <div class='card'>
- <h2>Expansion card slot 3:</h2>
- <select name='expansioncard3' id='expansioncard3'>
- <option class='active' value='none'>-None-</option>
- <option value='digital1'>digital exp. 1</option>
- <option value='digital2'>digital exp. 2</option>
- <option value='analog1'>analog exp. 1</option>
- <option value='analog2'>analog exp. 2</option>
- </select>
- <br>
- <input type='submit' value='Send' name='Send'>
- </div>
- <div class='card'>
- <h2>Expansion card slot 4:</h2>
- <select name='expansioncard4' id='expansioncard4'>
- <option class='active' value='none'>-None-</option>
- <option value='digtal1'>digital exp. 1</option>
- <option value='digital2'>digital exp. 2</option>
- <option value='analog1'>analog exp. 1</option>
- <option value='analog2'>analog exp. 2</option>
- </select>
- <br>
- <table class="table table-responsive table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Beschreibung</th>
-            <th scope="col">Datenpunkt</th>
-            <th scope="col">Wert</th>
-            <th scope="col">CRUD</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (_datenpunkte != null)
-        {
-            foreach (var datenpunkt in _datenpunkte)
-            {
-                 if (datenpunkt.DPNummer.Equals(10300))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
-                {
-                <tr>
-                   <th scope="row">@datenpunkt.DPBeschreibung</th>
-                   <td>@datenpunkt.DPNummer</td>
-                   <td>@datenpunkt.DPWert</td>
-                   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
-                </tr>
-                }
-            }
-        }
-    </tbody>
-</table>
- </div>
+ -->
+ <RadzenTabs TabPosition="TabPosition.Left" style="width: 1000px; margin-left: -100px;"  @bind-SelectedIndex=@selectedIndex Change=@OnChanged>
+    <Tabs>
+        <RadzenTabsItem Text="Expansion Card 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(57))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Expansion Card 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(58))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Expansion Card  3">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(59))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Expansion Card  4">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Beschreibung</th>
+						<th scope="col">Datenpunkt</th>
+						<th scope="col">Wert</th>
+						<th scope="col">CRUD</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(60))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId/@seite" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+		
+	</Tabs>
+</RadzenTabs>
  </div>
  </div>
  </body>
@@ -372,6 +257,7 @@ button:hover {  opacity: 0.8;}
 @inject IJSRuntime JsRuntime
 
 @code {
+    int selectedIndex = 0;
     private List<Datenpunkt> _datenpunkte = null;
     public string seite = "/hardwareconfig";
 
@@ -380,6 +266,10 @@ button:hover {  opacity: 0.8;}
         using var context = new DPointDbContext();
 
         _datenpunkte = await context.Datenpunkte.ToListAsync();
+    }
+     void OnChanged(int index)
+    {
+//        console.Log($"Tab with index {index} was selected.");
     }
 }
 

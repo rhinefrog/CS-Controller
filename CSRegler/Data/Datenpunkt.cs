@@ -15,4 +15,11 @@ internal sealed class Datenpunkt
 
     [MaxLength(200)]
     public string DPBeschreibung { get; set; } = string.Empty;
+
+    [MaxLength(200)]
+    public string DPBeschreibungEN { get; set; } = string.Empty;
+
+    [MaxLength(200)]
+    public string DPRange { get; set; } = string.Empty;
+
 }
