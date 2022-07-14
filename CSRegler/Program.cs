@@ -1,6 +1,7 @@
 using CSRegler.Areas.Identity;
 using CSRegler.Data;
 using CSRegler.Shared;
+using CSRegler.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
@@ -34,7 +35,8 @@ builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
-
+//register fileupload service
+builder.Services.AddSingleton<IUploadFileService, UploadFileService>();
 
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddLocalization();

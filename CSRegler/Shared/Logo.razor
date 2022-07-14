@@ -1,1 +1,23 @@
-﻿<img src="img/logo.png" width="150px" height="50" />
+﻿@using Services
+@using Models
+@inject IWebHostEnvironment Environment
+@inject IUploadFileService FileService
+
+                           @foreach (var item in uplodedFileModels)
+                           {
+                                if (item.Equals(uplodedFileModels.Last()))
+                                   {                                            
+                                   <img src=@item.FileUrl width="150" height="50">
+                               } 
+                           }
+
+@code{
+    List<UplodedFileModel> uplodedFileModels = new List<UplodedFileModel>();     
+
+    //call LoadFiletotable method in page init
+    protected override async Task OnInitializedAsync()
+    {
+        uplodedFileModels = await FileService.GetAllFilesAsync();
+
+    }
+}

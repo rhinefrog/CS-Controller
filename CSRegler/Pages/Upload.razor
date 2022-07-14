@@ -13,8 +13,10 @@
 @using Microsoft.AspNetCore.Http
 @inject IStringLocalizer<CSReglerResource> Loc
 @inject NotificationService NotificationService
-@using Microsoft.AspNetCore.Hosting
+@using Services
+@using Models
 @inject IWebHostEnvironment Environment
+@inject IUploadFileService FileService
 <PageTitle>File Upload</PageTitle>
 
 
@@ -130,20 +132,86 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
- <RadzenCard class="m-3">
-    <div>
-        <label>Before you select a File(only png is allowed), please rename it to: logo.png</label>
-        <InputFile OnChange="@UploadFile" Accept="image/png"/>
-        <progress value="@Wert" max="100"></progress>
-    </div>
-    @if (ImgUrl != null)
-    {
-    <div>
-        <img src="/img/logo.png" style="width:200px" />
+ <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           <div class="card">
+                <div class="card-header">
+                    <span>Please Select File of this format and size :
+                    @foreach (var item in AcceptedFileTypes)
+                    {
+                        <span class="badge bg-success m-1">@item</span>
+                        
+                    }
+                    </span>
+                    <span class="badge bg-success">File Size : @AcceptedMaxFileSize Bytes</span>
+                </div>
+                <div class="card-body">
 
+                    <InputFile OnChange="@HandelFileChange" class="form-control" aria-label="Select File"></InputFile>
+                    <br />
+                    @if(SelectedFileNotification)
+                    {
+                        <div class="@AlertCssClass" role="alert">
+                            @foreach (var item in SelectedFileDetails)
+                            {
+                                <p>@item</p>
+                                
+                            }
+
+                        </div>
+                    }
+                    @if(ShowUploadBtn)
+                    {
+                        <button @onclick="@(async ()=>await HandelUpload())" class="btn btn-success">Upload SelectedFile</button>
+
+                    }
+
+                </div>
+            </div>
+           @* Table to Show Uploaded Files*@
+           <div class="card">
+               <div class="card-header">
+                   <h3>Uploaded Files Table</h3>
+
+               </div>
+               <div class="card-body">
+
+                   <table class="table table-bordered">
+                       <thead>
+                           <tr>
+                               <th>#</th>
+                               <th>File Name</th>
+                               <th>Sile Size</th>
+                               <th>File Format</th>
+                               <th>Image</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           @foreach (var item in uplodedFileModels)
+                           {
+                                if (item.Equals(uplodedFileModels.Last()))
+                                   {                                            
+                                   <tr>
+                                   <td>@item.Id</td>
+                                   <td>@item.FileName</td>
+                                   <td>@item.FileSize</td>
+                                   <td>@item.FileType</td>
+                                   <td>
+                                   <img src=@item.FileUrl class="img-thumbnail" width="100" height="100">
+                                   </td>
+                                   </tr>
+                               }
+                              
+                           }
+                       </tbody>
+                   </table>
+
+               </div>
+           </div>
+        </div>
     </div>
-    }
-    </RadzenCard>
+</div>
 
  </div>
  </div>
@@ -152,25 +220,108 @@ button:hover {  opacity: 0.8;}
 </html>
 @inject IJSRuntime JsRuntime
 
-@code {
-    private string ImgUrl;
-    public int Wert;
+@code
+{
+    bool SelectedFileNotification = false;
+    bool ShowUploadBtn = false;
+    int AcceptedMaxFileSize = 3000000;
+    List<string> AcceptedFileTypes = new List<string> { "image/jpg", "image/jpeg", "image/png" };
+    List<string> SelectedFileDetails = new List<string>();
+    string NewFileName = string.Empty;
+    string AlertCssClass = string.Empty;
 
+    IBrowserFile UploadedFile;
+    string PathToUpload = string.Empty;
+
+    //crate a list of model
+    List<UplodedFileModel> uplodedFileModels = new List<UplodedFileModel>();
+
+    private async Task HandelFileChange(InputFileChangeEventArgs e)
+    {
+        UploadedFile = e.File;
+        var selectedFileType = UploadedFile.ContentType;
+        SelectedFileNotification = false;
+        SelectedFileDetails = new List<string>();
+
+        //Check File Size And File Format
+        if(!AcceptedFileTypes.Any(t=>t.Equals(selectedFileType)))
+        {
+            //Set Message For File Type
+            AlertCssClass = "alert alert-danger";
+            SelectedFileDetails.Add("File Type is not Acceptable!");
+            SelectedFileNotification = true;
+            ShowUploadBtn = false;
+            return;
+        }
+        //check file size
+        var selectedFileSize = UploadedFile.Size;
+        if(selectedFileSize>AcceptedMaxFileSize)
+        {
+            AlertCssClass = "alert alert-danger";
+            SelectedFileDetails.Add($"the selected file size is larger than the allowed value {AcceptedMaxFileSize}");
+            SelectedFileNotification = true;
+            ShowUploadBtn = false;
+            return;
+        }
+        //If everything is ok ,change the file name to avoid overwrite
+        var FileExtension = Path.GetExtension(UploadedFile.Name);
+        NewFileName = Guid.NewGuid().ToString() + FileExtension;
+
+        //Place File In IBrowseFile
+
+        PathToUpload = Path.Combine(Environment.WebRootPath, "img", NewFileName);
+
+        SelectedFileNotification = true;
+        ShowUploadBtn = true;
+        AlertCssClass = "alert alert-success";
+        SelectedFileDetails.Add("File Size : " + selectedFileSize.ToString());
+        SelectedFileDetails.Add("File Type :" + selectedFileType);
+        SelectedFileDetails.Add("New File Name : " + NewFileName);
+
+
+
+    }
+    private async Task HandelUpload()
+    {
+        //here we upload the selected file to server
+        await using FileStream fs = new(PathToUpload, FileMode.Create);
+        await UploadedFile.OpenReadStream(AcceptedMaxFileSize).CopyToAsync(fs);
+
+        //Lets Create A model and save file data in it
+        UplodedFileModel model = new UplodedFileModel()
+            {
+                FileName = NewFileName,
+                FileSize = UploadedFile.Size,
+                FileType = UploadedFile.ContentType,
+                FileUrl = "img/" + NewFileName
+            };
+
+        await FileService.AddNewFileAsync(model);
+
+        //clear the notification Messages
+        SelectedFileDetails = new List<string>();
+        //add new message to show to user
+        SelectedFileDetails.Add("The File Uploaded Successfully / please refesh the webpage");
+        SelectedFileNotification = true;
+        //hide upload btn 
+        ShowUploadBtn = false;
+        AlertCssClass = "alert alert-success";
+        //Pupulate Data After Insert
+        await LoadFilesToTable();
+
+
+    }
+    //lets Create a table to show uploaded file detail
+    //fill the model list from database using service
+    private async Task LoadFilesToTable()
+    {
+        uplodedFileModels = await FileService.GetAllFilesAsync();
+    }
+    //call LoadFiletotable method in page init
     protected override async Task OnInitializedAsync()
     {
-        Wert = 0;
-    }
+        await LoadFilesToTable();
 
-    private async Task UploadFile(InputFileChangeEventArgs e)
-    {
-        Wert = 0;
-        var path = Path.Combine(Environment.ContentRootPath, "wwwroot", "img", e.File.Name);
-        //var newFilePath = Path.Combine(Environment.ContentRootPath, "wwwroot", "uploads", "logo.png");
-        await using FileStream fs = new(path, FileMode.Create);
-        await e.File.OpenReadStream().CopyToAsync(fs);
-        ImgUrl = Path.Combine("https://localhost:5000/", "upload", e.File.Name);
-        //System.IO.File.Move(path, newFilePath);
-        Wert = 100;
     }
 
 }
