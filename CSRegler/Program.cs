@@ -12,6 +12,7 @@ using System.Globalization;
 using System.Resources;
 using Radzen;
 
+
 // Register Syncfusion license
 //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTUzMDgzQDMxMzkyZTM0MmUzMFFOSnU1T0NZOVNMYUhpWkpNeGNHS29WZlhvZzFzM29kdHk2L1BRM3ZHdjA9;NTUzMDg0QDMxMzkyZTM0MmUzMERpNlRxOWoxZlJ1R0pVdTVYMEFNYWJVSlB0dnF4NTFqTlh6VGxFUWZiaUU9");
 
@@ -25,7 +26,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+//builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -52,7 +53,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
+//    app.UseMigrationsEndPoint();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

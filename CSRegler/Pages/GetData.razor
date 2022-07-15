@@ -1,4 +1,11 @@
-﻿@page "/ae"
+﻿@page "/chart"
+@using System.IO
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Identity;
+@using System.Collections;
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment HostEnvironment
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 @using System.Globalization
 @using CSRegler.Resources
 @using CSRegler.Pages
@@ -6,7 +13,8 @@
 @using Microsoft.AspNetCore.Http
 @inject IStringLocalizer<CSReglerResource> Loc
 @inject NotificationService NotificationService
-<PageTitle>Ae</PageTitle>
+
+<PageTitle>Charts</PageTitle>
 
 
 
@@ -58,13 +66,14 @@ button:hover {  opacity: 0.8;}
 <a href='/unitconfig'>@Loc["Unit Configuration"]</a>
 <a href='/networkconfig'>@Loc["Network Configuration"]</a>
 <a href='/administration'>@Loc["Administration"]</a> 
- <a href='/upload'>@Loc["File Upload"]</a>
- </div>
+<a href='/upload'>@Loc["File Upload"]</a>
+<a class='active' href='/chart'>Charts</a>
+</div>
 
   <div class='row'>
    <div class='leftcolumn' >
      <div class='vertical-menu' >
- <a class='active' href='/ae'>@Loc["ae"]</a>
+ <a href='/ae'>@Loc["ae"]</a>
  <a href='/ain'>@Loc["ain"]</a>
  <a href='/aout'>@Loc["aout"]</a>
  <a href='/bmsstop'>@Loc["bmsstop"]</a>
@@ -121,30 +130,14 @@ button:hover {  opacity: 0.8;}
    </div>
 
  <div class='rightcolumn'>
-<h2>AE Control</h2>
-
+ 
  </div>
  </div>
-
 
  </body>
 </html>
-
 @inject IJSRuntime JsRuntime
 
 @code {
-    int selectedIndex = 0;
-    private List<Datenpunkt> _datenpunkte = null;
-    public string seite = "/ae";
-
-    protected override async Task OnInitializedAsync()
-    {
-        using var context = new DPointDbContext();
-
-        _datenpunkte = await context.Datenpunkte.ToListAsync();
-    }
-     void OnChanged(int index)
-    {
-//        console.Log($"Tab with index {index} was selected.");
-    }
+ 
 }

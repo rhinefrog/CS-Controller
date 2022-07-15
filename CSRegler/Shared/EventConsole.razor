@@ -1,10 +1,10 @@
-﻿@inject IStringLocalizer<App> Localizer
+﻿@inject IStringLocalizer<App> Loc
 @using System.Text.Json
 @inject IJSRuntime JSRuntime
 <RadzenCard @attributes=@Attributes>
     <div class="console-header align-items-center">
-        <h3 class="console-title">@Localizer["Console log"]</h3>
-        <RadzenButton Click=@OnClearClick Text="@Localizer["Clear console"]" ButtonStyle="ButtonStyle.Light" />
+        <h3 class="console-title">@Loc["Console log"]</h3>
+        <RadzenButton Click=@OnClearClick Text="@Loc["Clear console"]" ButtonStyle="ButtonStyle.Light" />
     </div>
     <div class="console-content" @ref=@console>
         @foreach (var message in messages)
