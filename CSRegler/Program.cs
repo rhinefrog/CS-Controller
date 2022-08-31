@@ -13,9 +13,6 @@ using System.Resources;
 using Radzen;
 
 
-// Register Syncfusion license
-//Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTUzMDgzQDMxMzkyZTM0MmUzMFFOSnU1T0NZOVNMYUhpWkpNeGNHS29WZlhvZzFzM29kdHk2L1BRM3ZHdjA9;NTUzMDg0QDMxMzkyZTM0MmUzMERpNlRxOWoxZlJ1R0pVdTVYMEFNYWJVSlB0dnF4NTFqTlh6VGxFUWZiaUU9");
-
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -23,8 +20,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //    options.UseSqlServer(connectionString));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
 
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -36,9 +33,11 @@ builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
+
 //register fileupload service
 builder.Services.AddSingleton<IUploadFileService, UploadFileService>();
-
+builder.Services.AddTransient<TempTimer>();
+builder.Services.AddSingleton<GetTemp>();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddLocalization();
 
@@ -54,8 +53,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
 //    app.UseMigrationsEndPoint();
-    app.UseSwagger();
-    app.UseSwaggerUI();
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
 }
 else
 {

@@ -9,6 +9,11 @@
 @inject NotificationService NotificationService
 @inject NavigationManager NavigationManager
 
+@inject Services.TempTimer aTimer
+
+@using System.Collections.ObjectModel
+@using System.Timers
+
 <PageTitle>Home</PageTitle>
 
 
@@ -61,72 +66,4503 @@ button:hover {  opacity: 0.8;}
 <a href='/networkconfig'>@Loc["Network Configuration"]</a>
 <a href='/administration'>@Loc["Administration"]</a> 
 <a href='/upload'>@Loc["File Upload"]</a>
+</div>
+
+<div class='row'>
+	<div class='leftcolumn' >
+    <!-- Tab links -->
+		<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1450px; margin-left: 5px;"  @bind-SelectedIndex=@selectedIndex Change=@OnChanged>
+			<Tabs>
+				  <RadzenTabsItem Text="Chart">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex1 Change=@OnChanged1>
+							<Tabs>
+								<RadzenTabsItem Text="Temperature">
+									coming soon ...
+								</RadzenTabsItem>		
+								<RadzenTabsItem Text="Humidity">
+									coming soon ...
+								</RadzenTabsItem>		
+								<RadzenTabsItem Text="Pressure">
+									coming soon ...
+								</RadzenTabsItem>		
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+				  <RadzenTabsItem Text="Status">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex1 Change=@OnChanged1>
+							<Tabs>
+								<RadzenTabsItem Text="Refrigerant Schematic">
+									coming soon ...
+								</RadzenTabsItem>		
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>				<RadzenTabsItem Text="AE Control">
+					<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex2 Change=@OnChanged2>
+						<Tabs>
+							<RadzenTabsItem Text="Hallo">
+								<table class="table table-responsive table-striped">
+									<thead>
+										<tr>
+											<th scope="col">@Loc["Beschreibung"]</th>
+											<th scope="col">@Loc["Datenpunkt"]</th>
+											<th scope="col">@Loc["Wert"]</th>
+											<th scope="col">@Loc["CRUD"]</th>
+										</tr>
+									</thead>
+								</table>
+							</RadzenTabsItem>		
+						</Tabs>
+					</RadzenTabs>	
+				</RadzenTabsItem>
+				<RadzenTabsItem Text="AIN">
+					<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex3 Change=@OnChanged3>
+						<Tabs>
+        <RadzenTabsItem Text="Ain 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1900))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 2">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1901))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 3">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1902))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 4">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1903))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 5">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1904))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 6">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1905))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 7">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1906))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 8">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1907))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 9">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1908))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 10">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1909))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 11">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1910))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 12">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1911))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 13">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1912))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 14">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1913))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 15">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1914))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 16">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1915))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 17">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1916))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 18">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1917))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 19">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1918))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 20">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1919))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+								<RadzenTabsItem Text="Ain 21">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+										<tbody>
+											@if (_datenpunkte != null)
+											{
+												foreach (var datenpunkt in _datenpunkte)
+												{
+													if (datenpunkt.DPNummer.Equals(1920))//Datenpunkt
+													{
+														<tr>
+															<th scope="row">@datenpunkt.DPBeschreibung</th>
+															<td>@datenpunkt.DPNummer</td>
+															<td>@datenpunkt.DPWert</td>
+															<td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+														</tr>
+													}
+												}
+											}
+										</tbody>
+									</table>
+								</RadzenTabsItem>
+
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="AOUT">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex4 Change=@OnChanged4>
+							<Tabs>
+								<!--
+<td><select name='aout1' id='aout1'>
+<option value='none'>-none-</option>
+<option value='fan1'>Fan 1</option>
+<option value='fan2'>Fan 2</option>
+<option value='fan3'>Fan 3</option>
+<option value='humi1'>Humidifier 1</option>
+<option value='humi2'>Humidifier 2</option>
+<option value='drycool1'>Drycooler 1</option>
+<option value='drycool2'>Drycooler 2</option>
+<option value='drycool3'>Drycooler 3</option>
+<option value='pump1'>Pump 1</option>
+<option value='pump2'>Pump 2</option>
+<option value='pump3'>Pump 3</option>
+<option value='pump4'>Pump 4</option>
+<option value='cwvalve1'>CW-valve 1</option>
+<option value='cwvalve2'>CW-valve 2</option>-->
+<!-- Tab links -->
+
+<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex17 Change=@OnChanged17>
+    <Tabs>
+        <RadzenTabsItem Text="Aout 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1921))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1922))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 3">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1923))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 4">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1924))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 5">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1925))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 6">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1926))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 7">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1927))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 8">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1928))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 9">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1929))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 10">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1930))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 11">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1931))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 12">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1932))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 13">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1933))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 14">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1934))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 15">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1935))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 16">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1936))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 17">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1937))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 18">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1938))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Aout 19">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1939))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+			</RadzenTabsItem>
+			<RadzenTabsItem Text="Aout 20">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1940))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+
+	</Tabs>
+</RadzenTabs>	
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Bmsstop">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex5 Change=@OnChanged5>
+							<Tabs>
+								<RadzenTabsItem Text="Hallo">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+									</table>
+								</RadzenTabsItem>		
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+										<RadzenTabsItem Text="Common Alarm">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex6 Change=@OnChanged6>
+							<Tabs>
+								<RadzenTabsItem Text="Hallo">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+									</table>
+								</RadzenTabsItem>		
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Coil">
+						<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex7 Change=@OnChanged7>
+							<Tabs>
+								<RadzenTabsItem Text="Hallo">
+									<table class="table table-responsive table-striped">
+										<thead>
+											<tr>
+												<th scope="col">@Loc["Beschreibung"]</th>
+												<th scope="col">@Loc["Datenpunkt"]</th>
+												<th scope="col">@Loc["Wert"]</th>
+												<th scope="col">@Loc["CRUD"]</th>
+											</tr>
+										</thead>
+									</table>
+								</RadzenTabsItem>		
+							</Tabs>
+						</RadzenTabs>	
+					</RadzenTabsItem>
+										<RadzenTabsItem Text="Compressor">
+<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex8 Change=@OnChanged8>
+    <Tabs>
+        <RadzenTabsItem Text="Compressor 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(4400))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4401))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4402))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4403))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4404))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4405))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4406))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4407))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4408))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4416))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4417))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4418))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4419))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4420))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4421))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4422))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4423))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4424))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4425))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4426))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4427))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4428))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4429))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4430))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4431))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4432))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4433))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4434))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4435))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Compressor 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(4500))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4501))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4502))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4503))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4504))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4505))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4506))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4507))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4508))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4516))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4517))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4518))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4519))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4520))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4521))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4522))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4523))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4524))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4525))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4526))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4527))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4528))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4529))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4530))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4531))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4532))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4533))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4534))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+							 if (datenpunkt.DPNummer.Equals(4535))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>	
+		    </Tabs>
+</RadzenTabs>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Cond">
+
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Control">
+ <div class='card'>
+<table>
+<tr>
+<td>
+<label for='extslot1'>Choose ext. card for slot 1:</label>
+<select name='extslot1' id='extslot1'>
+<option value='none'>-none-</option>
+<option value='digSt1'>Dig. In/Output 1 (Stulz)</option>
+<option value='digSt2'>Dig. In/Output 2 (Stulz)</option>
+<option value='anSt1' >Ana. In/Output 1 (Stulz)</option>
+<option value='anSt2' >Ana. In/Output 2 (Stulz)</option>
+<option value='eevSt'>EEV               (Stulz)</option>
+<option value='digCS1'>Dig. In/Output 1 (CS)</option>
+<option value='digCS2'>Dig. In/Output 2 (CS)</option>
+<option value='anaCS1'>Ana. In/Output 1 (CS)</option>
+<option value='anaCS2'>Ana. In/Output 2 (CS)</option>
+</select>
+<br><br>
+<input type='submit' value='Send' name='paramSlot1'>
+</td>
+<td>
+<label for='extslot2'>Choose ext. card for slot 2:</label>
+<select name='extslot2' id='extslot2'>
+<option value='none'>-none-</option>
+<option value='digSt1'>Dig. In/Output 1 (Stulz)</option>
+<option value='digSt2'>Dig. In/Output 2 (Stulz)</option>
+<option value='anSt1' >Ana. In/Output 1 (Stulz)</option>
+<option value='anSt2' >Ana. In/Output 2 (Stulz)</option>
+<option value='eevSt'>EEV               (Stulz)</option>
+<option value='digCS1'>Dig. In/Output 1 (CS)</option>
+<option value='digCS2'>Dig. In/Output 2 (CS)</option>
+<option value='anaCS1'>Ana. In/Output 1 (CS)</option>
+<option value='anaCS2'>Ana. In/Output 2 (CS)</option>
+</select>
+<br><br>
+<input type='submit' value='Send' name='paramSlot2'>
+</td>
+<td>
+<label for='extslot3'>Choose ext. card for slot 3:</label>
+<select name='extslot3' id='extslot3'>
+<option value='none'>-none-</option>
+<option value='digSt1'>Dig. In/Output 1 (Stulz)</option>
+<option value='digSt2'>Dig. In/Output 2 (Stulz)</option>
+<option value='anSt1' >Ana. In/Output 1 (Stulz)</option>
+<option value='anSt2' >Ana. In/Output 2 (Stulz)</option>
+<option value='eevSt'>EEV               (Stulz)</option>
+<option value='digCS1'>Dig. In/Output 1 (CS)</option>
+<option value='digCS2'>Dig. In/Output 2 (CS)</option>
+<option value='anaCS1'>Ana. In/Output 1 (CS)</option>
+<option value='anaCS2'>Ana. In/Output 2 (CS)</option>
+</select>
+<br><br>
+<input type='submit' value='Send' name='paramSlot3'>
+</td>
+<td>
+<label for='extslot4'>Choose ext. card for slot 4:</label>
+<select name='extslot4' id='extslot4'>
+<option value='none'>-none-</option>
+<option value='digSt1'>Dig. In/Output 1 (Stulz)</option>
+<option value='digSt2'>Dig. In/Output 2 (Stulz)</option>
+<option value='anSt1' >Ana. In/Output 1 (Stulz)</option>
+<option value='anSt2' >Ana. In/Output 2 (Stulz)</option>
+<option value='eevSt'>EEV               (Stulz)</option>
+<option value='digCS1'>Dig. In/Output 1 (CS)</option>
+<option value='digCS2'>Dig. In/Output 2 (CS)</option>
+<option value='anaCS1'>Ana. In/Output 1 (CS)</option>
+<option value='anaCS2'>Ana. In/Output 2 (CS)</option>
+</select>
+<br><br>
+<input type='submit' value='Send' name='paramSlot4'>
+</td>
+</tr>
+</table>
+
+<table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th scope="col">@Loc["Beschreibung"]</th>
+            <th scope="col">@Loc["Datenpunkt"]</th>
+            <th scope="col">@Loc["Wert"]</th>
+            <th scope="col">@Loc["CRUD"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (_datenpunkte != null)
+        {
+            foreach (var datenpunkt in _datenpunkte)
+            {
+                 if (datenpunkt.DPNummer.Equals(10300))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+                 if (datenpunkt.DPNummer.Equals(131))//Datenpunkt
+                {
+                <tr>
+                   <th scope="row">@datenpunkt.DPBeschreibung</th>
+                   <td>@datenpunkt.DPNummer</td>
+                   <td>@datenpunkt.DPWert</td>
+                   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+                </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
  </div>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Coolingprio">
 
-  <div class='row'>
-   <div class='leftcolumn' >
-     <div class='vertical-menu' >
- <a href='/ae'>@Loc["ae"]</a>
- <a href='/ain'>@Loc["ain"]</a>
- <a href='/aout'>@Loc["aout"]</a>
- <a href='/bmsstop'>@Loc["bmsstop"]</a>
- <a href='/calarm'>@Loc["calarm"]</a>
- <a href='/coil'>@Loc["coil"]</a>
- <a href='/comp'>@Loc["comp"]</a>
- <a href='/cond'>@Loc["cond"]</a>
- <a href='/control'>@Loc["control"]</a>
- <a href='/coolingprio'>@Loc["coolingprio"]</a>
- <a href='/cpset'>@Loc["cpset"]</a>
- <a href='/cw'>@Loc["cw"]</a>
- <a href='/date'>@Loc["date time"]</a>
- <a href='/dehumi'>@Loc["dehumi"]</a>
- <a href='/din'>@Loc["din"]</a>
- <a href='/dout'>@Loc["dout"]</a>
- <a href='/drycool'>@Loc["drycool"]</a>
- <a href='/eco'>@Loc["eco"]</a>
- <a href='/eev'>eev</a>
- <a href='/eheat'>eheat</a>
- <a href='/equipment'>equipment</a>
- <a href='/event'>event</a>
- <a href='/fan'>fan</a>
- <a href='/fcm'>fcm</a>
- <a href='/filter'>filter</a>
- <a href='/fire'>fire</a>
- <a href='/flow'>flow</a>
- <a href='/gasheat'>gasheat</a>
- <a href='/gecwv'>gecwv</a>
- <a href='/gvalve'>gvalve</a>
- <a href='/hgbp'>hgbp</a>
- <a href='/humi'>humi</a>
- <a href='/iobus'>iobus</a>
- <a href='/is'>is</a>
- <a href='/loaddefault'>loaddefault</a>
- <a href='/log'>log</a>
- <a href='/louver'>louver</a>
- <a href='/minmax'>minmax</a>
- <a href='/option'>option</a>
- <a href='/phase'>phase</a>
- <a href='/protocol'>protocol</a>
- <a href='/pszone'>pszone</a>
- <a href='/pump'>pump</a>
- <a href='/pwwheat'>pwwheat</a>
- <a href='/sensor'>sensor</a>
- <a href='/setpoint'>setpoint</a>
- <a href='/state'>state</a>
- <a href='/suctionv'>suctionv</a>
- <a href='/ups'>ups</a>
- <a href='/water'>water</a>
- <a href='/winter'>winter</a>
- <a href='/wprg'>wprg</a>
- <a href='/zone'>zone</a>
- 	</div>
-   </div>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Cpset">
 
- <div class='rightcolumn'>
- </div>
- <!--<EventConsole @ref=@console Class="mt-4" />-->
- </div>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Cw">
+<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex13 Change=@OnChanged13>
+    <Tabs>
+        <RadzenTabsItem Text="CW">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+			<tbody>
+				@if (_datenpunkte != null)
+				{
+					foreach (var datenpunkt in _datenpunkte)
+					{
+						 if (datenpunkt.DPNummer.Equals(1708))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+						 if (datenpunkt.DPNummer.Equals(2300))//Datenpunkt
+						{
+						<tr>
+						   <th scope="row">@datenpunkt.DPBeschreibung</th>
+						   <td>@datenpunkt.DPNummer</td>
+						   <td>@datenpunkt.DPWert</td>
+						   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+						</tr>
+						}
+				  }
+				}
+			</tbody>
+		</table>
+		</RadzenTabsItem>
+  
+    
+    </Tabs>
+</RadzenTabs>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="DateTime">
+                  <RadzenCard>
+                    <h4 class="mb-4">Disabled DatePicker</h4>
+                    <RadzenDatePicker Disabled="false" @bind-Value=@value Class="w-100" />
+                </RadzenCard>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Dehumi">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="DIN">
+						<!--
+<option value='none'>-none-</option>
+<option value='Fan failure'>Fan failure</option>
+<option value='Compressor failure'>Compressor failure</option>
+<option value='Pump failure 1'>Pump failure 1</option>
+<option value='Low pressure 1'>Low pressure 1</option>
+<option value='Chiller failure'>Chiller failure</option>
+<option value='E-reheat failure 1-3'>E-reheat failure 1-3</option> 
+<option value='Filter alarm'>Filter alarm</option>
+<option value='Humidifier failure/ENS 20µS'>Humidifier failure/ENS 20µS</option>
+<option value='Water detection'>Water detection</option>
+<option value='ext. alarm 1'>ext. alarm 1</option>
+<option value='Compressor failure 2'>Compressor failure 2</option>
+<option value='ext. alarm 2'>ext. alarm 2</option>
+<option value='low pressure 2'>low pressure 2</option>
+<option value='Remote on/off'>Remote on/off</option>
+<option value='Fire stat'>Fire stat</option>
+<option value='UPS'>UPS</option>
+<option value='Pump 1(GE) failure'>Pump 1(GE) failure</option>
+<option value='Pump 2 (G) failure'>Pump 2 (G) failure</option>
+<option value='Drycooler failure'>Drycooler failure</option>
+<option value='CW disable/DX enable'>CW disable/DX enable</option>
+<option value='ext. alarm 3'>ext. alarm 3</option>
+<option value='ext. alarm 4'>ext. alarm 4</option>
+<option value='ENS 5µS'>ENS 5µS</option> 
+<option value='Phase control'>Phase control</option>
+<option value='Pump failure 3'>Pump failure 3</option>
+<option value='Pump failure 4'>Pump failure 4</option>-->
+<!-- Tab links -->
 
+<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex16 Change=@OnChanged16>
+    <Tabs>
+        <RadzenTabsItem Text="Din 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1800))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1801))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 3">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1802))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 4">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1803))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 5">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1804))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 6">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1805))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 7">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1806))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 8">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1807))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 9">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1808))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 10">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1809))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 11">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1810))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 12">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1811))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 13">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1812))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 14">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1813))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 15">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1814))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 16">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1815))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 17">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1816))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 18">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1817))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 19">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1818))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 20">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1819))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 21">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1820))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 22">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1821))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 23">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1822))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 24">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1823))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 25">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1824))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 26">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1825))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 27">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1826))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 28">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1827))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 29">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1828))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 30">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1829))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 31">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1830))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 32">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1831))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 33">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1832))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 34">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1833))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 35">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1834))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 36">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1835))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 37">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1836))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 38">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1837))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 39">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1838))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 40">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1839))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 41">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1840))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 42">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1841))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Din 43">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1842))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+		
+		
+	</Tabs>
+</RadzenTabs>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="DOUT">
+						<!--
+<option value='none'>-none-</option>
+<option value='enable fan'>enable fan</option>
+<option value='Compressor 1'>Compressor 1</option>
+<option value='Pump 2'>Pump 2</option>
+<option value='E-reheat 1'>E-reheat 1</option>
+<option value='E-reheat 2'>E-reheat 2</option>
+<option value='Dehumidification'>Dehumidification</option>
+<option value='Hotgas-bypass'>Hotgas-bypass</option>
+<option value='Common alarm 1'>Common alarm 1</option>
+<option value='Louver'>Louver</option>
+<option value='Compressor 2'>Compressor 2</option>
+<option value='Pump 1 (GE)'>Pump 1 (GE)</option>
+<option value='Drycooler 1'>Drycooler 1</option>
+<option value='Drycooler 2'>Drycooler 2</option>
+<option value='winter operation'>winter operation</option>
+<option value='summer operation'>summer operation</option>
+<option value='Pump 2 (G)'>Pump 2 (G)</option>
+<option value='E-reheat 3'>E-reheat 3</option>
+<option value='Humidifier on/off'>Humidifier on/off</option>
+<option value='Pump 3'>Pump 3</option>
+<option value='Pump 4'>Pump 4</option>
+<option value='Drycooler 3'>Drycooler 3</option>
+<option value='Drycooler 4'>Drycooler 4</option>
+<option value='eev 1'>eev 1</option>
+<option value='eev 2'>eev 2</option>-->
 
- </body>
+<!-- Tab links -->
+
+<RadzenTabs TabPosition="Radzen.TabPosition.Left" style="width: 1000px; margin-left: 20px;"  @bind-SelectedIndex=@selectedIndex17 Change=@OnChanged17>
+    <Tabs>
+        <RadzenTabsItem Text="Dout 1">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1843))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 2">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1844))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 3">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1845))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 4">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1846))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 5">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1847))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 6">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1848))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 7">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1849))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 8">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1850))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 9">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1851))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 10">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1852))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 11">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1853))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 12">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1854))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 13">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1855))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 14">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1856))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 15">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1857))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 16">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1858))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 17">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1859))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 18">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1860))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 19">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1861))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+        <RadzenTabsItem Text="Dout 20">
+			<table class="table table-responsive table-striped">
+				<thead>
+					<tr>
+						<th scope="col">@Loc["Beschreibung"]</th>
+						<th scope="col">@Loc["Datenpunkt"]</th>
+						<th scope="col">@Loc["Wert"]</th>
+						<th scope="col">@Loc["CRUD"]</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (_datenpunkte != null)
+					{
+						foreach (var datenpunkt in _datenpunkte)
+						{
+							 if (datenpunkt.DPNummer.Equals(1862))//Datenpunkt
+							{
+							<tr>
+							   <th scope="row">@datenpunkt.DPBeschreibung</th>
+							   <td>@datenpunkt.DPNummer</td>
+							   <td>@datenpunkt.DPWert</td>
+							   <td><a href="/update/@datenpunkt.DatenpunktId" class="btn btn-warning btn-sm w-100 my-2">Update</a></td>
+							</tr>
+							}
+					  }
+					}
+				</tbody>
+			</table>
+		</RadzenTabsItem>
+		
+	</Tabs>
+</RadzenTabs>
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Drycool">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="ECO">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="EEV">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="EHEAT">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Equipment">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Event">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="FAN">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="FCM">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="FILTER">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Fire">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Flow">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Gasheat">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="GECWV">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="GVALVE">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="HGBP">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Humi">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="LOG">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Louver">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="MinMaxConfig">
+					</RadzenTabsItem>
+					<RadzenTabsItem Text="Option">
+					</RadzenTabsItem>
+				</Tabs>
+			</RadzenTabs>
+		</div>
+	</div>
+</body>
 </html>
+
+@inject IJSRuntime JsRuntime
+
+@code {
+	Random rand = new Random();
+	int selectedIndex = 0;
+	int selectedIndex1 = 0;
+	int selectedIndex2 = 0;
+	int selectedIndex3 = 0;
+	int selectedIndex4 = 0;
+	int selectedIndex5 = 0;
+	int selectedIndex6 = 0;
+	int selectedIndex7 = 0;
+	int selectedIndex8 = 0;
+	int selectedIndex9 = 0;
+	int selectedIndex10 = 0;
+	int selectedIndex11 = 0;
+	int selectedIndex12 = 0;
+	int selectedIndex13 = 0;
+	int selectedIndex14 = 0;
+	int selectedIndex15 = 0;
+	int selectedIndex16 = 0;
+	int selectedIndex17 = 0;
+	int selectedIndex18 = 0;
+	int selectedIndex19 = 0;
+	int selectedIndex20 = 0;
+	int selectedIndex21 = 0;
+	int selectedIndex22 = 0;
+	int selectedIndex23 = 0;
+	int selectedIndex24 = 0;
+	int selectedIndex25 = 0;
+	int selectedIndex26 = 0;
+	int selectedIndex27 = 0;
+	int selectedIndex28 = 0;
+	int selectedIndex29 = 0;
+	int selectedIndex30 = 0;
+	int selectedIndex31 = 0;
+	int selectedIndex32 = 0;
+	int selectedIndex33 = 0;
+	int selectedIndex34 = 0;
+	int selectedIndex35 = 0;
+	int selectedIndex36 = 0;
+	int selectedIndex37 = 0;
+
+	private List<Datenpunkt> _datenpunkte = null;
+	//public string seite = "/";
+
+	protected override async Task OnInitializedAsync()
+	{
+		using var context = new DPointDbContext();
+
+		_datenpunkte = await context.Datenpunkte.ToListAsync();
+	}
+
+	void OnChanged(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged1(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged2(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged3(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged4(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged5(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged6(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged7(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged8(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged9(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged10(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged11(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged12(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged13(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged14(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged15(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged16(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged17(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged18(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged19(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged20(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged21(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged22(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged23(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged24(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged25(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged26(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged27(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged28(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged29(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged30(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged31(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged32(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged33(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged34(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged35(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged36(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	void OnChanged37(int index)
+	{
+		//        console.Log($"Tab with index {index} was selected.");
+	}
+	DateTime? value = DateTime.Now;
+
+     IEnumerable<DateTime> dates = new DateTime[] { DateTime.Today.AddDays(-1), DateTime.Today.AddDays(1) };
+
+    void OnChange(DateTime? value, string name, string format)
+    {
+       // console.Log($"{name} value changed to {value?.ToString(format)}");
+    }
+
+    void DateRenderSpecial(DateRenderEventArgs args)
+    {
+        if (dates.Contains(args.Date))
+        {
+            args.Attributes.Add("style", "background-color: #ff6d41; border-color: white;");
+        }
+    }
+
+    void DateRender(DateRenderEventArgs args)
+    {
+        args.Disabled = args.Disabled || dates.Contains(args.Date);
+    }
+
+    void DateRenderNoWeekends(DateRenderEventArgs args)
+    {
+        args.Disabled = args.Disabled || args.Date.DayOfWeek == DayOfWeek.Sunday || args.Date.DayOfWeek == DayOfWeek.Saturday;
+    }
+
+    void OnTodayClick()
+    {
+        value = DateTime.Now;
+    }
+}

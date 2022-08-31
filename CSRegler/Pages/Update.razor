@@ -1,4 +1,5 @@
-﻿@page "/update/{DPNummer:int}/{DPSeite}"
+﻿@page "/update/{DPNummer:int}"
+<!--page "/update/{DPNummer:int}/{DPSeite}"-->
 
 <h1>Update DP:"@_postToUpdate.DPNummer"</h1>
 
@@ -58,8 +59,8 @@
 
         if (await context.SaveChangesAsync() > 0)
         {
-//            NavigationManager.NavigateTo("/");
-            NavigationManager.NavigateTo(@DPSeite);
+            NavigationManager.NavigateTo("/");
+//            NavigationManager.NavigateTo(@DPSeite);
         }
         else
         {
