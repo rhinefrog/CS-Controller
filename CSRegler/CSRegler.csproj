@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Coil.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Pages\1hmk4nt3.uos~" />
   </ItemGroup>
 
@@ -80,9 +76,5 @@
 	  <Folder Include="Database\" />
 	  <Folder Include="wwwroot\img\" />
 	  <Folder Include="wwwroot\uploads\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="Pages\Coil.razor" />
 	</ItemGroup>
 </Project>
