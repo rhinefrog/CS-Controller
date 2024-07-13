@@ -3,7 +3,7 @@
 SycFusion:
 unter Programm.cs oder altem system in startup.cs
 // Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTUzMDgzQDMxMzkyZTM0MmUzMFFOSnU1T0NZOVNMYUhpWkpNeGNHS29WZlhvZzFzM29kdHk2L1BRM3ZHdjA9;NTUzMDg0QDMxMzkyZTM0MmUzMERpNlRxOWoxZlJ1R0pVdTVYMEFNYWJVSlB0dnF4NTFqTlh6VGxFUWZiaUU9");
+            
 
 direkt unter using direktive
 
